@@ -7,22 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>2023.02.01 | 작은 걸음</title>
+<title>git정리 | 작은 걸음</title>
 <meta name="generator" content="Jekyll v4.3.2">
-<meta property="og:title" content="2023.02.01">
+<meta property="og:title" content="git정리">
 <meta name="author" content="pwsusc10">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-<link rel="canonical" href="http://localhost:4000/til/2023/02/01/til.html">
-<meta property="og:url" content="http://localhost:4000/til/2023/02/01/til.html">
+<meta name="description" content="init">
+<meta property="og:description" content="init">
+<link rel="canonical" href="http://localhost:4000/til/2023/01/01/git.html">
+<meta property="og:url" content="http://localhost:4000/til/2023/01/01/git.html">
 <meta property="og:site_name" content="작은 걸음">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2023-02-01T00:00:00+09:00">
+<meta property="article:published_time" content="2023-01-01T00:00:00+09:00">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="2023.02.01">
+<meta property="twitter:title" content="git정리">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-02-01T00:00:00+09:00","datePublished":"2023-02-01T00:00:00+09:00","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"2023.02.01","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/02/01/til.html"},"url":"http://localhost:4000/til/2023/02/01/til.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-01-01T00:00:00+09:00","datePublished":"2023-01-01T00:00:00+09:00","description":"init","headline":"git정리","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/01/01/git.html"},"url":"http://localhost:4000/til/2023/01/01/git.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -782,11 +782,11 @@ function googleTranslateElementInit() {
 
 
 <header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">2023.02.01</h1>
-  <h2 class="post-subtitle">Post</h2>
+  <h1 class="post-title p-name" itemprop="name headline">git정리</h1>
+  <h2 class="post-subtitle">git 개념 및 명령어 정리</h2>
 
   <p class="post-meta">
-    <time class="dt-published" datetime="2023-02-01T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Feb 01, 2023
+    <time class="dt-published" datetime="2023-01-01T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 01, 2023
     </time>
 
     
@@ -826,29 +826,78 @@ function googleTranslateElementInit() {
     <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
   </p>
 <div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#post">#post</a>
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#github">#github</a>
 </div></header>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="post-content e-content" itemprop="articleBody">
 
-      
+      <h2 id="init">init</h2>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init // .git 폴더 생성 - 로컬 저장소
+</span></code></pre></div></div>
+
+<p>download zip : 최근 커밋을 기준으로 source 코드를 내려받음<br>
+clone : .git파일을 포함하여 source코드를 내려받음</p>
+
+<h2 id="파일의-4가지-상태">파일의 4가지 상태</h2>
+
+<p><img src="https://user-images.githubusercontent.com/101408068/222651600-bd3cf396-a10b-4358-b924-bbf0a44f0e4e.png" alt="git-status"></p>
+
+<div style="text-align : right">출처 : 팀 개발을 위한 Git, GitHub 시작하기</div>
+<ol>
+  <li>untracked : add를 하지않은 새로운 파일</li>
+  <li>staged : add를 한 파일</li>
+  <li>unmodified : 이미 변경된 사항을 add를 했거나 변경된 것이 없는 파일</li>
+  <li>modified : 전 add 또는 commit된 파일 중 변경 된 파일</li>
+</ol>
+
+<p>git add : 워킹트리에 존재하는 파일을 stage에 추가하는 명령으로 해당 파일의 체크섬 값과 동일한 이름을 가지는 blob(binary large object) 객체가 생성되고 이 객체는 .git/objects에 저장된다. 그리고 stage의 내용은 .git/index에 기록된다.</p>
+
+<h2 id="config">config</h2>
+
+<p>git config 명령으로 옵션을 보거나 값을 바꿀수 있다.<br>
+git 옵션에는 세 종류가 있다.</p>
+
+<ol>
+  <li>시스템 환경 옵션 : PC 전체의 사용자를 위한 옵션</li>
+  <li>전체 옵션 : 현재 사용자를 위한 옵션</li>
+  <li>지역 옵션 : 현재 Git 저장소에만 요휴한 옵션</li>
+</ol>
+
+<p>우선순위 : 지역 옵션 &gt; 전역 옵션 &gt; 시스템 환경 옵션</p>
+
+<h2 id="merge--rebase">merge / rebase</h2>
+
+<p>merge : fast-forward 병합</p>
+
+<!-- <img src="../assets/images/230101/git merge.png"> -->
+
+<p>rebase : 재배치
+<img src="https://user-images.githubusercontent.com/101408068/222651101-cd2ffd4d-820e-43a7-af4f-6c7bdea91981.png" alt="git-rebase"></p>
+
+<div style="text-align : right">출처 : 팀 개발을 위한 Git, GitHub 시작하기</div>
+
+<p>main branch에서 merge하고 싶은 branch를 지명<br>
+ex) git merge test_branch</p>
+
+<p>conflict가 생긴 상황에서 merge 취소 : git merge –abort</p>
 
 
     </div>
 
 </article>
 <div class="post-nav">
-<span></span><a class="next" href="/til/2023/02/02/til.html" title="2023.02.02">2023.02.02</a>
+<span></span><a class="next" href="/til/2023/02/02/til.html" title="2023.02.01">2023.02.01</a>
 </div>
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
         <li>
-          <a class="post-link" href="/til/2023/02/02/til.html" title="2023.02.02">2023.02.02</a>
+          <a class="post-link" href="/til/2023/02/02/til.html" title="2023.02.01">2023.02.01</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/02/01/til.html" title="2023.02.02">2023.02.01</a>
+          <a class="post-link" href="/til/2023/01/01/git.html" title="2023.02.01">git정리</a>
         </li>
 </ul>
     </div>
