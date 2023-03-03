@@ -857,21 +857,28 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
-        <a class="post-link" href="/til/2023/02/02/til.html">
-          2023.02.01
+        <a class="post-link" href="/til/2023/03/03/algorithm.html">
+          알고리즘
         </a>
       </h2>
       <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Feb 02, 2023</span>
+        <span class="post-date"><i class="fa fa-calendar"></i> Mar 03, 2023</span>
         <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
       </div>
-      <a class="post-excerpt" href="/til/2023/02/02/til.html">
+      <a class="post-excerpt" href="/til/2023/03/03/algorithm.html">
         <p>
-        
+        알고리즘 평가
+
+알고리즘 평가하는 요소는 크게 두 가지가 있다.
+하나는 ‘속도’에 관한 것이고 다른 하나는 ‘메모리의 사용량’에 관한 것이다.
+속도에 해당하는 알고리즘 수행시간 분석결과를 ‘시간 복잡도(time complexity)’
+메모리 사용량에 대한 분석 결과를 ‘공간 복잡도(space complexity)’라 한다.
  <span class="read_more">Read More</span>
         </p>
       </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#testing">#testing</a></div>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
+</div>
     </li>
 <li>
       
@@ -937,7 +944,229 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
-        <a class="post-link" href="/til/2023/01/01/git.html">
+        <a class="post-link" href="/til/2023/02/02/data-structure01.html">
+          자료구조
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Feb 02, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/02/02/data-structure01.html">
+        <p>
+        자조 구조의 분류
+
+
+  
+    단순 구조
+
+    
+      정수
+      실수
+      문자
+      문자열
+    
+  
+  
+    선형 구조
+
+    
+      리스트
+      스택
+      큐
+    
+  
+  
+    비선형 구조
+
+    
+      트리
+      그래프
+    
+  
+  
+    파일 구조
+    
+      순차 파일
+      색인 파일
+      직접 파일
+    
+  
+
+
+자료 구조에 따라서 알고리즘은 달라진다.
+알고리즘은 자료 구조에 의존적이다.
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Data%20Structure">#Data Structure</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2023/01/08/BinarySearch.html">
+          이진 탐색
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 08, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/01/08/BinarySearch.html">
+        <p>
+        반복문
+
+int BSearch(int arr[], int len, int target)
+{
+  int first = 0;
+  int last = len - 1;
+  int mid;
+
+  while(first &lt;= last)      // first == last인 경우에도 비교룰 해야 한다.
+  {
+    mid = (first + last) / 2;
+
+    if(arr[mid] == target)      // 타을 찾았다면 return
+    {
+      return mid;
+    }
+    else if(arr[mid] &lt; target)
+      first = mid + 1;
+    else... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/data,/til/2023/01/01/git.html">
           git정리
         </a>
       </h2>
@@ -945,7 +1174,7 @@ function googleTranslateElementInit() {
         <span class="post-date"><i class="fa fa-calendar"></i> Jan 01, 2023</span>
         <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
       </div>
-      <a class="post-excerpt" href="/til/2023/01/01/git.html">
+      <a class="post-excerpt" href="/data,/til/2023/01/01/git.html">
         <p>
         init
 
@@ -1008,14 +1237,20 @@ git add : 워킹트리에 존재하는 파일을 stage에 추가하는... <span 
   <ul>
     <li>
       <a href="/index.html">
-        All<span>2</span>
+        All<span>4</span>
       </a>
     </li>
 
     
       <li>
+        <a href="/categories.html#h-Data,">
+          Data, <span>1</span>
+        </a>
+      </li>
+    
+      <li>
         <a href="/categories.html#h-TIL">
-          TIL <span>2</span>
+          TIL <span>4</span>
         </a>
       </li>
     

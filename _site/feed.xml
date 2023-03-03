@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-03T15:54:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">2023.02.01</title><link href="http://localhost:4000/til/2023/02/02/til.html" rel="alternate" type="text/html" title="2023.02.01" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/02/til</id><content type="html" xml:base="http://localhost:4000/til/2023/02/02/til.html"><![CDATA[]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="testing" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">git정리</title><link href="http://localhost:4000/til/2023/01/01/git.html" rel="alternate" type="text/html" title="git정리" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/01/git</id><content type="html" xml:base="http://localhost:4000/til/2023/01/01/git.html"><![CDATA[<h2 id="init">init</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-04T01:02:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/til/2023/03/03/algorithm.html" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-03T00:00:00+09:00</published><updated>2023-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/03/03/algorithm</id><content type="html" xml:base="http://localhost:4000/til/2023/03/03/algorithm.html"><![CDATA[<h2 id="알고리즘-평가">알고리즘 평가</h2>
+
+<p>알고리즘 평가하는 요소는 크게 두 가지가 있다.<br />
+하나는 ‘속도’에 관한 것이고 다른 하나는 ‘메모리의 사용량’에 관한 것이다.<br />
+속도에 해당하는 알고리즘 수행시간 분석결과를 ‘시간 복잡도(time complexity)’<br />
+메모리 사용량에 대한 분석 결과를 ‘공간 복잡도(space complexity)’라 한다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[알고리즘 평가]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/til/2023/02/02/data-structure01.html" rel="alternate" type="text/html" title="자료구조" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/02/data-structure01</id><content type="html" xml:base="http://localhost:4000/til/2023/02/02/data-structure01.html"><![CDATA[<h2 id="자조-구조의-분류">자조 구조의 분류</h2>
+
+<ul>
+  <li>
+    <p>단순 구조</p>
+
+    <ul>
+      <li>정수</li>
+      <li>실수</li>
+      <li>문자</li>
+      <li>문자열</li>
+    </ul>
+  </li>
+  <li>
+    <p>선형 구조</p>
+
+    <ul>
+      <li>리스트</li>
+      <li>스택</li>
+      <li>큐</li>
+    </ul>
+  </li>
+  <li>
+    <p>비선형 구조</p>
+
+    <ul>
+      <li>트리</li>
+      <li>그래프</li>
+    </ul>
+  </li>
+  <li>
+    <p>파일 구조</p>
+    <ul>
+      <li>순차 파일</li>
+      <li>색인 파일</li>
+      <li>직접 파일</li>
+    </ul>
+  </li>
+</ul>
+
+<p>자료 구조에 따라서 알고리즘은 달라진다.<br />
+알고리즘은 자료 구조에 의존적이다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[자조 구조의 분류]]></summary></entry><entry><title type="html">이진 탐색</title><link href="http://localhost:4000/til/2023/01/08/BinarySearch.html" rel="alternate" type="text/html" title="이진 탐색" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/08/BinarySearch</id><content type="html" xml:base="http://localhost:4000/til/2023/01/08/BinarySearch.html"><![CDATA[<h2 id="반복문">반복문</h2>
+
+<pre><code class="language-BinarySearch.c">int BSearch(int arr[], int len, int target)
+{
+  int first = 0;
+  int last = len - 1;
+  int mid;
+
+  while(first &lt;= last)      // first == last인 경우에도 비교룰 해야 한다.
+  {
+    mid = (first + last) / 2;
+
+    if(arr[mid] == target)      // 타을 찾았다면 return
+    {
+      return mid;
+    }
+    else if(arr[mid] &lt; target)
+      first = mid + 1;
+    else
+      end = mid - 1;
+  }
+  return -1;      // 타겟을 찾지 못했다면 -1을 return
+}
+</code></pre>
+
+<h2 id="재귀-함수">재귀 함수</h2>
+
+<pre><code class="language-BinarySearch.c">int BSearch(int arr[], int target, int first, int end)
+{
+  if(first &gt; end)     // 탈출 조건
+  {
+    return -1;
+  }
+
+  int mid = (first + end) / 2;
+
+  if(arr[mid] == target)      // 타겟을 찾았다면 return
+    return mid;
+  else if(arr[mid] &lt; target)
+    return BSearch(arr, target, mid + 1, end)
+  else
+    return BSearch(arr, target, first, mid - 1)
+}
+</code></pre>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[반복문]]></summary></entry><entry><title type="html">git정리</title><link href="http://localhost:4000/data,/til/2023/01/01/git.html" rel="alternate" type="text/html" title="git정리" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/data,/til/2023/01/01/git</id><content type="html" xml:base="http://localhost:4000/data,/til/2023/01/01/git.html"><![CDATA[<h2 id="init">init</h2>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init // .git 폴더 생성 - 로컬 저장소
 </span></code></pre></div></div>
@@ -33,6 +122,26 @@ git 옵션에는 세 종류가 있다.</p>
 
 <p>우선순위 : 지역 옵션 &gt; 전역 옵션 &gt; 시스템 환경 옵션</p>
 
+<h2 id="수정">수정</h2>
+
+<p>amend : commit 덮어쓰기</p>
+
+<p>reset에는 soft / mixed / hard 세 종류가 있다.</p>
+
+<ul>
+  <li>soft : commit을 취소하고 해당 파일을 stage에 올림(add가 되어 있는 상태)</li>
+  <li>mixed : commit을 취소하고 해당 파일을 unstaged 상태로 워킹 디렉토리에 저장</li>
+  <li>hard : commit을 취소하고 해당 파일들도 지움.</li>
+</ul>
+
+<p>untracked 파일 삭제 - git clean</p>
+
+<ul>
+  <li>git clean -f : 디렉토리를 제외한 파일 삭제</li>
+  <li>git clean -f -d : 디렉토리를 포함해 파일 삭제</li>
+  <li>git clean -f -d -x : .gitignore에 명시되어있는 파일도 포함해 삭제</li>
+</ul>
+
 <h2 id="merge--rebase">merge / rebase</h2>
 
 <p>merge : fast-forward 병합</p>
@@ -47,4 +156,4 @@ git 옵션에는 세 종류가 있다.</p>
 <p>main branch에서 merge하고 싶은 branch를 지명<br />
 ex) git merge test_branch</p>
 
-<p>conflict가 생긴 상황에서 merge 취소 : git merge –abort</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="github" /><summary type="html"><![CDATA[init]]></summary></entry></feed>
+<p>conflict가 생긴 상황에서 merge 취소 : git merge –abort</p>]]></content><author><name>pwsusc10</name></author><category term="Data," /><category term="TIL" /><category term="TIL" /><category term="github" /><summary type="html"><![CDATA[init]]></summary></entry></feed>
