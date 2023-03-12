@@ -18,6 +18,7 @@
 <meta property="og:url" content="http://localhost:4000/">
 <meta property="og:site_name" content="작은 걸음">
 <meta property="og:type" content="website">
+<link rel="next" href="http://localhost:4000/page2">
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Home">
 <script type="application/ld+json">
@@ -1067,35 +1068,48 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
-        <a class="post-link" href="/til/2023/01/08/BinarySearch.html">
-          이진 탐색
+        <a class="post-link" href="/til/2023/01/22/Linked-List-02.html">
+          리스트 - 2
         </a>
       </h2>
       <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Jan 08, 2023</span>
-        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 22, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
       </div>
-      <a class="post-excerpt" href="/til/2023/01/08/BinarySearch.html">
+      <a class="post-excerpt" href="/til/2023/01/22/Linked-List-02.html">
         <p>
-        반복문
+        연결 리스트 - 구현
 
-int BSearch(int arr[], int len, int target)
-{
-  int first = 0;
-  int last = len - 1;
-  int mid;
+새 노드를 추가할 때, 리스트의 머리와 꼬리 둘 중 어디에 저장하는 지에 따라 장단점이 있다.
 
-  while(first &lt;= last)      // first == last인 경우에도 비교룰 해야 한다.
-  {
-    mid = (first + last) / 2;
 
-    if(arr[mid] == target)      // 타을 찾았다면 return
-    {
-      return mid;
-    }
-    else if(arr[mid] &lt; target)
-      first = mid + 1;
-    else... <span class="read_more">Read More</span>
+  
+    머리에 저장할 경우
+
+    
+      장점
+        
+          포인터 변수 tail이 필요 없다.
+        
+      
+      단점
+        
+          저장된 순서를 유지하지 않는다.
+        
+      
+    
+  
+  
+    꼬리에 저장할 경우
+    
+      장점
+        
+          저장된 순서가 유지된다.
+        
+      
+      단점
+        
+          포인터 변수 tail이... <span class="read_more">Read More</span>
         </p>
       </a>
       <div class="post-tags">
@@ -1166,46 +1180,163 @@ int BSearch(int arr[], int len, int target)
 
 
 <h2 class="post-title">
-        <a class="post-link" href="/data,/til/2023/01/01/git.html">
-          git정리
+        <a class="post-link" href="/til/2023/01/15/Linked-List-01.html">
+          리스트 - 1
         </a>
       </h2>
       <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Jan 01, 2023</span>
-        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 15, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
       </div>
-      <a class="post-excerpt" href="/data,/til/2023/01/01/git.html">
+      <a class="post-excerpt" href="/til/2023/01/15/Linked-List-01.html">
         <p>
-        init
+        순차 리스트? 연결 리스트?
 
-git init // .git 폴더 생성 - 로컬 저장소
-
-
-download zip : 최근 커밋을 기준으로 source 코드를 내려받음
-clone : .git파일을 포함하여 source코드를 내려받음
-
-파일의 4가지 상태
+“리스트”라는 자료 구조는 구현 방법에 따라서 크게 두 가지로 나뉜다.
 
 
-
-출처 : 팀 개발을 위한 Git, GitHub 시작하기
-
-  untracked : add를 하지않은 새로운 파일
-  staged : add를 한 파일
-  unmodified : 이미 변경된 사항을 add를 했거나 변경된 것이 없는 파일
-  modified : 전 add 또는 commit된 파일 중 변경 된 파일
+  순차 리스트 - 배열을 기반으로 구현된 리스트
+  연결 리스트 - 메모리의 동적 할당을 기반으로 구현된 리스트
 
 
-git add : 워킹트리에 존재하는 파일을 stage에 추가하는... <span class="read_more">Read More</span>
+리스트 자료 구조는 데이터를 나란히 저장한다. 중복된 데이터의 저장을 허용한다.
+
+순차 리스트 - 구현
+
+ADT
+
+추상 자료형 - ADT(Abstract Data Type) 이란 “구체적인 기능의 완성과정을 언급하지 않고, 순수하게 기능이 무엇인지를 나열한 것”이다. / 자료구조적 측면
+
+void List Init(List *plist);
+- 리스트 초기화
+
+void LInsert(List *p... <span class="read_more">Read More</span>
         </p>
       </a>
       <div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#github">#github</a>
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2023/01/08/BinarySearch.html">
+          이진 탐색
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 08, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/01/08/BinarySearch.html">
+        <p>
+        반복문
+
+int BSearch(int arr[], int len, int target)
+{
+  int first = 0;
+  int last = len - 1;
+  int mid;
+
+  while(first &lt;= last)      // first == last인 경우에도 비교룰 해야 한다.
+  {
+    mid = (first + last) / 2;
+
+    if(arr[mid] == target)      // 타을 찾았다면 return
+    {
+      return mid;
+    }
+    else if(arr[mid] &lt; target)
+      first = mid + 1;
+    else... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
 </div>
     </li>
 </ul>
 
   <!-- Pagination links -->
+
+
+  <div class="paginator">
+    <span class="previous">
+    
+      <span>Prev</span>
+    
+    </span>
+
+    <span class="indicator"> 1/2</span>
+
+    <span class="next">
+    
+      <a href="/page2">Next</a>
+    
+    </span>
+  </div>
+
 </div>
 </div>
 
@@ -1237,7 +1368,7 @@ git add : 워킹트리에 존재하는 파일을 stage에 추가하는... <span 
   <ul>
     <li>
       <a href="/index.html">
-        All<span>4</span>
+        All<span>6</span>
       </a>
     </li>
 
@@ -1250,7 +1381,7 @@ git add : 워킹트리에 존재하는 파일을 stage에 추가하는... <span 
     
       <li>
         <a href="/categories.html#h-TIL">
-          TIL <span>4</span>
+          TIL <span>6</span>
         </a>
       </li>
     
