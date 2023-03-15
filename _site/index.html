@@ -1068,6 +1068,106 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/til/2023/01/28/Linked-List-03.html">
+          리스트 - 3
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 28, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/01/28/Linked-List-03.html">
+        <p>
+        원형 연결 리스트 - 구현
+
+
+  장점
+    
+      단순 연결 리스트처럼 머리와 꼬리를 가리키는 포인터 변수를 각각 두지 않아도, 하나의 포인터 변수만 있어도 머리 또는 꼬리에 노드를 간단히 추가할 수 있다.
+    
+  
+
+
+ADT
+
+원형 연결 리스트의 ADT는 단순 연결 리스트의 ADT와 매우 흡사하다.
+차이점은 정렬 고려한 SetSortRule이 빠졌으며 데이터 삽입에도 머리에 추가하는 것과 꼬리에 추가하는 것. 두 가지로 나누었다.
+
+void List Init(List *plist);
+- 리스트 초기화
+
+void LInsertFront(List *plist, LData pdata);
+- 리스트 머리에... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/til/2023/01/22/Linked-List-02.html">
           리스트 - 2
         </a>
@@ -1217,105 +1317,6 @@ void LInsert(List *p... <span class="read_more">Read More</span>
 <a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
 </div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/til/2023/01/08/BinarySearch.html">
-          이진 탐색
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Jan 08, 2023</span>
-        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
-      </div>
-      <a class="post-excerpt" href="/til/2023/01/08/BinarySearch.html">
-        <p>
-        반복문
-
-int BSearch(int arr[], int len, int target)
-{
-  int first = 0;
-  int last = len - 1;
-  int mid;
-
-  while(first &lt;= last)      // first == last인 경우에도 비교룰 해야 한다.
-  {
-    mid = (first + last) / 2;
-
-    if(arr[mid] == target)      // 타을 찾았다면 return
-    {
-      return mid;
-    }
-    else if(arr[mid] &lt; target)
-      first = mid + 1;
-    else... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
-</div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -1368,20 +1369,20 @@ int BSearch(int arr[], int len, int target)
   <ul>
     <li>
       <a href="/index.html">
-        All<span>6</span>
+        All<span>7</span>
       </a>
     </li>
 
     
       <li>
-        <a href="/categories.html#h-Data,">
-          Data, <span>1</span>
+        <a href="/categories.html#h-Data">
+          Data <span>1</span>
         </a>
       </li>
     
       <li>
         <a href="/categories.html#h-TIL">
-          TIL <span>6</span>
+          TIL <span>7</span>
         </a>
       </li>
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-13T00:28:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/til/2023/03/03/algorithm.html" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-03T00:00:00+09:00</published><updated>2023-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/03/03/algorithm</id><content type="html" xml:base="http://localhost:4000/til/2023/03/03/algorithm.html"><![CDATA[<h2 id="알고리즘-평가">알고리즘 평가</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-15T13:01:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/til/2023/03/03/algorithm.html" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-03T00:00:00+09:00</published><updated>2023-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/03/03/algorithm</id><content type="html" xml:base="http://localhost:4000/til/2023/03/03/algorithm.html"><![CDATA[<h2 id="알고리즘-평가">알고리즘 평가</h2>
 
 <p>알고리즘 평가하는 요소는 크게 두 가지가 있다.<br />
 하나는 ‘속도’에 관한 것이고 다른 하나는 ‘메모리의 사용량’에 관한 것이다.<br />
@@ -44,7 +44,258 @@
 </ul>
 
 <p>자료 구조에 따라서 알고리즘은 달라진다.<br />
-알고리즘은 자료 구조에 의존적이다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[자조 구조의 분류]]></summary></entry><entry><title type="html">리스트 - 2</title><link href="http://localhost:4000/til/2023/01/22/Linked-List-02.html" rel="alternate" type="text/html" title="리스트 - 2" /><published>2023-01-22T00:00:00+09:00</published><updated>2023-01-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/22/Linked-List-02</id><content type="html" xml:base="http://localhost:4000/til/2023/01/22/Linked-List-02.html"><![CDATA[<h2 id="연결-리스트---구현">연결 리스트 - 구현</h2>
+알고리즘은 자료 구조에 의존적이다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[자조 구조의 분류]]></summary></entry><entry><title type="html">리스트 - 3</title><link href="http://localhost:4000/til/2023/01/28/Linked-List-03.html" rel="alternate" type="text/html" title="리스트 - 3" /><published>2023-01-28T00:00:00+09:00</published><updated>2023-01-28T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/28/Linked-List-03</id><content type="html" xml:base="http://localhost:4000/til/2023/01/28/Linked-List-03.html"><![CDATA[<h2 id="원형-연결-리스트---구현">원형 연결 리스트 - 구현</h2>
+
+<ul>
+  <li>장점
+    <ul>
+      <li>단순 연결 리스트처럼 머리와 꼬리를 가리키는 포인터 변수를 각각 두지 않아도, 하나의 포인터 변수만 있어도 머리 또는 꼬리에 노드를 간단히 추가할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="adt">ADT</h3>
+
+<p>원형 연결 리스트의 ADT는 단순 연결 리스트의 ADT와 매우 흡사하다.<br />
+차이점은 정렬 고려한 SetSortRule이 빠졌으며 데이터 삽입에도 머리에 추가하는 것과 꼬리에 추가하는 것. 두 가지로 나누었다.</p>
+
+<pre><code class="language-ADT">void List Init(List *plist);
+- 리스트 초기화
+
+void LInsertFront(List *plist, LData pdata);
+- 리스트 머리에 데이터 저장
+
+void LInsert(List *plist, LData pdata);
+- 리스트 꼬리에 데이터 저장
+
+int LFirst(List *plist, LData pdata);
+- 첫 번째 데이터를 pdata에 저장
+- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
+
+int LNext(List *plist, LData *pdata);
+- 참조된 데이터의 다음 데이터를 pdata에 저장
+- 참조를 새로 시작하기 위해선 LFirst 함수를 호출해야 한다.
+- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
+
+LData LRemove(List *plist);
+- LFirst 또는 LNext 함수의 마지막 반환 데이터를 삭제
+- 삭제된 데이터를 반환
+
+int LCount(List *plist);
+- 리스트에 저장되어 있는 데이터의 수 반환
+</code></pre>
+
+<h3 id="header-file">header file</h3>
+
+<pre><code class="language-CLinkedList.h">#ifndef __C_LINKED_LIST_H__
+#define __C_LINKED_LIST_H__
+
+#define TRUE 1
+#define FALSE 0
+
+typedef int Data;
+
+typedef struct _node
+{
+  Data data;
+  struct _node *next;
+}Node;
+
+typedef struct _CirclelinkedList
+{
+  Node *tail;
+  Node *cur;
+  Node *before;
+  int numOfData;
+
+}CList;
+
+typedef CList List;
+
+void ListInit(List *plist);                 // 초기화
+void LInsert(List *plist, Data data);       // 꼬리에 데이터 저장
+void LInsertFront(List *plist, Data data);  // 머리에 데이터 저장
+
+int LFirst(List *plist, Data *pdata);       // 첫 데이터 참조
+int LNext(List *plist, Data *pdata);        // 두 번째 이후 데이터 참조
+
+Data LRemove(List *plist);                  // 참조한 데이터 삭제
+int LCount(List *plist);                    // 저장된 데이터의 수 반환
+
+
+#endif
+</code></pre>
+
+<h3 id="source-file">source file</h3>
+
+<p>원형 연결 리스트의 삭제 함수는 단순 연결 리스트의 삭제 함수와 매우 유사하지만 2가지의 예외 case에 대해 처리해주어야한다.</p>
+
+<ol>
+  <li>삭제할 노드를 tail이 가리키는 경우 -&gt; tail이 가리키는 노드가 삭제되므로 tail이 다른 노드를 가리키도록 해야 한다.</li>
+  <li>삭제할 노드가 리스트에 홀로 남은 경우 -&gt; 삭제가 진행되고 나면 포인터 변수 tail은 더 이상 가리킬 노드가 존재하지 않으므로 NULL을 가리키게 해야 한다.</li>
+</ol>
+
+<pre><code class="language-CLinkedList.c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "CLinkedList.h"
+
+void ListInit(List *plist)
+{
+  plist-&gt;tail = NULL;
+  plist-&gt;cur = NULL;
+  plist-&gt;before = NULL;
+  plist-&gt;numOfData = 0;
+}
+
+void LInsert(List *plist, Data data)    // 꼬리에 데이터 추가
+{
+  Node *newNode = (Node*)malloc(sizeof(Node));
+  newNode-&gt;data = data;
+
+  if(plist-&gt;tail == NULL)               // 데이터를 처음 추가할 때
+  {
+    plist-&gt;tail = newNode;
+    newNode-&gt;next = newNode;
+  }
+  else
+  {
+    newNode-&gt;next = plist-&gt;tail-&gt;next;  // 새 노드가 다시 머리를 가리키도록 연결
+    plist-&gt;tail-&gt;next = newNode;        // 꼬리에 있는 마지막 노드가 새 노드를 가리키도록 연결
+    plist-&gt;tail = newNode;              // 꼬리가 새 노드를 가리키도록 연결
+  }
+
+  plist-&gt;numOfData++;                   // 데이터 수 증가
+}
+
+void LInsertFront(List *plist, Data data)
+{
+  Node *newNode = (Node*)malloc(sizeof(Node));
+  newNode-&gt;data = data;
+
+  if(plist-&gt;tail == NULL)               // 데이터를 처음 추가할 때
+  {
+    plist-&gt;tail = newNode;
+    newNode-&gt;next = newNode;
+  }
+  else
+  {
+    newNode-&gt;next = plist-&gt;tail-&gt;next;  // 새 노드가 머리에 있는 노드를 가리키도록 연결
+    plist-&gt;tail-&gt;next = newNode;        // 꼬리에 있는 노드가 새 노드를 가리키도록 연결
+  }
+
+  plist-&gt;numOfData++;                   // 데이터 수 증가
+}
+
+int LFirst(List *plist, Data *pdata)
+{
+  if(plist-&gt;tail == NULL)               // 데이터가 없다면 FALSE 반환
+    return FALSE;
+
+  plist-&gt;before = plist-&gt; tail;
+  plist-&gt;cur = plist-&gt;tail-&gt;next;       // 원형 리스트이므로 꼬리의 다음 노드는 머리
+
+  *pdata = plist-&gt;cur-&gt;data;            // 데이터 저장
+
+  return TRUE;
+}
+
+int LNext(List *plist, Data *pdata)
+{
+  if(plist-&gt;tail == NULL)               // 데이터가 없다면 FALSE 반환
+    return FALSE;
+
+  plist-&gt;before = plist-&gt;cur;
+  plist-&gt;cur = plist-&gt;cur-&gt;next;
+
+  *pdata = plist-&gt;cur-&gt;data;
+
+  return TRUE;
+}
+
+Data LRemove(List *plist)
+{
+  Node *delNode = plist-&gt;cur;
+  Data delData = delNode-&gt;data;
+
+  if(delNode == plist-&gt;tail)              // 삭제할 데이터가 꼬리를 가리킨다면
+  {
+    if(plist-&gt;tail == plist-&gt;tail-&gt;next)   // 남은 데이터가 하나라면
+      plist-&gt;tail = NULL;
+    else
+      plist-&gt;tail = plist-&gt;before;
+  }
+  plist-&gt;before-&gt;next = plist-&gt;cur-&gt;next; // cur 당겨주기
+  plist-&gt;cur = plist-&gt;before;
+  free(delNode);
+
+  plist-&gt;numOfData--;
+  return delData;
+}
+
+int LCount(List *plist)
+{
+  return plist-&gt;numOfData;
+}
+</code></pre>
+
+<h3 id="mainc">main.c</h3>
+
+<pre><code class="language-CLinkedListMain.c">#include &lt;stdio.h&gt;
+#include "CLinkedList.h"
+
+int main(void)
+{
+  List list;
+  Data data;
+
+  ListInit(&amp;list);
+
+  LInsert(&amp;list, 11);
+  LInsert(&amp;list, 22);
+  LInsert(&amp;list, 33);
+  LInsert(&amp;list, 44);
+  LInsert(&amp;list, 55);
+
+  printf("데이터 삭제 전\n");
+  if(LFirst(&amp;list, &amp;data))
+    printf("data : %d\n", data);
+  for(int i = 0; i &lt; list.numOfData - 1; i++)
+  {
+    LNext(&amp;list, &amp;data);
+    printf("data : %d\n", data);
+  }
+
+  printf("\n");
+
+  if(LFirst(&amp;list, &amp;data))
+  {
+    if(data == 22 || data == 44)
+      printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
+
+    for(int i = 0; i &lt; list.numOfData - 1; i++)
+    {
+      LNext(&amp;list, &amp;data);
+      if(data == 22 || data == 44)
+        printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
+    }
+  }
+
+  printf("데이터 삭제 후\n");
+
+  if(LFirst(&amp;list, &amp;data))
+    printf("data : %d\n", data);
+  for(int i = 0; i &lt; list.numOfData - 1; i++)
+  {
+    LNext(&amp;list, &amp;data);
+    printf("data : %d\n", data);
+  }
+  return 0;
+}
+</code></pre>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[원형 연결 리스트 - 구현]]></summary></entry><entry><title type="html">리스트 - 2</title><link href="http://localhost:4000/til/2023/01/22/Linked-List-02.html" rel="alternate" type="text/html" title="리스트 - 2" /><published>2023-01-22T00:00:00+09:00</published><updated>2023-01-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/22/Linked-List-02</id><content type="html" xml:base="http://localhost:4000/til/2023/01/22/Linked-List-02.html"><![CDATA[<h2 id="연결-리스트---구현">연결 리스트 - 구현</h2>
 
 <p>새 노드를 추가할 때, 리스트의 머리와 꼬리 둘 중 어디에 저장하는 지에 따라 장단점이 있다.</p>
 
@@ -337,7 +588,7 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[연결 리스트 - 구현]]></summary></entry><entry><title type="html">리스트 - 1</title><link href="http://localhost:4000/til/2023/01/15/Linked-List-01.html" rel="alternate" type="text/html" title="리스트 - 1" /><published>2023-01-15T00:00:00+09:00</published><updated>2023-01-15T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/15/Linked-List-01</id><content type="html" xml:base="http://localhost:4000/til/2023/01/15/Linked-List-01.html"><![CDATA[<h2 id="순차-리스트-연결-리스트">순차 리스트? 연결 리스트?</h2>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[연결 리스트 - 구현]]></summary></entry><entry><title type="html">리스트 - 1</title><link href="http://localhost:4000/til/2023/01/15/Linked-List-01.html" rel="alternate" type="text/html" title="리스트 - 1" /><published>2023-01-15T00:00:00+09:00</published><updated>2023-01-15T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/15/Linked-List-01</id><content type="html" xml:base="http://localhost:4000/til/2023/01/15/Linked-List-01.html"><![CDATA[<h2 id="순차-리스트-연결-리스트">순차 리스트? 연결 리스트?</h2>
 
 <p>“리스트”라는 자료 구조는 구현 방법에 따라서 크게 두 가지로 나뉜다.</p>
 
@@ -549,7 +800,7 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[순차 리스트? 연결 리스트?]]></summary></entry><entry><title type="html">이진 탐색</title><link href="http://localhost:4000/til/2023/01/08/BinarySearch.html" rel="alternate" type="text/html" title="이진 탐색" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/08/BinarySearch</id><content type="html" xml:base="http://localhost:4000/til/2023/01/08/BinarySearch.html"><![CDATA[<h2 id="반복문">반복문</h2>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[순차 리스트? 연결 리스트?]]></summary></entry><entry><title type="html">이진 탐색</title><link href="http://localhost:4000/til/2023/01/08/BinarySearch.html" rel="alternate" type="text/html" title="이진 탐색" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/08/BinarySearch</id><content type="html" xml:base="http://localhost:4000/til/2023/01/08/BinarySearch.html"><![CDATA[<h2 id="반복문">반복문</h2>
 
 <pre><code class="language-BinarySearch.c">int BSearch(int arr[], int len, int target)
 {
@@ -592,7 +843,7 @@ int main(void)
   else
     return BSearch(arr, target, first, mid - 1)
 }
-</code></pre>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[반복문]]></summary></entry><entry><title type="html">git정리</title><link href="http://localhost:4000/data,/til/2023/01/01/git.html" rel="alternate" type="text/html" title="git정리" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/data,/til/2023/01/01/git</id><content type="html" xml:base="http://localhost:4000/data,/til/2023/01/01/git.html"><![CDATA[<h2 id="init">init</h2>
+</code></pre>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[반복문]]></summary></entry><entry><title type="html">git정리</title><link href="http://localhost:4000/data/til/2023/01/01/git.html" rel="alternate" type="text/html" title="git정리" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/data/til/2023/01/01/git</id><content type="html" xml:base="http://localhost:4000/data/til/2023/01/01/git.html"><![CDATA[<h2 id="init">init</h2>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init // .git 폴더 생성 - 로컬 저장소
 </span></code></pre></div></div>
@@ -661,4 +912,4 @@ git 옵션에는 세 종류가 있다.</p>
 <p>main branch에서 merge하고 싶은 branch를 지명<br />
 ex) git merge test_branch</p>
 
-<p>conflict가 생긴 상황에서 merge 취소 : git merge –abort</p>]]></content><author><name>pwsusc10</name></author><category term="Data," /><category term="TIL" /><category term="TIL" /><category term="github" /><summary type="html"><![CDATA[init]]></summary></entry></feed>
+<p>conflict가 생긴 상황에서 merge 취소 : git merge –abort</p>]]></content><author><name>pwsusc10</name></author><category term="Data" /><category term="TIL" /><category term="TIL" /><category term="github" /><summary type="html"><![CDATA[init]]></summary></entry></feed>
