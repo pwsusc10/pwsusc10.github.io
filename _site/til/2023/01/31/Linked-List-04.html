@@ -7,22 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>이진 탐색 | 작은 걸음</title>
+<title>리스트 - 4 | 작은 걸음</title>
 <meta name="generator" content="Jekyll v4.3.2">
-<meta property="og:title" content="이진 탐색">
+<meta property="og:title" content="리스트 - 4">
 <meta name="author" content="pwsusc10">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="반복문">
-<meta property="og:description" content="반복문">
-<link rel="canonical" href="http://localhost:4000/til/2023/01/08/BinarySearch.html">
-<meta property="og:url" content="http://localhost:4000/til/2023/01/08/BinarySearch.html">
+<meta name="description" content="양방향 연결 리스트">
+<meta property="og:description" content="양방향 연결 리스트">
+<link rel="canonical" href="http://localhost:4000/til/2023/01/31/Linked-List-04.html">
+<meta property="og:url" content="http://localhost:4000/til/2023/01/31/Linked-List-04.html">
 <meta property="og:site_name" content="작은 걸음">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2023-01-08T00:00:00+09:00">
+<meta property="article:published_time" content="2023-01-31T00:00:00+09:00">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="이진 탐색">
+<meta property="twitter:title" content="리스트 - 4">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-01-08T00:00:00+09:00","datePublished":"2023-01-08T00:00:00+09:00","description":"반복문","headline":"이진 탐색","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/01/08/BinarySearch.html"},"url":"http://localhost:4000/til/2023/01/08/BinarySearch.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-01-31T00:00:00+09:00","datePublished":"2023-01-31T00:00:00+09:00","description":"양방향 연결 리스트","headline":"리스트 - 4","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/01/31/Linked-List-04.html"},"url":"http://localhost:4000/til/2023/01/31/Linked-List-04.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -782,11 +782,11 @@ function googleTranslateElementInit() {
 
 
 <header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">이진 탐색</h1>
-  <h2 class="post-subtitle">이진 탐색 구현</h2>
+  <h1 class="post-title p-name" itemprop="name headline">리스트 - 4</h1>
+  <h2 class="post-subtitle">양방향 연결 리스트 구현</h2>
 
   <p class="post-meta">
-    <time class="dt-published" datetime="2023-01-08T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 08, 2023
+    <time class="dt-published" datetime="2023-01-31T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 31, 2023
     </time>
 
     
@@ -823,7 +823,7 @@ function googleTranslateElementInit() {
 
 
 
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
   </p>
 <div class="post-tags">
 <a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
@@ -832,72 +832,313 @@ function googleTranslateElementInit() {
 
     <div class="post-content e-content" itemprop="articleBody">
 
-      <h2 id="반복문">반복문</h2>
+      <h2 id="양방향-연결-리스트">양방향 연결 리스트</h2>
 
-<pre><code class="language-BinarySearch.c">int BSearch(int arr[], int len, int target)
+<ul>
+  <li>장점
+    <ul>
+      <li>기존의 단순 연결 리스트는 한쪽 방향으로만 조회가 가능하기 때문에 삭제를 위해 before이라는 멤버 변수를 유지해야하지만 양뱡향 연결 리스트는 그럴 필요가 없다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>양방향 연결 리스트는 하나의 노드가 자신의 왼쪽과 오른쪽 노드를 동시에 가리키는 구조이다.<br>
+따라서 양방향 연결 리스트의 노드를 표현하는 구조체는 다음과 같다.</p>
+
+<pre><code class="language-Node">typedef struct _node
 {
-  int first = 0;
-  int last = len - 1;
-  int mid;
-
-  while(first &lt;= last)      // first == last인 경우에도 비교룰 해야 한다.
-  {
-    mid = (first + last) / 2;
-
-    if(arr[mid] == target)      // 타을 찾았다면 return
-    {
-      return mid;
-    }
-    else if(arr[mid] &lt; target)
-      first = mid + 1;
-    else
-      end = mid - 1;
-  }
-  return -1;      // 타겟을 찾지 못했다면 -1을 return
-}
+  Data data;
+  struct _node *prev;
+  struct _node *next;
+} Node;
 </code></pre>
 
-<h2 id="재귀-함수">재귀 함수</h2>
+<h3 id="adt">ADT</h3>
 
-<pre><code class="language-BinarySearch.c">int BSearch(int arr[], int target, int first, int end)
+<pre><code class="language-ADT">void List Init(List *plist);
+- 리스트 초기화
+
+void LInsertFront(List *plist, LData pdata);
+- 리스트 머리에 데이터 저장
+
+void LInsert(List *plist, LData pdata);
+- 리스트 꼬리에 데이터 저장
+
+int LFirst(List *plist, LData pdata);
+- 첫 번째 데이터를 pdata에 저장
+- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
+
+int LNext(List *plist, LData *pdata);
+- 참조된 데이터의 다음 데이터를 pdata에 저장
+- 참조를 새로 시작하기 위해선 LFirst 함수를 호출해야 한다.
+- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
+
+int LPrevious(List *plist, Data *pdata);
+- 참조된 데이터의 역순 데이터를 pdata에 저장
+- 참조를 새로 시작하기 위해선 LFirst 함수를 호출해야 한다.
+- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
+
+LData LRemove(List *plist);
+- LFirst 또는 LNext 함수의 마지막 반환 데이터를 삭제
+- 삭제된 데이터를 반환
+
+int LCount(List *plist);
+- 리스트에 저장되어 있는 데이터의 수 반환
+</code></pre>
+
+<h3 id="header-file">header file</h3>
+
+<pre><code class="language-DBLinkedList.h">#ifndef __DB_LINKED_LIST_H__
+#define __DB_LINKED_LIST_H__
+
+#define TRUE 1
+#define FALSE 0
+
+typedef int Data;
+
+typedef struct _node
 {
-  if(first &gt; end)     // 탈출 조건
+  Data data;
+  struct _node *prev;
+  struct _node *next;
+}Node;
+
+typedef struct _DLinkedList
+{
+  Node *head;
+  Node *cur;
+  int numOfData;
+
+}DBLinkedList;
+
+typedef DBLinkedList List;
+
+void ListInit(List *plist);                 // 초기화
+void LInsert(List *plist, Data data);       // 머리에 데이터 저장
+
+int LFirst(List *plist, Data *pdata);       // 첫 데이터 참조
+int LNext(List *plist, Data *pdata);        // 두 번째 이후 데이터 참조
+int LPrevious(List *plist, Data *pdata);    // LNext 함수의 반대 방향 노드 참조
+
+Data LRemove(List *plist);                  // 참조한 데이터 삭제
+int LCount(List *plist);                    // 저장된 데이터의 수 반환
+
+
+#endif
+</code></pre>
+
+<h3 id="source-file">source file</h3>
+
+<pre><code class="language-DBLinkedList.c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "DBLinkedList.h"
+
+void ListInit(List *plist)
+{
+  plist-&gt;head = NULL;
+  plist-&gt;numOfData = 0;
+}
+
+void LInsert(List *plist, Data data)
+{
+  /*
+  // 저장할 노드 생성
+  Node *newNode = (Node*)malloc(sizeof(Node));
+  newNode-&gt;data = data;
+
+  if(plist-&gt;head == NULL)               // 데이터를 처음 추가할 때
   {
-    return -1;
+    newNode-&gt;next = NULL;
+    newNode-&gt;prev = NULL;
+    plist-&gt;head = newNode;
   }
-
-  int mid = (first + end) / 2;
-
-  if(arr[mid] == target)      // 타겟을 찾았다면 return
-    return mid;
-  else if(arr[mid] &lt; target)
-    return BSearch(arr, target, mid + 1, end)
   else
-    return BSearch(arr, target, first, mid - 1)
+  {
+    newNode-&gt;next = plist-&gt;head;        // 새 노드가 다음 노드를 가리키게 연결
+    newNode-&gt;prev = NULL;               // 새 노드의 prev는 NULL을 가리킴
+    plist-&gt;head-&gt;prev = newNode;        // 새 노드가 가리키는 노드 즉 새로 추가된 노드의 앞에 있는 노드의 prev가 새 노드를 가리키게 연결
+    plist-&gt;head = newNode;              // head가 새 노드를 가리키도록 연결
+  }
+
+  plist-&gt;numOfData++;
+
+  조건문 안에 3문장이 중복된다.
+  처음 데이터를 추가할 때 plist-&gt;head는 NULL을 가리키므로 다음과 같은 함수로 만들 수 있다.
+  */
+
+  // 저장할 노드 생성
+  Node *newNode = (Node*)malloc(sizeof(Node));
+  newNode-&gt;data = data;
+
+  newNode-&gt;next = plist-&gt;head;
+  newNode-&gt;prev = NULL;
+
+  if(plist-&gt;head != NULL)               // 두 번째 이후의 노드를 추가할 때
+  {
+    plist-&gt;head-&gt;prev = newNode;
+  }
+  plist-&gt;head = newNode;                // head가 새 노드를 가리키도록 연결
+
+  plist-&gt;numOfData++;
+}
+
+int LFirst(List *plist, Data *pdata)
+{
+  if(plist-&gt;head == NULL)
+    return FALSE;
+
+  plist-&gt;cur = plist-&gt;head;
+  *pdata = plist-&gt;cur-&gt;data;
+
+  return TRUE;
+}
+
+int LNext(List *plist, Data *pdata)
+{
+  if(plist-&gt;cur-&gt;next == NULL)
+    return FALSE;
+
+  plist-&gt;cur = plist-&gt;cur-&gt;next;
+  *pdata = plist-&gt;cur-&gt;data;
+
+  return TRUE;
+}
+
+int LPrevious(List *plist, Data *pdata)
+{
+  if(plist-&gt;cur-&gt;prev == NULL)
+    return FALSE;
+
+  plist-&gt;cur = plist-&gt;cur-&gt;prev;
+  *pdata = plist-&gt;cur-&gt;data;
+
+  return TRUE;
+}
+
+Data LRemove(List *plist)
+{
+  Node *delNode;
+  Data delData;
+
+  delNode = plist-&gt;cur;
+  delData = delNode-&gt;data;
+
+  if(delNode == plist-&gt;head)  // 삭제할 노드를 head인 경우
+  {
+    delNode-&gt;next-&gt;prev = NULL;
+    plist-&gt;head = delNode-&gt;next;
+    plist-&gt;cur = plist-&gt;head;
+    free(delNode);
+  }
+  else if(delNode-&gt;next == NULL) // 삭제할 노드가 마지막 노드인 경우
+  {
+    delNode-&gt;prev-&gt;next = NULL;
+    free(delNode);
+  }
+  else
+  {
+    delNode-&gt;prev-&gt;next = delNode-&gt;next;
+    delNode-&gt;next-&gt;prev = delNode-&gt;prev;
+    plist-&gt;cur = delNode-&gt;prev;
+    free(delNode);
+  }
+  return delData;
+}
+
+int LCount(List *plist)
+{
+  return plist-&gt;numOfData;
 }
 </code></pre>
+
+<h3 id="mainc">main.c</h3>
+
+<pre><code class="language-DBLinkedListMain.c">#include &lt;stdio.h&gt;
+#include "DBLinkedList.h"
+
+int main(void)
+{
+  List list;
+  Data data;
+
+  ListInit(&amp;list);
+
+  LInsert(&amp;list, 11);
+  LInsert(&amp;list, 22);
+  LInsert(&amp;list, 33);
+  LInsert(&amp;list, 44);
+  LInsert(&amp;list, 55);
+
+  printf("저장된 데이터 수 : %d\n", LCount(&amp;list));
+
+  if(LFirst(&amp;list, &amp;data))
+  {
+    printf("data : %d\n", data);
+
+    while(LNext(&amp;list, &amp;data))
+    {
+      printf("data : %d\n", data);
+    }
+
+    while(LPrevious(&amp;list, &amp;data))
+    {
+      printf("data : %d\n", data);
+    }
+  }
+
+  if(LFirst(&amp;list, &amp;data))
+  {
+    if(data == 11 || data == 33 || data == 55)
+    {
+      printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
+    }
+
+    while(LNext(&amp;list, &amp;data))
+    {
+      if(data == 11 || data == 33 || data == 55)
+        printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
+    }
+  }
+
+
+  if(LFirst(&amp;list, &amp;data))
+  {
+    printf("data : %d\n", data);
+
+    while(LNext(&amp;list, &amp;data))
+    {
+      printf("data : %d\n", data);
+    }
+  }
+  return 0;
+}
+</code></pre>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<p>책 - 윤성우의 열혈 자료 구조</p>
 
 
     </div>
 
 </article>
 <div class="post-nav">
-<a class="previous" href="/data/til/2023/01/01/git.html" title="git정리">git정리</a><a class="next" href="/til/2023/01/15/Linked-List-01.html" title="리스트 - 1">리스트 - 1</a>
+<a class="previous" href="/til/2023/01/28/Linked-List-03.html" title="리스트 - 3">리스트 - 3</a><a class="next" href="/til/2023/02/02/data-structure01.html" title="자료구조">자료구조</a>
 </div>
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
         <li>
-          <a class="post-link" href="/til/2023/01/08/BinarySearch.html" title="리스트 - 1">이진 탐색</a>
+          <a class="post-link" href="/data/til/2023/01/01/git.html" title="자료구조">git정리</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/02/02/data-structure01.html" title="리스트 - 1">자료구조</a>
+          <a class="post-link" href="/til/2023/03/03/algorithm.html" title="자료구조">알고리즘</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/15/Linked-List-01.html" title="리스트 - 1">리스트 - 1</a>
+          <a class="post-link" href="/til/2023/01/28/Linked-List-03.html" title="자료구조">리스트 - 3</a>
         </li>
 <li>
-          <a class="post-link" href="/data/til/2023/01/01/git.html" title="리스트 - 1">git정리</a>
+          <a class="post-link" href="/til/2023/01/15/Linked-List-01.html" title="자료구조">리스트 - 1</a>
         </li>
 </ul>
     </div>
