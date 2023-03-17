@@ -1,50 +1,235 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-17T00:59:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/til/2023/03/03/algorithm.html" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-03T00:00:00+09:00</published><updated>2023-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/03/03/algorithm</id><content type="html" xml:base="http://localhost:4000/til/2023/03/03/algorithm.html"><![CDATA[<h2 id="알고리즘-평가">알고리즘 평가</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-17T13:07:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/til/2023/03/03/algorithm.html" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-03T00:00:00+09:00</published><updated>2023-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/03/03/algorithm</id><content type="html" xml:base="http://localhost:4000/til/2023/03/03/algorithm.html"><![CDATA[<h2 id="알고리즘-평가">알고리즘 평가</h2>
 
 <p>알고리즘 평가하는 요소는 크게 두 가지가 있다.<br />
 하나는 ‘속도’에 관한 것이고 다른 하나는 ‘메모리의 사용량’에 관한 것이다.<br />
 속도에 해당하는 알고리즘 수행시간 분석결과를 ‘시간 복잡도(time complexity)’<br />
-메모리 사용량에 대한 분석 결과를 ‘공간 복잡도(space complexity)’라 한다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[알고리즘 평가]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/til/2023/02/02/data-structure01.html" rel="alternate" type="text/html" title="자료구조" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/02/data-structure01</id><content type="html" xml:base="http://localhost:4000/til/2023/02/02/data-structure01.html"><![CDATA[<h2 id="자조-구조의-분류">자조 구조의 분류</h2>
+메모리 사용량에 대한 분석 결과를 ‘공간 복잡도(space complexity)’라 한다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[알고리즘 평가]]></summary></entry><entry><title type="html">리스트 - 5</title><link href="http://localhost:4000/til/2023/01/31/Linked-List-05.html" rel="alternate" type="text/html" title="리스트 - 5" /><published>2023-01-31T00:00:00+09:00</published><updated>2023-01-31T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/31/Linked-List-05</id><content type="html" xml:base="http://localhost:4000/til/2023/01/31/Linked-List-05.html"><![CDATA[<h2 id="양방향-연결-리스트---headdummynode와-taildummynode가-있는-것">양방향 연결 리스트 - headDummyNode와 tailDummyNode가 있는 것</h2>
 
 <ul>
-  <li>
-    <p>단순 구조</p>
-
+  <li>장점
     <ul>
-      <li>정수</li>
-      <li>실수</li>
-      <li>문자</li>
-      <li>문자열</li>
-    </ul>
-  </li>
-  <li>
-    <p>선형 구조</p>
-
-    <ul>
-      <li>리스트</li>
-      <li>스택</li>
-      <li>큐</li>
-    </ul>
-  </li>
-  <li>
-    <p>비선형 구조</p>
-
-    <ul>
-      <li>트리</li>
-      <li>그래프</li>
-    </ul>
-  </li>
-  <li>
-    <p>파일 구조</p>
-    <ul>
-      <li>순차 파일</li>
-      <li>색인 파일</li>
-      <li>직접 파일</li>
+      <li>DummyNode를 head와 tail에 추가함으로써 삭제와 조회의 일관성을 더한다.</li>
     </ul>
   </li>
 </ul>
 
-<p>자료 구조에 따라서 알고리즘은 달라진다.<br />
-알고리즘은 자료 구조에 의존적이다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[자조 구조의 분류]]></summary></entry><entry><title type="html">리스트 - 4</title><link href="http://localhost:4000/til/2023/01/31/Linked-List-04.html" rel="alternate" type="text/html" title="리스트 - 4" /><published>2023-01-31T00:00:00+09:00</published><updated>2023-01-31T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/31/Linked-List-04</id><content type="html" xml:base="http://localhost:4000/til/2023/01/31/Linked-List-04.html"><![CDATA[<h2 id="양방향-연결-리스트">양방향 연결 리스트</h2>
+<h3 id="adt">ADT</h3>
+
+<pre><code class="language-ADT">void List Init(List *plist);
+- 리스트 초기화
+
+void LInsert(List *plist, LData pdata);
+- 리스트에 데이터 저장
+
+int LFirst(List *plist, LData pdata);
+- 첫 번째 데이터를 pdata에 저장
+- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
+
+int LNext(List *plist, LData *pdata);
+- 참조된 데이터의 다음 데이터를 pdata에 저장
+- 참조를 새로 시작하기 위해선 LFirst 함수를 호출해야 한다.
+- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
+
+LData LRemove(List *plist);
+- LFirst 또는 LNext 함수의 마지막 반환 데이터를 삭제
+- 삭제된 데이터를 반환
+
+int LCount(List *plist);
+- 리스트에 저장되어 있는 데이터의 수 반환
+</code></pre>
+
+<h3 id="header-file">header file</h3>
+
+<pre><code class="language-DBLinkedList.h">#ifndef __DB_LINKED_LIST_H__
+#define __DB_LINKED_LIST_H__
+
+#define TRUE 1
+#define FALSE 0
+
+typedef int Data;
+
+typedef struct _node
+{
+  Data data;
+  struct _node *prev;
+  struct _node *next;
+}Node;
+
+typedef struct _DLinkedList
+{
+  Node *head;
+  Node *tail;
+  Node *cur;
+  int numOfData;
+
+}DBLinkedList;
+
+typedef DBLinkedList List;
+
+void ListInit(List *plist);                 // 초기화
+void LInsert(List *plist, Data data);       // 머리에 데이터 저장
+
+int LFirst(List *plist, Data *pdata);       // 첫 데이터 참조
+int LNext(List *plist, Data *pdata);        // 두 번째 이후 데이터 참조
+
+Data LRemove(List *plist);                  // 참조한 데이터 삭제
+int LCount(List *plist);                    // 저장된 데이터의 수 반환
+
+
+#endif
+</code></pre>
+
+<h3 id="source-file">source file</h3>
+
+<pre><code class="language-DBLinkedList.c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "DBLinkedList.h"
+
+void ListInit(List *plist)
+{
+  Node *headDummy = (Node*)malloc(sizeof(Node));
+  Node *tailDummy = (Node*)malloc(sizeof(Node));
+
+  // headDummy 연결.
+  headDummy-&gt;prev = NULL;
+  headDummy-&gt;next = tailDummy;
+  plist-&gt;head = headDummy;
+
+  // tailDummy 연결
+  tailDummy-&gt;prev = headDummy;
+  tailDummy-&gt;next = NULL;
+  plist-&gt;tail = tailDummy;
+
+  plist-&gt;numOfData = 0;
+}
+
+void LInsert(List *plist, Data data)
+{
+  // 저장할 노드 생성
+  Node *newNode = (Node*)malloc(sizeof(Node));
+  newNode-&gt;data = data;
+
+  // newNode와 다음 Node 연결
+  newNode-&gt;next = plist-&gt;head-&gt;next;
+  plist-&gt;head-&gt;next-&gt;prev = newNode;
+
+  // headDummy와 newNode 연결
+  newNode-&gt;prev = plist-&gt;head;
+  plist-&gt;head-&gt;next = newNode;
+
+  plist-&gt;numOfData++;
+}
+
+int LFirst(List *plist, Data *pdata)
+{
+  if(plist-&gt;head-&gt;next == plist-&gt;tail)
+    return FALSE;
+
+  plist-&gt;cur = plist-&gt;head-&gt;next;
+  *pdata = plist-&gt;cur-&gt;data;
+
+  return TRUE;
+}
+
+int LNext(List *plist, Data *pdata)
+{
+  if(plist-&gt;cur-&gt;next == plist-&gt;tail)
+    return FALSE;
+
+  plist-&gt;cur = plist-&gt;cur-&gt;next;
+  *pdata = plist-&gt;cur-&gt;data;
+
+  return TRUE;
+}
+
+Data LRemove(List *plist)
+{
+  Node *delNode;
+  Data delData;
+
+  delNode = plist-&gt;cur;
+  delData = delNode-&gt;data;
+
+  delNode-&gt;prev-&gt;next = delNode-&gt;next;
+  delNode-&gt;next-&gt;prev = delNode-&gt;prev;
+  plist-&gt;cur = delNode-&gt;prev;
+  free(delNode);
+
+  plist-&gt;numOfData--;
+
+  return delData;
+}
+
+int LCount(List *plist)
+{
+  return plist-&gt;numOfData;
+}
+</code></pre>
+
+<h3 id="mainc">main.c</h3>
+
+<pre><code class="language-DBLinkedListMain.c">#include &lt;stdio.h&gt;
+#include "DBLinkedList.h"
+
+int main(void)
+{
+  List list;
+  Data data;
+
+  ListInit(&amp;list);
+
+  LInsert(&amp;list, 11);
+  LInsert(&amp;list, 22);
+  LInsert(&amp;list, 33);
+  LInsert(&amp;list, 44);
+  LInsert(&amp;list, 55);
+
+  printf("저장된 데이터 수 : %d\n", LCount(&amp;list));
+
+  if(LFirst(&amp;list, &amp;data))
+  {
+    printf("data : %d\n", data);
+
+    while(LNext(&amp;list, &amp;data))
+    {
+      printf("data : %d\n", data);
+    }
+  }
+
+  if(LFirst(&amp;list, &amp;data))
+  {
+    if(data == 11 || data == 33 || data == 55)
+    {
+      printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
+    }
+
+    while(LNext(&amp;list, &amp;data))
+    {
+      if(data == 11 || data == 33 || data == 55)
+        printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
+    }
+  }
+
+
+  if(LFirst(&amp;list, &amp;data))
+  {
+    printf("data : %d\n", data);
+
+    while(LNext(&amp;list, &amp;data))
+    {
+      printf("data : %d\n", data);
+    }
+  }
+
+  printf("저장된 데이터 수 : %d\n", LCount(&amp;list));
+
+  return 0;
+}
+</code></pre>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[양방향 연결 리스트 - headDummyNode와 tailDummyNode가 있는 것]]></summary></entry><entry><title type="html">리스트 - 4</title><link href="http://localhost:4000/til/2023/01/30/Linked-List-04.html" rel="alternate" type="text/html" title="리스트 - 4" /><published>2023-01-30T00:00:00+09:00</published><updated>2023-01-30T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/30/Linked-List-04</id><content type="html" xml:base="http://localhost:4000/til/2023/01/30/Linked-List-04.html"><![CDATA[<h2 id="양방향-연결-리스트">양방향 연결 리스트</h2>
 
 <ul>
   <li>장점
@@ -70,11 +255,8 @@
 <pre><code class="language-ADT">void List Init(List *plist);
 - 리스트 초기화
 
-void LInsertFront(List *plist, LData pdata);
-- 리스트 머리에 데이터 저장
-
 void LInsert(List *plist, LData pdata);
-- 리스트 꼬리에 데이터 저장
+- 리스트에 데이터 저장
 
 int LFirst(List *plist, LData pdata);
 - 첫 번째 데이터를 pdata에 저장
@@ -254,6 +436,9 @@ Data LRemove(List *plist)
     plist-&gt;cur = delNode-&gt;prev;
     free(delNode);
   }
+
+  plist-&gt;numOfData--;
+
   return delData;
 }
 
@@ -1084,7 +1269,48 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[순차 리스트? 연결 리스트?]]></summary></entry><entry><title type="html">이진 탐색</title><link href="http://localhost:4000/til/2023/01/08/BinarySearch.html" rel="alternate" type="text/html" title="이진 탐색" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/08/BinarySearch</id><content type="html" xml:base="http://localhost:4000/til/2023/01/08/BinarySearch.html"><![CDATA[<h2 id="반복문">반복문</h2>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[순차 리스트? 연결 리스트?]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/til/2023/01/10/data-structure01.html" rel="alternate" type="text/html" title="자료구조" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/10/data-structure01</id><content type="html" xml:base="http://localhost:4000/til/2023/01/10/data-structure01.html"><![CDATA[<h2 id="자조-구조의-분류">자조 구조의 분류</h2>
+
+<ul>
+  <li>
+    <p>단순 구조</p>
+
+    <ul>
+      <li>정수</li>
+      <li>실수</li>
+      <li>문자</li>
+      <li>문자열</li>
+    </ul>
+  </li>
+  <li>
+    <p>선형 구조</p>
+
+    <ul>
+      <li>리스트</li>
+      <li>스택</li>
+      <li>큐</li>
+    </ul>
+  </li>
+  <li>
+    <p>비선형 구조</p>
+
+    <ul>
+      <li>트리</li>
+      <li>그래프</li>
+    </ul>
+  </li>
+  <li>
+    <p>파일 구조</p>
+    <ul>
+      <li>순차 파일</li>
+      <li>색인 파일</li>
+      <li>직접 파일</li>
+    </ul>
+  </li>
+</ul>
+
+<p>자료 구조에 따라서 알고리즘은 달라진다.<br />
+알고리즘은 자료 구조에 의존적이다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[자조 구조의 분류]]></summary></entry><entry><title type="html">이진 탐색</title><link href="http://localhost:4000/til/2023/01/08/BinarySearch.html" rel="alternate" type="text/html" title="이진 탐색" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/08/BinarySearch</id><content type="html" xml:base="http://localhost:4000/til/2023/01/08/BinarySearch.html"><![CDATA[<h2 id="반복문">반복문</h2>
 
 <pre><code class="language-BinarySearch.c">int BSearch(int arr[], int len, int target)
 {
