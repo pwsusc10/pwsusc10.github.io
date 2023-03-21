@@ -1,9 +1,167 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-17T13:07:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/til/2023/03/03/algorithm.html" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-03T00:00:00+09:00</published><updated>2023-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/03/03/algorithm</id><content type="html" xml:base="http://localhost:4000/til/2023/03/03/algorithm.html"><![CDATA[<h2 id="알고리즘-평가">알고리즘 평가</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-22T01:53:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/til/2023/03/03/algorithm.html" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-03T00:00:00+09:00</published><updated>2023-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/03/03/algorithm</id><content type="html" xml:base="http://localhost:4000/til/2023/03/03/algorithm.html"><![CDATA[<h2 id="알고리즘-평가">알고리즘 평가</h2>
 
 <p>알고리즘 평가하는 요소는 크게 두 가지가 있다.<br />
 하나는 ‘속도’에 관한 것이고 다른 하나는 ‘메모리의 사용량’에 관한 것이다.<br />
 속도에 해당하는 알고리즘 수행시간 분석결과를 ‘시간 복잡도(time complexity)’<br />
-메모리 사용량에 대한 분석 결과를 ‘공간 복잡도(space complexity)’라 한다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[알고리즘 평가]]></summary></entry><entry><title type="html">리스트 - 5</title><link href="http://localhost:4000/til/2023/01/31/Linked-List-05.html" rel="alternate" type="text/html" title="리스트 - 5" /><published>2023-01-31T00:00:00+09:00</published><updated>2023-01-31T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/31/Linked-List-05</id><content type="html" xml:base="http://localhost:4000/til/2023/01/31/Linked-List-05.html"><![CDATA[<h2 id="양방향-연결-리스트---headdummynode와-taildummynode가-있는-것">양방향 연결 리스트 - headDummyNode와 tailDummyNode가 있는 것</h2>
+메모리 사용량에 대한 분석 결과를 ‘공간 복잡도(space complexity)’라 한다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[알고리즘 평가]]></summary></entry><entry><title type="html">Stack - 배열 기반</title><link href="http://localhost:4000/til/2023/02/01/Stack.html" rel="alternate" type="text/html" title="Stack - 배열 기반" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-01T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/01/Stack</id><content type="html" xml:base="http://localhost:4000/til/2023/02/01/Stack.html"><![CDATA[<h2 id="stack">Stack</h2>
+
+<p>스택의 구조는 매우 간단하다. 스택은 쟁반 위에 쌓인 접시라고 생각하면 이해하기 쉽다. 쟁반 위에 쌓인 접시는 가장 먼저 쌓은 접시는 맨 밑에 가장 늦게 쌓은 접시는 가장 위에 놓여 있으며, 접시를 뺄 때에는 가장 늦게 쌓인 접시가 제일 먼저 뺄 수 있다는 것을 알 수 있다. 이처럼 스택은 ‘LIFO(Last-In, First-Out) 구조의 자료 구조이다. 즉 후입선출 방식의 자료구조를 뜻한다는 말이다.</p>
+
+<h3 id="adt">ADT</h3>
+
+<p>Stack의 ADT는 다음과 같다.</p>
+
+<pre><code class="language-ADT">void StackInit(Stack *pstack);
+- 스택의 초기화를 진행한다.
+- 스택 생성 후 가장 먼저 호출되어야 한다.
+
+int SIsEmpty(Stack *pstack);
+- 스택이 빈 경우 TRUE(1)을, 그렇지 않은 경우 FALSE(0)을 반환한다.
+
+void SPush(Stack *pstack, Data data);
+- 스택에 데이터를 저장한다. 매개변수 data로 전달된 값을 저장한다.
+
+Data SPop(Stack *pstack);
+- 마지막에 저장된 요소를 삭제한다.
+- 삭제된 데이터는 반환이 된다.
+- 본 함수의 호출을 위해서는 데이터가 하나 이상 존재해야한다.
+
+Data SPeek(Stack *pstack);
+- 마지막에 저장된 요소를 반환하되 삭제하지 않는다.
+- 본 함수의 호출을 위해서는 데이터가 하나 이상 존재해야한다.
+</code></pre>
+
+<h3 id="header-file">header file</h3>
+
+<p><img width="739" alt="ArrayBaseStack" src="https://user-images.githubusercontent.com/101408068/226134286-b93c7b13-ba2b-4e0f-971f-cdf14970730b.png" />&lt;/img&gt;
+위 그림에서 주목해야 할 것은 두 가지이다.</p>
+
+<ul>
+  <li>인데스 0의 배열 요소가 ‘스택의 바닥’으로 정의되어 있다.</li>
+  <li>마지막에 저장된 데이터의 위치를 기억해야 한다.(TOP)</li>
+</ul>
+
+<p>인데스 0의 배열 요소를 스택의 바닥으로 두어 배열의 길이에 상관 없이 언제나 인덱스 0의 요소가 스택의 바닥이 된다.<br />
+스택의 핵심 연산 두 가지는 다음과 같다.</p>
+
+<ul>
+  <li>push : Top을 위로 한 칸 올리고, Top이 가리키는 위치에 데이터 저장</li>
+  <li>pop : Top이 가리키는 데이터를 반환하고, Top을 아래로 한 칸 내림</li>
+</ul>
+
+<pre><code class="language-ArrayBaseStack.h">#ifndef __AB_STACK_H__
+#define __AB_STACK_H__
+
+#define TRUE 1
+#define FALSE 0
+#define STACK_LEN 100
+
+typedef int Data;
+
+typedef struct _arrayStack
+{
+  Data stackArr[STACK_LEN];
+  int topIndex;
+} ArrayStack;
+
+typedef ArrayStack Stack;
+
+void StackInit(Stack *pstack);          // 스택의 초기화
+int SIsEmpty(Stack *pstack);            // 스택이 비었는지 확인
+
+void SPush(Stack *pstack, Data data);   // 스택의 push연산
+Data SPop(Stack *pstack);               // 스택의 pop연산
+Data SPeek(Stack *pstack);              // 스택의 peek연산
+
+
+#endif
+</code></pre>
+
+<h3 id="source-file">source file</h3>
+
+<pre><code class="language-ArrayBaseStack.c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "ArrayBaseStack.h"
+
+void StackInit(Stack *pstack)
+{
+  pstack-&gt;topIndex = -1;        // -1은 빈 상태를 의미한다.
+}
+
+int SIsEmpty(Stack *pstack)
+{
+  if(pstack-&gt;topIndex == -1)
+    return TRUE;
+  else
+    return FALSE;
+}
+
+void SPush(Stack *pstack, Data data)
+{
+  pstack-&gt;topIndex++;
+  pstack-&gt;stackArr[pstack-&gt;topIndex] = data;
+}
+
+Data SPop(Stack *pstack)
+{
+  int delIndex;
+
+  if(SIsEmpty(pstack))                  // Stack이 비어있다면
+  {
+    printf("Stack Memory Error!\n");
+    exit(-1);
+  }
+
+  delIndex = pstack-&gt;topIndex;          // 삭제할 index값 저장
+  pstack-&gt;topIndex--;                   // pop 연산으로 인해 topIndex 값 하나 감소
+
+  return pstack-&gt;stackArr[delIndex];    // 삭제되는 데이터 반환
+}
+
+Data SPeek(Stack *pstack)
+{
+  if(SIsEmpty(pstack))
+  {
+    printf("Stack Memory Error!\n");
+    exit(-1);
+  }
+
+  return pstack-&gt;stackArr[pstack-&gt;topIndex];
+}
+</code></pre>
+
+<h3 id="mainc">main.c</h3>
+
+<pre><code class="language-ArrayBaseStackMain.c">#include &lt;stdio.h&gt;
+#include "ArrayBaseStack.h"
+
+int main(void)
+{
+  // Stack의 생성 및 초기화
+  Stack stack;
+  StackInit(&amp;stack);
+
+  // 데이터 저장
+  SPush(&amp;stack, 11);
+  SPush(&amp;stack, 22);
+  SPush(&amp;stack, 33);
+  SPush(&amp;stack, 44);
+  SPush(&amp;stack, 55);
+
+  // 데이터 꺼내기
+  while(!SIsEmpty(&amp;stack))
+  {
+    printf("%d ", SPop(&amp;stack));
+  }
+
+  return 0;
+}
+</code></pre>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<p>책 - 윤성우의 열혈 자료 구조<br />
+블로그 - <a href="https://hellmath.tistory.com/7">스택의 개념, 배열로 스택구현</a></p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[Stack]]></summary></entry><entry><title type="html">리스트 - 5</title><link href="http://localhost:4000/til/2023/01/31/Linked-List-05.html" rel="alternate" type="text/html" title="리스트 - 5" /><published>2023-01-31T00:00:00+09:00</published><updated>2023-01-31T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/31/Linked-List-05</id><content type="html" xml:base="http://localhost:4000/til/2023/01/31/Linked-List-05.html"><![CDATA[<h2 id="양방향-연결-리스트---headdummynode와-taildummynode가-있는-것">양방향 연결 리스트 - headDummyNode와 tailDummyNode가 있는 것</h2>
 
 <ul>
   <li>장점
@@ -229,7 +387,7 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[양방향 연결 리스트 - headDummyNode와 tailDummyNode가 있는 것]]></summary></entry><entry><title type="html">리스트 - 4</title><link href="http://localhost:4000/til/2023/01/30/Linked-List-04.html" rel="alternate" type="text/html" title="리스트 - 4" /><published>2023-01-30T00:00:00+09:00</published><updated>2023-01-30T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/30/Linked-List-04</id><content type="html" xml:base="http://localhost:4000/til/2023/01/30/Linked-List-04.html"><![CDATA[<h2 id="양방향-연결-리스트">양방향 연결 리스트</h2>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[양방향 연결 리스트 - headDummyNode와 tailDummyNode가 있는 것]]></summary></entry><entry><title type="html">리스트 - 4</title><link href="http://localhost:4000/til/2023/01/30/Linked-List-04.html" rel="alternate" type="text/html" title="리스트 - 4" /><published>2023-01-30T00:00:00+09:00</published><updated>2023-01-30T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/30/Linked-List-04</id><content type="html" xml:base="http://localhost:4000/til/2023/01/30/Linked-List-04.html"><![CDATA[<h2 id="양방향-연결-리스트">양방향 연결 리스트</h2>
 
 <ul>
   <li>장점
@@ -513,7 +671,7 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[양방향 연결 리스트]]></summary></entry><entry><title type="html">리스트 - 3</title><link href="http://localhost:4000/til/2023/01/28/Linked-List-03.html" rel="alternate" type="text/html" title="리스트 - 3" /><published>2023-01-28T00:00:00+09:00</published><updated>2023-01-28T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/28/Linked-List-03</id><content type="html" xml:base="http://localhost:4000/til/2023/01/28/Linked-List-03.html"><![CDATA[<h2 id="원형-연결-리스트---구현">원형 연결 리스트 - 구현</h2>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[양방향 연결 리스트]]></summary></entry><entry><title type="html">리스트 - 3</title><link href="http://localhost:4000/til/2023/01/28/Linked-List-03.html" rel="alternate" type="text/html" title="리스트 - 3" /><published>2023-01-28T00:00:00+09:00</published><updated>2023-01-28T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/28/Linked-List-03</id><content type="html" xml:base="http://localhost:4000/til/2023/01/28/Linked-List-03.html"><![CDATA[<h2 id="원형-연결-리스트---구현">원형 연결 리스트 - 구현</h2>
 
 <ul>
   <li>장점
@@ -764,7 +922,7 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[원형 연결 리스트 - 구현]]></summary></entry><entry><title type="html">리스트 - 2</title><link href="http://localhost:4000/til/2023/01/22/Linked-List-02.html" rel="alternate" type="text/html" title="리스트 - 2" /><published>2023-01-22T00:00:00+09:00</published><updated>2023-01-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/22/Linked-List-02</id><content type="html" xml:base="http://localhost:4000/til/2023/01/22/Linked-List-02.html"><![CDATA[<h2 id="연결-리스트---구현">연결 리스트 - 구현</h2>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[원형 연결 리스트 - 구현]]></summary></entry><entry><title type="html">리스트 - 2</title><link href="http://localhost:4000/til/2023/01/22/Linked-List-02.html" rel="alternate" type="text/html" title="리스트 - 2" /><published>2023-01-22T00:00:00+09:00</published><updated>2023-01-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/22/Linked-List-02</id><content type="html" xml:base="http://localhost:4000/til/2023/01/22/Linked-List-02.html"><![CDATA[<h2 id="연결-리스트---구현">연결 리스트 - 구현</h2>
 
 <p>새 노드를 추가할 때, 리스트의 머리와 꼬리 둘 중 어디에 저장하는 지에 따라 장단점이 있다.</p>
 
@@ -1057,7 +1215,7 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[연결 리스트 - 구현]]></summary></entry><entry><title type="html">리스트 - 1</title><link href="http://localhost:4000/til/2023/01/15/Linked-List-01.html" rel="alternate" type="text/html" title="리스트 - 1" /><published>2023-01-15T00:00:00+09:00</published><updated>2023-01-15T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/15/Linked-List-01</id><content type="html" xml:base="http://localhost:4000/til/2023/01/15/Linked-List-01.html"><![CDATA[<h2 id="순차-리스트-연결-리스트">순차 리스트? 연결 리스트?</h2>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[연결 리스트 - 구현]]></summary></entry><entry><title type="html">리스트 - 1</title><link href="http://localhost:4000/til/2023/01/15/Linked-List-01.html" rel="alternate" type="text/html" title="리스트 - 1" /><published>2023-01-15T00:00:00+09:00</published><updated>2023-01-15T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/15/Linked-List-01</id><content type="html" xml:base="http://localhost:4000/til/2023/01/15/Linked-List-01.html"><![CDATA[<h2 id="순차-리스트-연결-리스트">순차 리스트? 연결 리스트?</h2>
 
 <p>“리스트”라는 자료 구조는 구현 방법에 따라서 크게 두 가지로 나뉜다.</p>
 
@@ -1269,7 +1427,7 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[순차 리스트? 연결 리스트?]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/til/2023/01/10/data-structure01.html" rel="alternate" type="text/html" title="자료구조" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/10/data-structure01</id><content type="html" xml:base="http://localhost:4000/til/2023/01/10/data-structure01.html"><![CDATA[<h2 id="자조-구조의-분류">자조 구조의 분류</h2>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[순차 리스트? 연결 리스트?]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/til/2023/01/10/data-structure01.html" rel="alternate" type="text/html" title="자료구조" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/10/data-structure01</id><content type="html" xml:base="http://localhost:4000/til/2023/01/10/data-structure01.html"><![CDATA[<h2 id="자조-구조의-분류">자조 구조의 분류</h2>
 
 <ul>
   <li>
@@ -1353,7 +1511,7 @@ int main(void)
   else
     return BSearch(arr, target, first, mid - 1)
 }
-</code></pre>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[반복문]]></summary></entry><entry><title type="html">git정리</title><link href="http://localhost:4000/data/til/2023/01/01/git.html" rel="alternate" type="text/html" title="git정리" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/data/til/2023/01/01/git</id><content type="html" xml:base="http://localhost:4000/data/til/2023/01/01/git.html"><![CDATA[<h2 id="init">init</h2>
+</code></pre>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[반복문]]></summary></entry><entry><title type="html">git정리</title><link href="http://localhost:4000/git/til/2023/01/01/git.html" rel="alternate" type="text/html" title="git정리" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/git/til/2023/01/01/git</id><content type="html" xml:base="http://localhost:4000/git/til/2023/01/01/git.html"><![CDATA[<h2 id="init">init</h2>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init // .git 폴더 생성 - 로컬 저장소
 </span></code></pre></div></div>
@@ -1422,4 +1580,4 @@ git 옵션에는 세 종류가 있다.</p>
 <p>main branch에서 merge하고 싶은 branch를 지명<br />
 ex) git merge test_branch</p>
 
-<p>conflict가 생긴 상황에서 merge 취소 : git merge –abort</p>]]></content><author><name>pwsusc10</name></author><category term="Data" /><category term="TIL" /><category term="TIL" /><category term="github" /><summary type="html"><![CDATA[init]]></summary></entry></feed>
+<p>conflict가 생긴 상황에서 merge 취소 : git merge –abort</p>]]></content><author><name>pwsusc10</name></author><category term="Git" /><category term="TIL" /><category term="TIL" /><category term="github" /><summary type="html"><![CDATA[init]]></summary></entry></feed>
