@@ -1,9 +1,226 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-22T01:53:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/til/2023/03/03/algorithm.html" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-03T00:00:00+09:00</published><updated>2023-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/03/03/algorithm</id><content type="html" xml:base="http://localhost:4000/til/2023/03/03/algorithm.html"><![CDATA[<h2 id="알고리즘-평가">알고리즘 평가</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-22T04:11:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">알고리즘</title><link href="http://localhost:4000/til/2023/03/03/algorithm.html" rel="alternate" type="text/html" title="알고리즘" /><published>2023-03-03T00:00:00+09:00</published><updated>2023-03-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/03/03/algorithm</id><content type="html" xml:base="http://localhost:4000/til/2023/03/03/algorithm.html"><![CDATA[<h2 id="알고리즘-평가">알고리즘 평가</h2>
 
 <p>알고리즘 평가하는 요소는 크게 두 가지가 있다.<br />
 하나는 ‘속도’에 관한 것이고 다른 하나는 ‘메모리의 사용량’에 관한 것이다.<br />
 속도에 해당하는 알고리즘 수행시간 분석결과를 ‘시간 복잡도(time complexity)’<br />
-메모리 사용량에 대한 분석 결과를 ‘공간 복잡도(space complexity)’라 한다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[알고리즘 평가]]></summary></entry><entry><title type="html">Stack - 배열 기반</title><link href="http://localhost:4000/til/2023/02/01/Stack.html" rel="alternate" type="text/html" title="Stack - 배열 기반" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-01T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/01/Stack</id><content type="html" xml:base="http://localhost:4000/til/2023/02/01/Stack.html"><![CDATA[<h2 id="stack">Stack</h2>
+메모리 사용량에 대한 분석 결과를 ‘공간 복잡도(space complexity)’라 한다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[알고리즘 평가]]></summary></entry><entry><title type="html">Stack - 계산기</title><link href="http://localhost:4000/til/2023/02/03/Stack-03.html" rel="alternate" type="text/html" title="Stack - 계산기" /><published>2023-02-03T00:00:00+09:00</published><updated>2023-02-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/03/Stack-03</id><content type="html" xml:base="http://localhost:4000/til/2023/02/03/Stack-03.html"><![CDATA[<h2 id="수식의-표기법">수식의 표기법</h2>
+
+<p>수식의 표기법에는 세 가지가 있다.</p>
+
+<ul>
+  <li>중위 표기법(infix notation) -&gt; 3 + 4 / 7</li>
+  <li>전위 표기법(prefix notation) -&gt; + 3 / 4 7</li>
+  <li>후위 표기법(postfix notation) -&gt; 3 4 5 / +</li>
+</ul>
+
+<p>여기서 중요한 점은 전위 표기법과 후위 표기법의 수식은 연산자의 배치순서에 따라 연산 순서가 결정되기 때문에, 두 표기법의 수식을 계산하기 위해서 연산자의 우선순위를 알 필요가 없고, 소괄호도 삽입되지 않으니 소괄호에 대한 처리도 불필요하다는 점이다.<br />
+즉 구현할 계산기는 다음의 과정을 거쳐서 연산을 진행할 계획이다.</p>
+
+<ol>
+  <li>중위 표기법의 수식을 후위 표기법의 수식으로 바꾼다.</li>
+  <li>후위 표기법으로 바뀐 수식을 꼐산하여 그 결과를 얻는다.</li>
+</ol>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[수식의 표기법]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/til/2023/02/02/data-structure01.html" rel="alternate" type="text/html" title="자료구조" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/02/data-structure01</id><content type="html" xml:base="http://localhost:4000/til/2023/02/02/data-structure01.html"><![CDATA[<h2 id="자조-구조의-분류">자조 구조의 분류</h2>
+
+<ul>
+  <li>
+    <p>단순 구조</p>
+
+    <ul>
+      <li>정수</li>
+      <li>실수</li>
+      <li>문자</li>
+      <li>문자열</li>
+    </ul>
+  </li>
+  <li>
+    <p>선형 구조</p>
+
+    <ul>
+      <li>리스트</li>
+      <li>스택</li>
+      <li>큐</li>
+    </ul>
+  </li>
+  <li>
+    <p>비선형 구조</p>
+
+    <ul>
+      <li>트리</li>
+      <li>그래프</li>
+    </ul>
+  </li>
+  <li>
+    <p>파일 구조</p>
+    <ul>
+      <li>순차 파일</li>
+      <li>색인 파일</li>
+      <li>직접 파일</li>
+    </ul>
+  </li>
+</ul>
+
+<p>자료 구조에 따라서 알고리즘은 달라진다.<br />
+알고리즘은 자료 구조에 의존적이다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[자조 구조의 분류]]></summary></entry><entry><title type="html">Stack - 리스트 기반</title><link href="http://localhost:4000/til/2023/02/02/Stack-02.html" rel="alternate" type="text/html" title="Stack - 리스트 기반" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/02/Stack-02</id><content type="html" xml:base="http://localhost:4000/til/2023/02/02/Stack-02.html"><![CDATA[<h2 id="연결-리스트-기반-stack">연결 리스트 기반 Stack</h2>
+
+<p>스택도 연결 리스트이다. 다만 저장된 순서의 역순으로 조회(삭제)가 가능한 연결 리스트일 뿐이다.<br />
+우리는 연결리스트를 head만 있는 연결리스트와 head와 tail 둘 다 있는 연결리스트를 만들 수 있다.<br />
+여기서 주목할 점은 head만 있는 연결리스트는 stack의 구조와 유사하다는 점이다.<br />
+즉 새로운 노드를 꼬리가 아닌 머리에 추가하는 형태로 구현한 연결 리스트가 스택의 구조와 매우 유사한 성격을 지닌다.</p>
+
+<h3 id="adt">ADT</h3>
+
+<p>list기반 Stack의 ADT 또한 배열기반 Stack의 ADT와 동일하다.</p>
+
+<pre><code class="language-ADT">void StackInit(Stack *pstack);
+- 스택의 초기화를 진행한다.
+- 스택 생성 후 가장 먼저 호출되어야 한다.
+
+int SIsEmpty(Stack *pstack);
+- 스택이 빈 경우 TRUE(1)을, 그렇지 않은 경우 FALSE(0)을 반환한다.
+
+void SPush(Stack *pstack, Data data);
+- 스택에 데이터를 저장한다. 매개변수 data로 전달된 값을 저장한다.
+
+Data SPop(Stack *pstack);
+- 마지막에 저장된 요소를 삭제한다.
+- 삭제된 데이터는 반환이 된다.
+- 본 함수의 호출을 위해서는 데이터가 하나 이상 존재해야한다.
+
+Data SPeek(Stack *pstack);
+- 마지막에 저장된 요소를 반환하되 삭제하지 않는다.
+- 본 함수의 호출을 위해서는 데이터가 하나 이상 존재해야한다.
+</code></pre>
+
+<h3 id="header-file">header file</h3>
+
+<p>list 기반 Stack을 구현하기 위해서 필요한 것은 포인터 변수 head하나이므로 이를 헤더파일로 정의하면 다음과 같다.</p>
+
+<pre><code class="language-ListBaseStack.h">#ifndef __LB_STACK_H__
+#define __LB_STACK_H__
+
+#define TRUE 1
+#define FALSE 0
+#define STACK_LEN 100
+
+typedef int Data;
+
+typedef struct _node
+{
+  Data data;
+  struct _node *next;
+} Node;
+
+typedef struct _listStack
+{
+  Node *head;
+}ListStack;
+
+typedef ListStack Stack;
+
+void StackInit(Stack *pstack);          // 스택의 초기화
+int SIsEmpty(Stack *pstack);            // 스택이 비었는지 확인
+
+void SPush(Stack *pstack, Data data);   // 스택의 push연산
+Data SPop(Stack *pstack);               // 스택의 pop연산
+Data SPeek(Stack *pstack);              // 스택의 peek연산
+
+
+#endif
+</code></pre>
+
+<h3 id="source-file">source file</h3>
+
+<pre><code class="language-ListBaseStack.c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "ListBaseStack.h"
+
+void StackInit(Stack *pstack)
+{
+  pstack-&gt;head = NULL;
+}
+
+int SIsEmpty(Stack *pstack)
+{
+  if(pstack-&gt;head == NULL)
+    return TRUE;
+  else
+    return FALSE;
+}
+
+void SPush(Stack *pstack, Data data)
+{
+  // 새로운 노드 생성 및 데이터 저장.
+  Node *newNode = (Node*)malloc(sizeof(Node));
+  newNode-&gt;data = data;
+
+  newNode-&gt;next = pstack-&gt;head;
+  pstack-&gt;head = newNode;
+}
+
+Data SPop(Stack *pstack)
+{
+  Node *delNode;
+  Data delData;
+
+  if(SIsEmpty(pstack))
+  {
+    printf("Stack Memory Error!\n");
+    exit(-1);
+  }
+
+  delNode = pstack-&gt;head;
+  delData = delNode-&gt;data;
+
+  pstack-&gt;head = pstack-&gt;head-&gt;next;
+
+  free(delNode);
+
+  return delData;
+}
+
+Data SPeek(Stack *pstack)
+{
+  if(SIsEmpty(pstack))
+  {
+    printf("Stack Memory Error!\n");
+    exit(-1);
+  }
+
+  return pstack-&gt;head-&gt;data;
+}
+</code></pre>
+
+<h3 id="mainc">main.c</h3>
+
+<pre><code class="language-ListBaseStackMain.c">#include &lt;stdio.h&gt;
+#include "ListBaseStack.h"
+
+int main(void)
+{
+  // Stack의 생성 및 초기화
+  Stack stack;
+  StackInit(&amp;stack);
+
+  // 데이터 저장
+  SPush(&amp;stack, 11);
+  SPush(&amp;stack, 22);
+  SPush(&amp;stack, 33);
+  SPush(&amp;stack, 44);
+  SPush(&amp;stack, 55);
+
+  // 데이터 꺼내기
+  while(!SIsEmpty(&amp;stack))
+  {
+    printf("%d ", SPop(&amp;stack));
+  }
+
+  return 0;
+}
+</code></pre>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[연결 리스트 기반 Stack]]></summary></entry><entry><title type="html">Stack - 배열 기반</title><link href="http://localhost:4000/til/2023/02/01/Stack.html" rel="alternate" type="text/html" title="Stack - 배열 기반" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-01T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/01/Stack</id><content type="html" xml:base="http://localhost:4000/til/2023/02/01/Stack.html"><![CDATA[<h2 id="stack">Stack</h2>
 
 <p>스택의 구조는 매우 간단하다. 스택은 쟁반 위에 쌓인 접시라고 생각하면 이해하기 쉽다. 쟁반 위에 쌓인 접시는 가장 먼저 쌓은 접시는 맨 밑에 가장 늦게 쌓은 접시는 가장 위에 놓여 있으며, 접시를 뺄 때에는 가장 늦게 쌓인 접시가 제일 먼저 뺄 수 있다는 것을 알 수 있다. 이처럼 스택은 ‘LIFO(Last-In, First-Out) 구조의 자료 구조이다. 즉 후입선출 방식의 자료구조를 뜻한다는 말이다.</p>
 
@@ -1427,157 +1644,4 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[순차 리스트? 연결 리스트?]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/til/2023/01/10/data-structure01.html" rel="alternate" type="text/html" title="자료구조" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/10/data-structure01</id><content type="html" xml:base="http://localhost:4000/til/2023/01/10/data-structure01.html"><![CDATA[<h2 id="자조-구조의-분류">자조 구조의 분류</h2>
-
-<ul>
-  <li>
-    <p>단순 구조</p>
-
-    <ul>
-      <li>정수</li>
-      <li>실수</li>
-      <li>문자</li>
-      <li>문자열</li>
-    </ul>
-  </li>
-  <li>
-    <p>선형 구조</p>
-
-    <ul>
-      <li>리스트</li>
-      <li>스택</li>
-      <li>큐</li>
-    </ul>
-  </li>
-  <li>
-    <p>비선형 구조</p>
-
-    <ul>
-      <li>트리</li>
-      <li>그래프</li>
-    </ul>
-  </li>
-  <li>
-    <p>파일 구조</p>
-    <ul>
-      <li>순차 파일</li>
-      <li>색인 파일</li>
-      <li>직접 파일</li>
-    </ul>
-  </li>
-</ul>
-
-<p>자료 구조에 따라서 알고리즘은 달라진다.<br />
-알고리즘은 자료 구조에 의존적이다.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[자조 구조의 분류]]></summary></entry><entry><title type="html">이진 탐색</title><link href="http://localhost:4000/til/2023/01/08/BinarySearch.html" rel="alternate" type="text/html" title="이진 탐색" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/08/BinarySearch</id><content type="html" xml:base="http://localhost:4000/til/2023/01/08/BinarySearch.html"><![CDATA[<h2 id="반복문">반복문</h2>
-
-<pre><code class="language-BinarySearch.c">int BSearch(int arr[], int len, int target)
-{
-  int first = 0;
-  int last = len - 1;
-  int mid;
-
-  while(first &lt;= last)      // first == last인 경우에도 비교룰 해야 한다.
-  {
-    mid = (first + last) / 2;
-
-    if(arr[mid] == target)      // 타을 찾았다면 return
-    {
-      return mid;
-    }
-    else if(arr[mid] &lt; target)
-      first = mid + 1;
-    else
-      end = mid - 1;
-  }
-  return -1;      // 타겟을 찾지 못했다면 -1을 return
-}
-</code></pre>
-
-<h2 id="재귀-함수">재귀 함수</h2>
-
-<pre><code class="language-BinarySearch.c">int BSearch(int arr[], int target, int first, int end)
-{
-  if(first &gt; end)     // 탈출 조건
-  {
-    return -1;
-  }
-
-  int mid = (first + end) / 2;
-
-  if(arr[mid] == target)      // 타겟을 찾았다면 return
-    return mid;
-  else if(arr[mid] &lt; target)
-    return BSearch(arr, target, mid + 1, end)
-  else
-    return BSearch(arr, target, first, mid - 1)
-}
-</code></pre>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Algorithm" /><summary type="html"><![CDATA[반복문]]></summary></entry><entry><title type="html">git정리</title><link href="http://localhost:4000/git/til/2023/01/01/git.html" rel="alternate" type="text/html" title="git정리" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/git/til/2023/01/01/git</id><content type="html" xml:base="http://localhost:4000/git/til/2023/01/01/git.html"><![CDATA[<h2 id="init">init</h2>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git init // .git 폴더 생성 - 로컬 저장소
-</span></code></pre></div></div>
-
-<p>download zip : 최근 커밋을 기준으로 source 코드를 내려받음<br />
-clone : .git파일을 포함하여 source코드를 내려받음</p>
-
-<h2 id="파일의-4가지-상태">파일의 4가지 상태</h2>
-
-<p><img src="https://user-images.githubusercontent.com/101408068/222651600-bd3cf396-a10b-4358-b924-bbf0a44f0e4e.png" alt="git-status" /></p>
-
-<div style="text-align : right">출처 : 팀 개발을 위한 Git, GitHub 시작하기</div>
-<ol>
-  <li>untracked : add를 하지않은 새로운 파일</li>
-  <li>staged : add를 한 파일</li>
-  <li>unmodified : 이미 변경된 사항을 add를 했거나 변경된 것이 없는 파일</li>
-  <li>modified : 전 add 또는 commit된 파일 중 변경 된 파일</li>
-</ol>
-
-<p>git add : 워킹트리에 존재하는 파일을 stage에 추가하는 명령으로 해당 파일의 체크섬 값과 동일한 이름을 가지는 blob(binary large object) 객체가 생성되고 이 객체는 .git/objects에 저장된다. 그리고 stage의 내용은 .git/index에 기록된다.</p>
-
-<h2 id="config">config</h2>
-
-<p>git config 명령으로 옵션을 보거나 값을 바꿀수 있다.<br />
-git 옵션에는 세 종류가 있다.</p>
-
-<ol>
-  <li>시스템 환경 옵션 : PC 전체의 사용자를 위한 옵션</li>
-  <li>전체 옵션 : 현재 사용자를 위한 옵션</li>
-  <li>지역 옵션 : 현재 Git 저장소에만 요휴한 옵션</li>
-</ol>
-
-<p>우선순위 : 지역 옵션 &gt; 전역 옵션 &gt; 시스템 환경 옵션</p>
-
-<h2 id="수정">수정</h2>
-
-<p>amend : commit 덮어쓰기</p>
-
-<p>reset에는 soft / mixed / hard 세 종류가 있다.</p>
-
-<ul>
-  <li>soft : commit을 취소하고 해당 파일을 stage에 올림(add가 되어 있는 상태)</li>
-  <li>mixed : commit을 취소하고 해당 파일을 unstaged 상태로 워킹 디렉토리에 저장</li>
-  <li>hard : commit을 취소하고 해당 파일들도 지움.</li>
-</ul>
-
-<p>untracked 파일 삭제 - git clean</p>
-
-<ul>
-  <li>git clean -f : 디렉토리를 제외한 파일 삭제</li>
-  <li>git clean -f -d : 디렉토리를 포함해 파일 삭제</li>
-  <li>git clean -f -d -x : .gitignore에 명시되어있는 파일도 포함해 삭제</li>
-</ul>
-
-<h2 id="merge--rebase">merge / rebase</h2>
-
-<p>merge : fast-forward 병합</p>
-
-<!-- <img src="../assets/images/230101/git merge.png"> -->
-
-<p>rebase : 재배치
-<img src="https://user-images.githubusercontent.com/101408068/222651101-cd2ffd4d-820e-43a7-af4f-6c7bdea91981.png" alt="git-rebase" /></p>
-
-<div style="text-align : right">출처 : 팀 개발을 위한 Git, GitHub 시작하기</div>
-
-<p>main branch에서 merge하고 싶은 branch를 지명<br />
-ex) git merge test_branch</p>
-
-<p>conflict가 생긴 상황에서 merge 취소 : git merge –abort</p>]]></content><author><name>pwsusc10</name></author><category term="Git" /><category term="TIL" /><category term="TIL" /><category term="github" /><summary type="html"><![CDATA[init]]></summary></entry></feed>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[순차 리스트? 연결 리스트?]]></summary></entry></feed>

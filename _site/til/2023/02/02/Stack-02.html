@@ -7,22 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Stack - 배열 기반 | 작은 걸음</title>
+<title>Stack - 리스트 기반 | 작은 걸음</title>
 <meta name="generator" content="Jekyll v4.3.2">
-<meta property="og:title" content="Stack - 배열 기반">
+<meta property="og:title" content="Stack - 리스트 기반">
 <meta name="author" content="pwsusc10">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Stack">
-<meta property="og:description" content="Stack">
-<link rel="canonical" href="http://localhost:4000/til/2023/02/01/Stack.html">
-<meta property="og:url" content="http://localhost:4000/til/2023/02/01/Stack.html">
+<meta name="description" content="연결 리스트 기반 Stack">
+<meta property="og:description" content="연결 리스트 기반 Stack">
+<link rel="canonical" href="http://localhost:4000/til/2023/02/02/Stack-02.html">
+<meta property="og:url" content="http://localhost:4000/til/2023/02/02/Stack-02.html">
 <meta property="og:site_name" content="작은 걸음">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2023-02-01T00:00:00+09:00">
+<meta property="article:published_time" content="2023-02-02T00:00:00+09:00">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="Stack - 배열 기반">
+<meta property="twitter:title" content="Stack - 리스트 기반">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-02-01T00:00:00+09:00","datePublished":"2023-02-01T00:00:00+09:00","description":"Stack","headline":"Stack - 배열 기반","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/02/01/Stack.html"},"url":"http://localhost:4000/til/2023/02/01/Stack.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-02-02T00:00:00+09:00","datePublished":"2023-02-02T00:00:00+09:00","description":"연결 리스트 기반 Stack","headline":"Stack - 리스트 기반","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/02/02/Stack-02.html"},"url":"http://localhost:4000/til/2023/02/02/Stack-02.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -782,11 +782,11 @@ function googleTranslateElementInit() {
 
 
 <header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">Stack - 배열 기반</h1>
+  <h1 class="post-title p-name" itemprop="name headline">Stack - 리스트 기반</h1>
   <h2 class="post-subtitle">Stack의 이해와 구현</h2>
 
   <p class="post-meta">
-    <time class="dt-published" datetime="2023-02-01T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Feb 01, 2023
+    <time class="dt-published" datetime="2023-02-02T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Feb 02, 2023
     </time>
 
     
@@ -832,13 +832,16 @@ function googleTranslateElementInit() {
 
     <div class="post-content e-content" itemprop="articleBody">
 
-      <h2 id="stack">Stack</h2>
+      <h2 id="연결-리스트-기반-stack">연결 리스트 기반 Stack</h2>
 
-<p>스택의 구조는 매우 간단하다. 스택은 쟁반 위에 쌓인 접시라고 생각하면 이해하기 쉽다. 쟁반 위에 쌓인 접시는 가장 먼저 쌓은 접시는 맨 밑에 가장 늦게 쌓은 접시는 가장 위에 놓여 있으며, 접시를 뺄 때에는 가장 늦게 쌓인 접시가 제일 먼저 뺄 수 있다는 것을 알 수 있다. 이처럼 스택은 ‘LIFO(Last-In, First-Out) 구조의 자료 구조이다. 즉 후입선출 방식의 자료구조를 뜻한다는 말이다.</p>
+<p>스택도 연결 리스트이다. 다만 저장된 순서의 역순으로 조회(삭제)가 가능한 연결 리스트일 뿐이다.<br>
+우리는 연결리스트를 head만 있는 연결리스트와 head와 tail 둘 다 있는 연결리스트를 만들 수 있다.<br>
+여기서 주목할 점은 head만 있는 연결리스트는 stack의 구조와 유사하다는 점이다.<br>
+즉 새로운 노드를 꼬리가 아닌 머리에 추가하는 형태로 구현한 연결 리스트가 스택의 구조와 매우 유사한 성격을 지닌다.</p>
 
 <h3 id="adt">ADT</h3>
 
-<p>Stack의 ADT는 다음과 같다.</p>
+<p>list기반 Stack의 ADT 또한 배열기반 Stack의 ADT와 동일하다.</p>
 
 <pre><code class="language-ADT">void StackInit(Stack *pstack);
 - 스택의 초기화를 진행한다.
@@ -862,24 +865,10 @@ Data SPeek(Stack *pstack);
 
 <h3 id="header-file">header file</h3>
 
-<p><img width="739" alt="ArrayBaseStack" src="https://user-images.githubusercontent.com/101408068/226134286-b93c7b13-ba2b-4e0f-971f-cdf14970730b.png">&lt;/img&gt;
-위 그림에서 주목해야 할 것은 두 가지이다.</p>
+<p>list 기반 Stack을 구현하기 위해서 필요한 것은 포인터 변수 head하나이므로 이를 헤더파일로 정의하면 다음과 같다.</p>
 
-<ul>
-  <li>인데스 0의 배열 요소가 ‘스택의 바닥’으로 정의되어 있다.</li>
-  <li>마지막에 저장된 데이터의 위치를 기억해야 한다.(TOP)</li>
-</ul>
-
-<p>인데스 0의 배열 요소를 스택의 바닥으로 두어 배열의 길이에 상관 없이 언제나 인덱스 0의 요소가 스택의 바닥이 된다.<br>
-스택의 핵심 연산 두 가지는 다음과 같다.</p>
-
-<ul>
-  <li>push : Top을 위로 한 칸 올리고, Top이 가리키는 위치에 데이터 저장</li>
-  <li>pop : Top이 가리키는 데이터를 반환하고, Top을 아래로 한 칸 내림</li>
-</ul>
-
-<pre><code class="language-ArrayBaseStack.h">#ifndef __AB_STACK_H__
-#define __AB_STACK_H__
+<pre><code class="language-ListBaseStack.h">#ifndef __LB_STACK_H__
+#define __LB_STACK_H__
 
 #define TRUE 1
 #define FALSE 0
@@ -887,13 +876,18 @@ Data SPeek(Stack *pstack);
 
 typedef int Data;
 
-typedef struct _arrayStack
+typedef struct _node
 {
-  Data stackArr[STACK_LEN];
-  int topIndex;
-} ArrayStack;
+  Data data;
+  struct _node *next;
+} Node;
 
-typedef ArrayStack Stack;
+typedef struct _listStack
+{
+  Node *head;
+}ListStack;
+
+typedef ListStack Stack;
 
 void StackInit(Stack *pstack);          // 스택의 초기화
 int SIsEmpty(Stack *pstack);            // 스택이 비었는지 확인
@@ -908,18 +902,18 @@ Data SPeek(Stack *pstack);              // 스택의 peek연산
 
 <h3 id="source-file">source file</h3>
 
-<pre><code class="language-ArrayBaseStack.c">#include &lt;stdio.h&gt;
+<pre><code class="language-ListBaseStack.c">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
-#include "ArrayBaseStack.h"
+#include "ListBaseStack.h"
 
 void StackInit(Stack *pstack)
 {
-  pstack-&gt;topIndex = -1;        // -1은 빈 상태를 의미한다.
+  pstack-&gt;head = NULL;
 }
 
 int SIsEmpty(Stack *pstack)
 {
-  if(pstack-&gt;topIndex == -1)
+  if(pstack-&gt;head == NULL)
     return TRUE;
   else
     return FALSE;
@@ -927,24 +921,33 @@ int SIsEmpty(Stack *pstack)
 
 void SPush(Stack *pstack, Data data)
 {
-  pstack-&gt;topIndex++;
-  pstack-&gt;stackArr[pstack-&gt;topIndex] = data;
+  // 새로운 노드 생성 및 데이터 저장.
+  Node *newNode = (Node*)malloc(sizeof(Node));
+  newNode-&gt;data = data;
+
+  newNode-&gt;next = pstack-&gt;head;
+  pstack-&gt;head = newNode;
 }
 
 Data SPop(Stack *pstack)
 {
-  int delIndex;
+  Node *delNode;
+  Data delData;
 
-  if(SIsEmpty(pstack))                  // Stack이 비어있다면
+  if(SIsEmpty(pstack))
   {
     printf("Stack Memory Error!\n");
     exit(-1);
   }
 
-  delIndex = pstack-&gt;topIndex;          // 삭제할 index값 저장
-  pstack-&gt;topIndex--;                   // pop 연산으로 인해 topIndex 값 하나 감소
+  delNode = pstack-&gt;head;
+  delData = delNode-&gt;data;
 
-  return pstack-&gt;stackArr[delIndex];    // 삭제되는 데이터 반환
+  pstack-&gt;head = pstack-&gt;head-&gt;next;
+
+  free(delNode);
+
+  return delData;
 }
 
 Data SPeek(Stack *pstack)
@@ -955,14 +958,14 @@ Data SPeek(Stack *pstack)
     exit(-1);
   }
 
-  return pstack-&gt;stackArr[pstack-&gt;topIndex];
+  return pstack-&gt;head-&gt;data;
 }
 </code></pre>
 
 <h3 id="mainc">main.c</h3>
 
-<pre><code class="language-ArrayBaseStackMain.c">#include &lt;stdio.h&gt;
-#include "ArrayBaseStack.h"
+<pre><code class="language-ListBaseStackMain.c">#include &lt;stdio.h&gt;
+#include "ListBaseStack.h"
 
 int main(void)
 {
@@ -989,30 +992,29 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>책 - 윤성우의 열혈 자료 구조<br>
-블로그 - <a href="https://hellmath.tistory.com/7">스택의 개념, 배열로 스택구현</a></p>
+<p>책 - 윤성우의 열혈 자료 구조</p>
 
 
     </div>
 
 </article>
 <div class="post-nav">
-<a class="previous" href="/til/2023/01/31/Linked-List-05.html" title="리스트 - 5">리스트 - 5</a><a class="next" href="/til/2023/02/02/Stack-02.html" title="Stack - 리스트 기반">Stack - 리스트 기반</a>
+<a class="previous" href="/til/2023/02/01/Stack.html" title="Stack - 배열 기반">Stack - 배열 기반</a><a class="next" href="/til/2023/02/02/data-structure01.html" title="자료구조">자료구조</a>
 </div>
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
         <li>
-          <a class="post-link" href="/til/2023/03/03/algorithm.html" title="Stack - 리스트 기반">알고리즘</a>
+          <a class="post-link" href="/til/2023/01/15/Linked-List-01.html" title="자료구조">리스트 - 1</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/02/03/Stack-03.html" title="Stack - 리스트 기반">Stack - 계산기</a>
+          <a class="post-link" href="/til/2023/01/28/Linked-List-03.html" title="자료구조">리스트 - 3</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/08/BinarySearch.html" title="Stack - 리스트 기반">이진 탐색</a>
+          <a class="post-link" href="/til/2023/01/22/Linked-List-02.html" title="자료구조">리스트 - 2</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/28/Linked-List-03.html" title="Stack - 리스트 기반">리스트 - 3</a>
+          <a class="post-link" href="/til/2023/01/30/Linked-List-04.html" title="자료구조">리스트 - 4</a>
         </li>
 </ul>
     </div>

@@ -14,15 +14,15 @@
 <meta property="og:locale" content="en_US">
 <meta name="description" content="자조 구조의 분류">
 <meta property="og:description" content="자조 구조의 분류">
-<link rel="canonical" href="http://localhost:4000/til/2023/01/10/data-structure01.html">
-<meta property="og:url" content="http://localhost:4000/til/2023/01/10/data-structure01.html">
+<link rel="canonical" href="http://localhost:4000/til/2023/02/02/data-structure01.html">
+<meta property="og:url" content="http://localhost:4000/til/2023/02/02/data-structure01.html">
 <meta property="og:site_name" content="작은 걸음">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2023-01-10T00:00:00+09:00">
+<meta property="article:published_time" content="2023-02-02T00:00:00+09:00">
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="자료구조">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-01-10T00:00:00+09:00","datePublished":"2023-01-10T00:00:00+09:00","description":"자조 구조의 분류","headline":"자료구조","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/01/10/data-structure01.html"},"url":"http://localhost:4000/til/2023/01/10/data-structure01.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-02-02T00:00:00+09:00","datePublished":"2023-02-02T00:00:00+09:00","description":"자조 구조의 분류","headline":"자료구조","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/02/02/data-structure01.html"},"url":"http://localhost:4000/til/2023/02/02/data-structure01.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -658,7 +658,7 @@ function googleTranslateElementInit() {
   (function() {
     var sw = document.getElementById('theme-switch');
     var html = document.getElementsByTagName('html')[0];
-    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var nightModeOption = ('on' || 'auto').toLowerCase();
     var storage = nightModeOption === 'manual'
         ? localStorage
         : sessionStorage;
@@ -786,7 +786,7 @@ function googleTranslateElementInit() {
   <h2 class="post-subtitle">자료구조 -1</h2>
 
   <p class="post-meta">
-    <time class="dt-published" datetime="2023-01-10T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 10, 2023
+    <time class="dt-published" datetime="2023-02-02T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Feb 02, 2023
     </time>
 
     
@@ -880,29 +880,68 @@ function googleTranslateElementInit() {
 
 </article>
 <div class="post-nav">
-<a class="previous" href="/til/2023/01/08/BinarySearch.html" title="이진 탐색">이진 탐색</a><a class="next" href="/til/2023/01/15/Linked-List-01.html" title="리스트 - 1">리스트 - 1</a>
+<a class="previous" href="/til/2023/02/02/Stack-02.html" title="Stack - 리스트 기반">Stack - 리스트 기반</a><a class="next" href="/til/2023/02/03/Stack-03.html" title="Stack - 계산기">Stack - 계산기</a>
 </div>
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
         <li>
-          <a class="post-link" href="/til/2023/01/15/Linked-List-01.html" title="리스트 - 1">리스트 - 1</a>
+          <a class="post-link" href="/git/til/2023/01/01/git.html" title="Stack - 계산기">git정리</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/31/Linked-List-05.html" title="리스트 - 1">리스트 - 5</a>
+          <a class="post-link" href="/til/2023/02/03/Stack-03.html" title="Stack - 계산기">Stack - 계산기</a>
         </li>
 <li>
-          <a class="post-link" href="/git/til/2023/01/01/git.html" title="리스트 - 1">git정리</a>
+          <a class="post-link" href="/til/2023/02/01/Stack.html" title="Stack - 계산기">Stack - 배열 기반</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/08/BinarySearch.html" title="리스트 - 1">이진 탐색</a>
+          <a class="post-link" href="/til/2023/01/31/Linked-List-05.html" title="Stack - 계산기">리스트 - 5</a>
         </li>
 </ul>
     </div>
-<div class="post-comments"></div></section>
-</div>
+<div class="post-comments">
+<div id="utterances-placeholder"></div>
+<script>
+  const utterancesThemeFromDataTheme = () => {
+    const dataTheme = document.documentElement.getAttribute('data-theme');
+    return `github-${dataTheme}`;
+  };
 
-<script src="https://utteranc.es/client.js" repo="pwsusc10/pwsusc10.github.io" issue-term="pathname" label="comments" theme="preferred-color-scheme" crossorigin="anonymous" async></script>
+  const setUtterancesTheme = () => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (iframe) {
+      const message = {
+        type: 'set-theme',
+        theme: utterancesThemeFromDataTheme()
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  // dynamic change
+  const observer = new MutationObserver((mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        setUtterancesTheme();
+      }
+    }
+  });
+  observer.observe(document.documentElement, { attributes: true, childList: false, subtree: false });
+
+  let utterancesScript = document.createElement('script');
+  utterancesScript.async = true;
+  utterancesScript.src = 'https://utteranc.es/client.js';
+  utterancesScript.crossOrigin = 'anonymous';
+  utterancesScript.setAttribute('issue-term', 'pathname');
+  utterancesScript.setAttribute('label', 'comments');
+  utterancesScript.setAttribute('repo', 'pwsusc10/pwsusc10.github.io');
+  utterancesScript.setAttribute('theme', utterancesThemeFromDataTheme());
+
+  const placeholder = document.getElementById('utterances-placeholder');
+  placeholder.parentNode.replaceChild(utterancesScript, placeholder);
+</script>
+</div></section>
+</div>
 
 
   </section>

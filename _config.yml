@@ -63,7 +63,7 @@ yat:
 # header_transparent: true
 
 # If you want to change the content width, you can set to another value
-# content_width: "920px"
+content_width: "1080px"
 
 # Google analytics
 # google_analytics: [Tracking ID]
@@ -134,7 +134,7 @@ yat:
 # it will be always kept on every visit (i.e. no matter
 # the browser is closed or not)
 #
-# night_mode: "auto"
+night_mode: "on"
 
 # Code badge setting
 # You can enable or disable the code badge and so on
@@ -199,12 +199,12 @@ paginate: 5
 # See https://utteranc.es/
 # set follow_site_theme true to make utterances' theme follow the site's
 
-# utterances:
-#   repo: "owner/repo"
-#   issue_term: "title"
-#   label: "utterances comment"
-#   theme: "github-light"
-#   follow_site_theme: true
+utterances:
+  repo: "pwsusc10/pwsusc10.github.io"
+  issue_term: "pathname"
+  label: "comments"
+  theme: "github-light"
+  follow_site_theme: true
 
 # Build settings
 # highlighter: none

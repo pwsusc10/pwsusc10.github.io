@@ -658,7 +658,7 @@ function googleTranslateElementInit() {
   (function() {
     var sw = document.getElementById('theme-switch');
     var html = document.getElementsByTagName('html')[0];
-    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var nightModeOption = ('on' || 'auto').toLowerCase();
     var storage = nightModeOption === 'manual'
         ? localStorage
         : sessionStorage;
@@ -1129,23 +1129,62 @@ int main(void)
       <div>Related Articles</div>
       <ul>
         <li>
-          <a class="post-link" href="/til/2023/01/31/Linked-List-05.html" title="리스트 - 5">리스트 - 5</a>
+          <a class="post-link" href="/til/2023/01/22/Linked-List-02.html" title="리스트 - 5">리스트 - 2</a>
         </li>
 <li>
           <a class="post-link" href="/til/2023/01/08/BinarySearch.html" title="리스트 - 5">이진 탐색</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/28/Linked-List-03.html" title="리스트 - 5">리스트 - 3</a>
+          <a class="post-link" href="/til/2023/02/02/data-structure01.html" title="리스트 - 5">자료구조</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/03/03/algorithm.html" title="리스트 - 5">알고리즘</a>
+          <a class="post-link" href="/til/2023/01/31/Linked-List-05.html" title="리스트 - 5">리스트 - 5</a>
         </li>
 </ul>
     </div>
-<div class="post-comments"></div></section>
-</div>
+<div class="post-comments">
+<div id="utterances-placeholder"></div>
+<script>
+  const utterancesThemeFromDataTheme = () => {
+    const dataTheme = document.documentElement.getAttribute('data-theme');
+    return `github-${dataTheme}`;
+  };
 
-<script src="https://utteranc.es/client.js" repo="pwsusc10/pwsusc10.github.io" issue-term="pathname" label="comments" theme="preferred-color-scheme" crossorigin="anonymous" async></script>
+  const setUtterancesTheme = () => {
+    const iframe = document.querySelector('.utterances-frame');
+    if (iframe) {
+      const message = {
+        type: 'set-theme',
+        theme: utterancesThemeFromDataTheme()
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
+  // dynamic change
+  const observer = new MutationObserver((mutationsList, observer) => {
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+        setUtterancesTheme();
+      }
+    }
+  });
+  observer.observe(document.documentElement, { attributes: true, childList: false, subtree: false });
+
+  let utterancesScript = document.createElement('script');
+  utterancesScript.async = true;
+  utterancesScript.src = 'https://utteranc.es/client.js';
+  utterancesScript.crossOrigin = 'anonymous';
+  utterancesScript.setAttribute('issue-term', 'pathname');
+  utterancesScript.setAttribute('label', 'comments');
+  utterancesScript.setAttribute('repo', 'pwsusc10/pwsusc10.github.io');
+  utterancesScript.setAttribute('theme', utterancesThemeFromDataTheme());
+
+  const placeholder = document.getElementById('utterances-placeholder');
+  placeholder.parentNode.replaceChild(utterancesScript, placeholder);
+</script>
+</div></section>
+</div>
 
 
   </section>
