@@ -823,7 +823,7 @@ function googleTranslateElementInit() {
 
 
 
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
   </p>
 <div class="post-tags">
 <a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Data%20Structure">#Data Structure</a>
@@ -850,12 +850,297 @@ function googleTranslateElementInit() {
   <li>후위 표기법으로 바뀐 수식을 꼐산하여 그 결과를 얻는다.</li>
 </ol>
 
+<p>중위 표기법의 수식을 후위 표기법의 수식으로 바꾸는 과정은 다음과 같이 정리할 수 있다.</p>
+
+<ol>
+  <li>피연산자는 그냥 옮긴다.</li>
+  <li>연산자는 스택으로 옮긴다.</li>
+  <li>연산자가 스택에 있다면 우선순위를 비교하여 처리방법을 결정한다. - 우선 순위가 낮은 것부터 스택에 쌓아야한다. 나중에 들어온 연산자가 스택에 있는 연산자의 우선순위보다 낮다면 스택에 있는 연산자를 빼고 넣는다. / 사칙연산의 경우 연산자의 우선순위가 동일하다면, 먼저 등장한 연산자가 우선순위가 높다.</li>
+  <li>마지막까지 스택에 남아있는 연산자들은 하나씩 꺼내서 옮긴다.</li>
+</ol>
+
+<h2 id="중위-표기법을-후위-표기법으로">중위 표기법을 후위 표기법으로</h2>
+
+<h3 id="infixtopostfix-header-file">InfixToPostfix header file</h3>
+<pre><code class="language-InfixToPostfix.h">#ifndef __INFIX_TO_POSTFIX_H__
+#define __INFIX_TO_POSTFIX_H__
+
+// 중위 표기법을 후위 표기법으로 바꾸는 함수.
+void ConvToRPNExp(char exp[]);
+
+#endif
+</code></pre>
+
+<h3 id="infixtopostfix-source-file">InfixToPostfix source file</h3>
+<pre><code class="language-InfixToPostfix.c">#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;stdio.h&gt;
+#include "ListBaseStack.h"
+
+// 연산자의 우선순위를 반환해주는 함수.
+int GetOpPrec(char op)
+{
+  switch(op)
+  {
+    case '*':
+    case '/':
+      return 5;
+
+    case '+':
+    case '-':
+      return 3;
+
+    case '(':
+      return 1;
+  }
+
+  return -1;
+}
+
+// 두 연산자의 우선순위를 비교해주는 함수.
+int WhoPrecOp(char op1, char op2)
+{
+  int op1Prec = GetOpPrec(op1);
+  int op2Prec = GetOpPrec(op2);
+
+  if(op1Prec &gt; op2Prec)
+    return 1;
+  else if(op1Prec &lt; op2Prec)
+    return -1;
+  else
+    return 0;
+}
+
+void ConvToRPNExp(char exp[])
+{
+  Stack stack;
+  int expLen = strlen(exp);
+  char *convExp = (char*)malloc(expLen + 1);
+  
+  int idx = 0;
+  char tok, popOp;
+
+  memset(convExp, 0, sizeof(char)*expLen + 1);
+  StackInit(&amp;stack);
+
+  for(int i = 0; i &lt; expLen; i++)
+  {
+    tok = exp[i];
+    if(isdigit(tok))  // 피연산자라면 그대로 옮기기
+      convExp[idx++] = tok;
+    else
+    {
+      switch(tok)
+      {
+        case '(':
+          SPush(&amp;stack, tok);
+          break;
+        case ')':
+          while(1)    // ')'가 나왔다면 괄호로 쌓인 연산자 변환식에 옮기기.
+          {
+            popOp = SPop(&amp;stack);
+            if(popOp == '(')
+              break;
+            convExp[idx++] = popOp;
+          }
+          break;
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+          while(!SIsEmpty(&amp;stack) &amp;&amp; (WhoPrecOp(SPeek(&amp;stack), tok) &gt;= 0))
+            convExp[idx++] = SPop(&amp;stack);
+            
+          SPush(&amp;stack, tok);
+          break;
+      }
+    }
+  }
+
+  // 스택에 쌓인 연산자 변환하는 식에 넣기.
+  while(!SIsEmpty(&amp;stack))
+    convExp[idx++] = SPop(&amp;stack);
+
+  // 변환된 후위 표기식 복사하기
+  strcpy(exp, convExp);
+  free(convExp);
+}
+</code></pre>
+
+<h3 id="infixtopostfixmainc">InfixToPostfixMain.c</h3>
+<pre><code class="language-InfixToPostfixMain.c">#include &lt;stdio.h&gt;
+#include "InfixToPostfix.h"
+
+int main(void)
+{
+  char exp1[] = "1+2*3";
+  char exp2[] = "(1+2)*3";
+  char exp3[] = "((1+2)+3)*(5-2)";
+
+  ConvToRPNExp(exp1);
+  ConvToRPNExp(exp2);
+  ConvToRPNExp(exp3);
+
+  printf("%s\n", exp1);
+  printf("%s\n", exp2);
+  printf("%s\n", exp3);
+
+  return 0;
+}
+</code></pre>
+
+<h2 id="후위-표기법으로-계산하기">후위 표기법으로 계산하기</h2>
+<p>계산 방법 : 후위 표기법을 읽다가 연산자가 나온다면 앞의 두 피연산자를 계산.
+ex) 1 2 3 * + = 1 6 + = 7<br>
+따라서 연산 과정을 다음과 같이 정리할 수 있다.</p>
+<ol>
+  <li>후위 표기법으로 표현된 식을 앞에서 부터 읽어 스택에 저장.</li>
+  <li>하나씩 저장하다 연산자를 만나면 스택에 저장되어 있는 피연산자 두개를 꺼내 연산후 다시 스택에 저장.</li>
+  <li>표현식을 다 읽을 때까지 1,2를 반복.</li>
+</ol>
+
+<h3 id="postcalcular-header-file">PostCalcular header file</h3>
+<pre><code class="language-PostCalcular.h">#ifndef __POST_CALCULAR_H__
+#define __POST_CALCULAR_H__
+
+// 표현식을 인자로 넣으면 계산 값을 반환.
+int EvalRPNExp(char exp[]);
+
+#endif
+</code></pre>
+
+<h3 id="postcalcular-source-file">PostCalcular source file</h3>
+<pre><code class="language-PostCalcular.c">#include &lt;string.h&gt;
+#include &lt;ctype.h&gt;
+#include "ListBaseStack.h"
+
+int EvalRPNExp(char exp[])
+{
+    Stack stack;
+    int expLen = strlen(exp);
+    char tok, op1, op2;
+
+    StackInit(&amp;stack);
+
+    for(int i = 0; i &lt; expLen; i++)
+    {
+        tok = exp[i];
+
+        if(isdigit(tok))
+            SPush(&amp;stack, tok - '0');
+        else
+        {
+            op2 = SPop(&amp;stack);
+            op1 = SPop(&amp;stack);
+
+            switch(tok)
+            {
+                case '+':
+                    SPush(&amp;stack, op1 + op2);
+                    break;
+                case '-':
+                    SPush(&amp;stack, op1 - op2);
+                    break;
+                case '*':
+                    SPush(&amp;stack, op1 * op2);
+                    break;
+                case '/':
+                    SPush(&amp;stack, op1 / op2);
+                    break;
+            }
+        }
+    }
+
+    return SPop(&amp;stack);
+}
+</code></pre>
+
+<h3 id="postcalcularmainc">PostCalcularMain.c</h3>
+<pre><code class="language-PostCalcularMain.c">#include &lt;stdio.h&gt;
+#include "ListBaseStack.h"
+#include "PostCalcular.h"
+
+int main(void)
+{
+    char *exp1 = "123*+";
+    char *exp2 = "12+3*";
+    char *exp3 = "12+3+52-*";
+
+    printf("%s = %d\n", exp1, EvalRPNExp(exp1));
+    printf("%s = %d\n", exp1, EvalRPNExp(exp2));
+    printf("%s = %d\n", exp1, EvalRPNExp(exp3));
+
+    return 0;
+}
+</code></pre>
+
+<h2 id="합치기">합치기</h2>
+<p>InfixToPostfix.h와 PostCalculator.h을 합쳐 InfixCalculator로 만들고 실행시켜보자</p>
+
+<h3 id="infixcalculatorh">InfixCalculator.h</h3>
+
+<pre><code class="language-InfixCalculator.h">#ifndef __INFIX_CALCULATOR_H__
+#define __INFIX_CALCULATOR_H__
+
+// 중위 표기법 표현식을 넣으면 값 반환
+int EvalInfixExp(char exp[]);
+
+#endif
+</code></pre>
+
+<h3 id="infixcalculatorc">InfixCalculator.c</h3>
+<pre><code class="language-InfixCalculator.c">#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include "InfixToPostfix.h"
+#include "PostCalcular.h"
+
+int EvalInfixExp(char exp[])
+{
+    int strLen = strlen(exp);
+    int result;
+    char *expcpy = (char*)malloc((strLen + 1)*sizeof(char));
+
+    strcpy(expcpy, exp);
+
+    ConvToRPNExp(expcpy);
+
+    result = EvalRPNExp(expcpy);
+
+    free(expcpy);
+
+    return result;
+}
+</code></pre>
+
+<h3 id="infixcalculatormainc">InfixCalculatorMain.c</h3>
+<pre><code class="language-InfixCalculatorMain.c">#include &lt;stdio.h&gt;
+#include "InfixCalculator.h"
+
+int main(void)
+{
+    char exp1[] = "1+2*3";
+    char exp2[] = "(1+2)*3";
+    char exp3[] = "((1-2)+3)*(5-2)";
+
+    printf("%s = %d\n", exp1, EvalInfixExp(exp1));
+    printf("%s = %d\n", exp2, EvalInfixExp(exp2));
+    printf("%s = %d\n", exp3, EvalInfixExp(exp3));
+
+    return 0;
+}
+</code></pre>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<p>책 - 윤성우의 열혈 자료 구조</p>
+
 
     </div>
 
 </article>
 <div class="post-nav">
-<a class="previous" href="/til/2023/02/02/data-structure01.html" title="자료구조">자료구조</a><a class="next" href="/til/2023/03/03/algorithm.html" title="알고리즘">알고리즘</a>
+<a class="previous" href="/til/2023/02/02/Stack-02.html" title="Stack - 리스트 기반">Stack - 리스트 기반</a><a class="next" href="/til/2023/03/03/algorithm.html" title="알고리즘">알고리즘</a>
 </div>
 <div class="post-related">
       <div>Related Articles</div>
@@ -867,10 +1152,10 @@ function googleTranslateElementInit() {
           <a class="post-link" href="/git/til/2023/01/01/git.html" title="알고리즘">git정리</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/02/01/Stack-01.html" title="알고리즘">Stack - 배열 기반</a>
+          <a class="post-link" href="/til/2023/02/02/Stack-02.html" title="알고리즘">Stack - 리스트 기반</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/03/03/algorithm.html" title="알고리즘">알고리즘</a>
+          <a class="post-link" href="/til/2023/01/10/data-structure01.html" title="알고리즘">자료구조</a>
         </li>
 </ul>
     </div>
