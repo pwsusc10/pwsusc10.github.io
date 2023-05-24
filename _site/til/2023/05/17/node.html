@@ -823,7 +823,7 @@ function googleTranslateElementInit() {
 
 
 
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
   </p>
 <div class="post-tags">
 <a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Node">#Node</a>
@@ -892,42 +892,112 @@ JavaScript runtime의 종류는 웹 브라우저(Chrome, Firefox 등등)프로�
   <li>Event-Driven</li>
 </ol>
 
+<p>node.js는 single thread라는 특징을 갖고 있다. 즉 main thread, 하나의 thread로 구성되어 있다는 것이며 한번에 하나의 작업만 수행할 수 있다는 것을 의미한다. 그렇다면 어떻게 Non-Blocking I/O, 비동기등과 같은 상반되는 개념들을 갖고 있는 것일까?</p>
+
 <h3 id="동작-원리">동작 원리</h3>
 
-<p>JavaScript Runtime은 메모리 힙과 콜 스택으로 구성되어있다.
-JavaScript Runtime은 자체적으로 비동기를 지원하지 않는다.<br>
-비동기, Non-blocking 처리들은 JavaScript Engine을 구동하는 Runtime 환경(Node.js, 브라우저)에서 담당한다.</p>
+<p>우선 JavaScript의 동작 원리에 대해 알고 가야한다.
+<img width="564" alt="스크린샷 2023-05-24 오후 12 59 41" src="https://github.com/pwsusc10/pwsusc10.github.io/assets/101408068/fe92fbf3-fc21-4b5c-996e-b8079602b875"></p>
+
+<ol>
+  <li>
+    <p>JavaScript Runtime은 메모리 힙과 콜 스택으로 구성되어있다.</p>
+
+    <ul>
+      <li>메모리 힙 : 메모리를 할당하는 곳</li>
+      <li>콜 스택 : 코드가 호출되면서, 스택으로 쌓이는 곳(하나의 메인 스레드에서 호출되는 함수들이 콜 스택에 쌓인다. 함수들은 LIFO(Last-In First_Out)방식으로 처리)</li>
+    </ul>
+  </li>
+  <li>JavaScript Runtime은 자체적으로 비동기를 지원하지 않는다.</li>
+  <li>비동기, Non-blocking 처리들은 JavaScript Engine을 구동하는 Runtime 환경(Node.js, 브라우저)에서 담당한다.
+    <ul>
+      <li>런타임(runtime)과 엔진(Engine)의 관계는 전통적인 컴파일드 언어에서의 링커와 컴파일러의 관계와 같습니다.</li>
+    </ul>
+  </li>
+  <li>즉 JavaScript의 Engine은 단지 코드에 대한 실행환경이며 각 이벤트를 스케줄링하는 것은 그것을 둘러싸고 있는 환경이다. 비동기 작업들도 이러한 환경에서 지원한다.</li>
+</ol>
+
+<p><img width="687" alt="스크린샷 2023-05-24 오후 4 46 14" src="https://github.com/pwsusc10/pwsusc10.github.io/assets/101408068/002e167f-38f9-4bd3-a72c-27f01f16bf4f"></p>
+
+<p>다음 이미지가 바로 JavaScript의 엔진과 외부의 런타임 환결등이 조합된 모습이다.</p>
 
 <ul>
-  <li>메모리 힙 : 메모리를 할당하는 곳</li>
-  <li>콜 스택 : 코드가 호출되면서 스택이 쌓이는 곳(하나의 메인 스레드에서 호출되는 함수들이 콜 스택에 쌓인다. 함수들은 LIFO(Last-In First_Out)방식으로 처리)</li>
+  <li>이벤트 루프: 이벤트 발생 시 호출되는 콜백 함수들을 관리하여 콜백 큐에 전달하고, 콜백 큐에 담겨있는 콜백 함수들을 콜스택에 넘겨줍니다.
+    <ul>
+      <li>이벤트 루프가 콜백 큐에서 콜스택으로 콜백 함수를 넘겨주는 작업은 콜스택에 쌓여있는 함수가 없을때만 수행됩니다.</li>
+    </ul>
+  </li>
+  <li>콜백 큐: web api에서 비동기 작업들이 실행된 후 호출되는 콜백함수들이 기다리는 공간입니다. 이벤트 루프가 정해준 순서대로 줄을 서있으며, FIFO(First In First Out) 방식을 따릅니다.
+    <ul>
+      <li>콜백 큐는 하나의 큐로 이루어있지 않습니다. Microtask Queue, Animation Frames 등 여러개의 큐로 이루어져 있습니다. 단, 이 글에서는 이해의 편의를 위해 Callback Queue로 통합하여 명칭합니다.</li>
+    </ul>
+  </li>
+  <li>Web api: Web api는 브라우저에서 자체 지원하는 api입니다. Web api는 Dom 이벤트, Ajax (XmlHttpRequest), setTimeout 등의 비동기 작업들을 수행할 수 있도록 api를 지원합니다.</li>
 </ul>
+
+<p>다음은 런타임 환경에서 비동기 코드가 실행되는 과정을 살펴보자.</p>
+
+<p>JS 코드들이 실행될 때, Web api가 지원하는 비동기 작업을 수행하는 코드가 실행된다고 생각해보자. 비동기 작업을 수행하는 코드는 아래의 순서로 실행된다.</p>
+
+<ol>
+  <li>먼저 이 코드는 호출스택에 쌓인 후 실행되면, Javascript의 엔진은 비동기 작업을 Web api에게 위임합니다.</li>
+  <li>Web api는 해당 비동기 작업을 수행하고 콜백 함수를 이벤트 루프를 통해 태스크 큐에 넘겨주게 됩니다.</li>
+  <li>이벤트 루프는 콜스택에 쌓여있는 함수가 없을 때에, 태스크 큐에서 대기하고 있던 콜백함수를 콜스택으로 넘겨줍니다</li>
+  <li>콜스택에 쌓인콜백함수가 실행되고, 콜스택에서 제거됩니다.</li>
+</ol>
+
+<p>위에서 언급했었던 논블로킹 I/O의 개념이 이 부분을 통해 설명된다.<br>
+만약 http 요청의 작업을 동기로 수행했다면 해당 함수가 콜스택에 쌓인채로 머물것이고, JS엔진은 해당 작업이 끝날때까지 어떠한 작업도 수행할 수 없다. 즉, 동기 작업이 다른 코드들을 블로킹한 것이다. 그러나 Javascript는 비동기 작업들을 Web api에게 넘겨줌으로써, 해당 작업이 완료될때까지 다른 코드들을 실행할 수 있다. 이것이 바로 논블로킹이다.</p>
+
+<p>간단한 예시를 통해 확인해보자.</p>
+
+<pre><code class="language-JS">console.log('첫번째로 실행됩니다.');
+setTimeout(() =&gt; console.log('최소 1초 후에 실행됩니다.'), 1000);
+console.log('언제 실행될까요?');
+</code></pre>
+
+<p>출력순서</p>
+
+<pre><code class="language-Terminal">첫번째로 실행됩니다.
+언제 실행될까요?
+최소 1초 후에 실행됩니다.
+</code></pre>
+
+<p>동작 순서</p>
+
+<ol>
+  <li>제일 먼저 console.log(‘첫번째로 실행됩니다.’)가 콜스택에 쌓이고, 이는 바로 실행되어 제거됩니다.</li>
+  <li>그 다음으로 setTimeout이 콜스택에 쌓입니다. setTimeout이 실행되고, Web api에서 timer가 생성됩니다.
+console.log(‘언제 실행될까요?’)가 콜스택에 쌓인 후, 바로 실행되고 제거됩니다.</li>
+  <li>Web api에서 생성된 timer는 생성된 시점을 기준으로 최소 1초 후에 태스크 큐로 콜백함수를 전달합니다.</li>
+  <li>태스크 큐에 전달되어있던 setTimeout의 콜백함수가 콜스택에 스택이 없는것을 확인한 후, 콜스택에 호출되어 실행됩니다.</li>
+</ol>
 
 <h2 id="참고">참고</h2>
 
-<p>블로그 - <a href="https://codingjuny.tistory.com/58">Node JS 동장 원리</a></p>
+<p>블로그 - <a href="https://codingjuny.tistory.com/58">Node JS 동작 원리</a></p>
 
 
     </div>
 
 </article>
 <div class="post-nav">
-<a class="previous" href="/til/2023/03/03/algorithm.html" title="알고리즘">알고리즘</a><a class="next" href="/2023/05/20/npm.html" title="Npm">Npm</a>
+<a class="previous" href="/til/2023/03/03/algorithm.html" title="알고리즘">알고리즘</a><a class="next" href="/til/2023/05/19/npm.html" title="npm이란">npm이란</a>
 </div>
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
         <li>
-          <a class="post-link" href="/til/2023/01/31/Linked-List-05.html" title="Npm">리스트 - 5</a>
+          <a class="post-link" href="/til/2023/03/03/algorithm.html" title="npm이란">알고리즘</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/22/Linked-List-02.html" title="Npm">리스트 - 2</a>
+          <a class="post-link" href="/til/2023/01/22/Linked-List-02.html" title="npm이란">리스트 - 2</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/30/Linked-List-04.html" title="Npm">리스트 - 4</a>
+          <a class="post-link" href="/til/2023/01/31/Linked-List-05.html" title="npm이란">리스트 - 5</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/10/data-structure01.html" title="Npm">자료구조</a>
+          <a class="post-link" href="/git/til/2023/01/01/git.html" title="npm이란">git정리</a>
         </li>
 </ul>
     </div>
