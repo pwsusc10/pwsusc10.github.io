@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Page 3 of 3 for Home | 작은 걸음</title>
+<title>Page 3 of 4 for Home | 작은 걸음</title>
 <meta name="generator" content="Jekyll v4.3.2">
 <meta property="og:title" content="Home">
 <meta name="author" content="pwsusc10">
@@ -19,6 +19,7 @@
 <meta property="og:site_name" content="작은 걸음">
 <meta property="og:type" content="website">
 <link rel="prev" href="http://localhost:4000/page2">
+<link rel="next" href="http://localhost:4000/page4">
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Home">
 <script type="application/ld+json">
@@ -858,6 +859,323 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/til/2023/01/30/Linked-List-04.html">
+          리스트 - 4
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 30, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/01/30/Linked-List-04.html">
+        <p>
+        양방향 연결 리스트
+
+
+  장점
+    
+      기존의 단순 연결 리스트는 한쪽 방향으로만 조회가 가능하기 때문에 삭제를 위해 before이라는 멤버 변수를 유지해야하지만 양뱡향 연결 리스트는 그럴 필요가 없다.
+    
+  
+
+
+양방향 연결 리스트는 하나의 노드가 자신의 왼쪽과 오른쪽 노드를 동시에 가리키는 구조이다.
+따라서 양방향 연결 리스트의 노드를 표현하는 구조체는 다음과 같다.
+
+typedef struct _node
+{
+  Data data;
+  struct _node *prev;
+  struct _node *next;
+} Node;
+
+
+ADT
+
+void List Init(List *plist);
+- ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Data%20Structure">#Data Structure</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2023/01/28/Linked-List-03.html">
+          리스트 - 3
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 28, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/01/28/Linked-List-03.html">
+        <p>
+        원형 연결 리스트 - 구현
+
+
+  장점
+    
+      단순 연결 리스트처럼 머리와 꼬리를 가리키는 포인터 변수를 각각 두지 않아도, 하나의 포인터 변수만 있어도 머리 또는 꼬리에 노드를 간단히 추가할 수 있다.
+    
+  
+
+
+ADT
+
+원형 연결 리스트의 ADT는 단순 연결 리스트의 ADT와 매우 흡사하다.
+차이점은 정렬 고려한 SetSortRule이 빠졌으며 데이터 삽입에도 머리에 추가하는 것과 꼬리에 추가하는 것. 두 가지로 나누었다.
+
+void List Init(List *plist);
+- 리스트 초기화
+
+void LInsertFront(List *plist, LData pdata);
+- 리스트 머리에... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Data%20Structure">#Data Structure</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2023/01/22/Linked-List-02.html">
+          리스트 - 2
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 22, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/01/22/Linked-List-02.html">
+        <p>
+        연결 리스트 - 구현
+
+새 노드를 추가할 때, 리스트의 머리와 꼬리 둘 중 어디에 저장하는 지에 따라 장단점이 있다.
+
+
+  
+    머리에 저장할 경우
+
+    
+      장점
+        
+          포인터 변수 tail이 필요 없다.
+        
+      
+      단점
+        
+          저장된 순서를 유지하지 않는다.
+        
+      
+    
+  
+  
+    꼬리에 저장할 경우
+    
+      장점
+        
+          저장된 순서가 유지된다.
+        
+      
+      단점
+        
+          포인터 변수 tail이... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Data%20Structure">#Data Structure</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/til/2023/01/15/Linked-List-01.html">
           리스트 - 1
         </a>
@@ -1018,199 +1336,6 @@ void LInsert(List *p... <span class="read_more">Read More</span>
 <a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Data%20Structure">#Data Structure</a>
 </div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/til/2023/01/08/BinarySearch.html">
-          이진 탐색
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Jan 08, 2023</span>
-        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
-      </div>
-      <a class="post-excerpt" href="/til/2023/01/08/BinarySearch.html">
-        <p>
-        반복문
-
-int BSearch(int arr[], int len, int target)
-{
-  int first = 0;
-  int last = len - 1;
-  int mid;
-
-  while(first &lt;= last)      // first == last인 경우에도 비교룰 해야 한다.
-  {
-    mid = (first + last) / 2;
-
-    if(arr[mid] == target)      // 타을 찾았다면 return
-    {
-      return mid;
-    }
-    else if(arr[mid] &lt; target)
-      first = mid + 1;
-    else... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
-</div>
-    </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/git/til/2023/01/01/git.html">
-          git정리
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Jan 01, 2023</span>
-        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
-      </div>
-      <a class="post-excerpt" href="/git/til/2023/01/01/git.html">
-        <p>
-        init
-
-git init // .git 폴더 생성 - 로컬 저장소
-
-
-download zip : 최근 커밋을 기준으로 source 코드를 내려받음
-clone : .git파일을 포함하여 source코드를 내려받음
-
-push
-
-git push &lt;원격 저장소 이름&gt; &lt;branch 이름&gt; // 원격 저장소에 branch의 코드를 push한다.
-git push origin main  // 일반적으로 원격 저장소의 이름은 main이므로 다음과 같이 쓰인다.
-git push -f &lt;원격 저장소 이름&gt; &lt;branch 이름&gt; // -f 옵션은 강제로 덮어쓰기를 하게 된다.
-git pus... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#github">#github</a>
-</div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -1223,11 +1348,11 @@ git pus... <span class="read_more">Read More</span>
     
     </span>
 
-    <span class="indicator"> 3/3</span>
+    <span class="indicator"> 3/4</span>
 
     <span class="next">
     
-      <span>Next</span>
+      <a href="/page4">Next</a>
     
     </span>
   </div>
@@ -1263,7 +1388,7 @@ git pus... <span class="read_more">Read More</span>
   <ul>
     <li>
       <a href="/index.html">
-        All<span>14</span>
+        All<span>17</span>
       </a>
     </li>
 
@@ -1276,7 +1401,7 @@ git pus... <span class="read_more">Read More</span>
     
       <li>
         <a href="/categories.html#h-TIL">
-          TIL <span>14</span>
+          TIL <span>17</span>
         </a>
       </li>
     

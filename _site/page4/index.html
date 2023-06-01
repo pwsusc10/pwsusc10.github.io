@@ -7,22 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>리스트 - 4 | 작은 걸음</title>
+<title>Page 4 of 4 for Home | 작은 걸음</title>
 <meta name="generator" content="Jekyll v4.3.2">
-<meta property="og:title" content="리스트 - 4">
+<meta property="og:title" content="Home">
 <meta name="author" content="pwsusc10">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="양방향 연결 리스트">
-<meta property="og:description" content="양방향 연결 리스트">
-<link rel="canonical" href="http://localhost:4000/til/2023/01/30/Linked-List-04.html">
-<meta property="og:url" content="http://localhost:4000/til/2023/01/30/Linked-List-04.html">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<link rel="canonical" href="http://localhost:4000/page4/">
+<meta property="og:url" content="http://localhost:4000/page4/">
 <meta property="og:site_name" content="작은 걸음">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2023-01-30T00:00:00+09:00">
+<meta property="og:type" content="website">
+<link rel="prev" href="http://localhost:4000/page3">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="리스트 - 4">
+<meta property="twitter:title" content="Home">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-01-30T00:00:00+09:00","datePublished":"2023-01-30T00:00:00+09:00","description":"양방향 연결 리스트","headline":"리스트 - 4","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/01/30/Linked-List-04.html"},"url":"http://localhost:4000/til/2023/01/30/Linked-List-04.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"pwsusc10"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Home","url":"http://localhost:4000/page4/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-<header class="site-header " role="banner">
+<header class="site-header site-header-transparent" role="banner">
 
   <div class="wrapper">
     <div class="site-header-inner">
@@ -429,7 +429,7 @@ function googleTranslateElementInit() {
     var documentElement = document.documentElement;
 
     function storeScrollData() {
-      var y = getScrollPos().y;var scrollStatus = "";
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
 
       if (y <= 0) {
         scrollStatus = "top";
@@ -596,7 +596,22 @@ function googleTranslateElementInit() {
 
 
 
-<script>
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/assets/images/banners/background.png)"></div>
+        <img class="img-placeholder" src="/assets/images/banners/background.png">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner"><div class="page-banner-default">
+            <h1 class="page-banner-heading">
+              잊지않기  위한  발버둥
+            </h1>
+            <h2 class="page-banner-subheading">
+               
+            </h2>
+          </div></div>
+    </div>
+  </section><script>
   function hashLocate(hashValue) {
     hashValue = hashValue.replace(/^.*#h-/, '');
     hashValue = decodeURIComponent(hashValue);
@@ -770,27 +785,17 @@ function googleTranslateElementInit() {
         <div class="framework">
   <section class="main">
 
-     <div class="post">
-  <section>
+     <div class="articles">
+  
+
+  
 
 
-
-
-
-
-
-
-
-<header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">리스트 - 4</h1>
-  <h2 class="post-subtitle">양방향 연결 리스트 구현</h2>
-
-  <p class="post-meta">
-    <time class="dt-published" datetime="2023-01-30T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 30, 2023
-    </time>
-
-    
-    
+  <div class="pagination">
+  <!-- Post list links -->
+  <ul class="post-list">
+<li>
+      
 
 
 
@@ -823,494 +828,237 @@ function googleTranslateElementInit() {
 
 
 
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
-  </p>
-<div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Data%20Structure">#Data Structure</a>
-</div></header>
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <div class="post-content e-content" itemprop="articleBody">
 
-      <h2 id="양방향-연결-리스트">양방향 연결 리스트</h2>
 
-<ul>
-  <li>장점
-    <ul>
-      <li>기존의 단순 연결 리스트는 한쪽 방향으로만 조회가 가능하기 때문에 삭제를 위해 before이라는 멤버 변수를 유지해야하지만 양뱡향 연결 리스트는 그럴 필요가 없다.</li>
-    </ul>
-  </li>
-</ul>
 
-<p>양방향 연결 리스트는 하나의 노드가 자신의 왼쪽과 오른쪽 노드를 동시에 가리키는 구조이다.<br>
-따라서 양방향 연결 리스트의 노드를 표현하는 구조체는 다음과 같다.</p>
 
-<pre><code class="language-Node">typedef struct _node
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2023/01/08/BinarySearch.html">
+          이진 탐색
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 08, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/01/08/BinarySearch.html">
+        <p>
+        반복문
+
+int BSearch(int arr[], int len, int target)
 {
-  Data data;
-  struct _node *prev;
-  struct _node *next;
-} Node;
-</code></pre>
+  int first = 0;
+  int last = len - 1;
+  int mid;
 
-<h3 id="adt">ADT</h3>
-
-<pre><code class="language-ADT">void List Init(List *plist);
-- 리스트 초기화
-
-void LInsert(List *plist, LData pdata);
-- 리스트에 데이터 저장
-
-int LFirst(List *plist, LData pdata);
-- 첫 번째 데이터를 pdata에 저장
-- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
-
-int LNext(List *plist, LData *pdata);
-- 참조된 데이터의 다음 데이터를 pdata에 저장
-- 참조를 새로 시작하기 위해선 LFirst 함수를 호출해야 한다.
-- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
-
-int LPrevious(List *plist, Data *pdata);
-- 참조된 데이터의 역순 데이터를 pdata에 저장
-- 참조를 새로 시작하기 위해선 LFirst 함수를 호출해야 한다.
-- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
-
-LData LRemove(List *plist);
-- LFirst 또는 LNext 함수의 마지막 반환 데이터를 삭제
-- 삭제된 데이터를 반환
-
-int LCount(List *plist);
-- 리스트에 저장되어 있는 데이터의 수 반환
-</code></pre>
-
-<h3 id="header-file">header file</h3>
-
-<pre><code class="language-DBLinkedList.h">#ifndef __DB_LINKED_LIST_H__
-#define __DB_LINKED_LIST_H__
-
-#define TRUE 1
-#define FALSE 0
-
-typedef int Data;
-
-typedef struct _node
-{
-  Data data;
-  struct _node *prev;
-  struct _node *next;
-}Node;
-
-typedef struct _DLinkedList
-{
-  Node *head;
-  Node *cur;
-  int numOfData;
-
-}DBLinkedList;
-
-typedef DBLinkedList List;
-
-void ListInit(List *plist);                 // 초기화
-void LInsert(List *plist, Data data);       // 머리에 데이터 저장
-
-int LFirst(List *plist, Data *pdata);       // 첫 데이터 참조
-int LNext(List *plist, Data *pdata);        // 두 번째 이후 데이터 참조
-int LPrevious(List *plist, Data *pdata);    // LNext 함수의 반대 방향 노드 참조
-
-Data LRemove(List *plist);                  // 참조한 데이터 삭제
-int LCount(List *plist);                    // 저장된 데이터의 수 반환
-
-
-#endif
-</code></pre>
-
-<h3 id="source-file">source file</h3>
-
-<pre><code class="language-DBLinkedList.c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include "DBLinkedList.h"
-
-void ListInit(List *plist)
-{
-  plist-&gt;head = NULL;
-  plist-&gt;numOfData = 0;
-}
-
-void LInsert(List *plist, Data data)
-{
-  /*
-  // 저장할 노드 생성
-  Node *newNode = (Node*)malloc(sizeof(Node));
-  newNode-&gt;data = data;
-
-  if(plist-&gt;head == NULL)               // 데이터를 처음 추가할 때
+  while(first &lt;= last)      // first == last인 경우에도 비교룰 해야 한다.
   {
-    newNode-&gt;next = NULL;
-    newNode-&gt;prev = NULL;
-    plist-&gt;head = newNode;
-  }
-  else
-  {
-    newNode-&gt;next = plist-&gt;head;        // 새 노드가 다음 노드를 가리키게 연결
-    newNode-&gt;prev = NULL;               // 새 노드의 prev는 NULL을 가리킴
-    plist-&gt;head-&gt;prev = newNode;        // 새 노드가 가리키는 노드 즉 새로 추가된 노드의 앞에 있는 노드의 prev가 새 노드를 가리키게 연결
-    plist-&gt;head = newNode;              // head가 새 노드를 가리키도록 연결
-  }
+    mid = (first + last) / 2;
 
-  plist-&gt;numOfData++;
-
-  조건문 안에 3문장이 중복된다.
-  처음 데이터를 추가할 때 plist-&gt;head는 NULL을 가리키므로 다음과 같은 함수로 만들 수 있다.
-  */
-
-  // 저장할 노드 생성
-  Node *newNode = (Node*)malloc(sizeof(Node));
-  newNode-&gt;data = data;
-
-  newNode-&gt;next = plist-&gt;head;
-  newNode-&gt;prev = NULL;
-
-  if(plist-&gt;head != NULL)               // 두 번째 이후의 노드를 추가할 때
-  {
-    plist-&gt;head-&gt;prev = newNode;
-  }
-  plist-&gt;head = newNode;                // head가 새 노드를 가리키도록 연결
-
-  plist-&gt;numOfData++;
-}
-
-int LFirst(List *plist, Data *pdata)
-{
-  if(plist-&gt;head == NULL)
-    return FALSE;
-
-  plist-&gt;cur = plist-&gt;head;
-  *pdata = plist-&gt;cur-&gt;data;
-
-  return TRUE;
-}
-
-int LNext(List *plist, Data *pdata)
-{
-  if(plist-&gt;cur-&gt;next == NULL)
-    return FALSE;
-
-  plist-&gt;cur = plist-&gt;cur-&gt;next;
-  *pdata = plist-&gt;cur-&gt;data;
-
-  return TRUE;
-}
-
-int LPrevious(List *plist, Data *pdata)
-{
-  if(plist-&gt;cur-&gt;prev == NULL)
-    return FALSE;
-
-  plist-&gt;cur = plist-&gt;cur-&gt;prev;
-  *pdata = plist-&gt;cur-&gt;data;
-
-  return TRUE;
-}
-
-Data LRemove(List *plist)
-{
-  Node *delNode;
-  Data delData;
-
-  delNode = plist-&gt;cur;
-  delData = delNode-&gt;data;
-
-  if(delNode == plist-&gt;head)  // 삭제할 노드를 head인 경우
-  {
-    delNode-&gt;next-&gt;prev = NULL;
-    plist-&gt;head = delNode-&gt;next;
-    plist-&gt;cur = plist-&gt;head;
-    free(delNode);
-  }
-  else if(delNode-&gt;next == NULL) // 삭제할 노드가 마지막 노드인 경우
-  {
-    delNode-&gt;prev-&gt;next = NULL;
-    free(delNode);
-  }
-  else
-  {
-    delNode-&gt;prev-&gt;next = delNode-&gt;next;
-    delNode-&gt;next-&gt;prev = delNode-&gt;prev;
-    plist-&gt;cur = delNode-&gt;prev;
-    free(delNode);
-  }
-
-  plist-&gt;numOfData--;
-
-  return delData;
-}
-
-int LCount(List *plist)
-{
-  return plist-&gt;numOfData;
-}
-</code></pre>
-
-<h3 id="mainc">main.c</h3>
-
-<pre><code class="language-DBLinkedListMain.c">#include &lt;stdio.h&gt;
-#include "DBLinkedList.h"
-
-int main(void)
-{
-  List list;
-  Data data;
-
-  ListInit(&amp;list);
-
-  LInsert(&amp;list, 11);
-  LInsert(&amp;list, 22);
-  LInsert(&amp;list, 33);
-  LInsert(&amp;list, 44);
-  LInsert(&amp;list, 55);
-
-  printf("저장된 데이터 수 : %d\n", LCount(&amp;list));
-
-  if(LFirst(&amp;list, &amp;data))
-  {
-    printf("data : %d\n", data);
-
-    while(LNext(&amp;list, &amp;data))
+    if(arr[mid] == target)      // 타을 찾았다면 return
     {
-      printf("data : %d\n", data);
+      return mid;
     }
-
-    while(LPrevious(&amp;list, &amp;data))
-    {
-      printf("data : %d\n", data);
-    }
-  }
-
-  if(LFirst(&amp;list, &amp;data))
-  {
-    if(data == 11 || data == 33 || data == 55)
-    {
-      printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
-    }
-
-    while(LNext(&amp;list, &amp;data))
-    {
-      if(data == 11 || data == 33 || data == 55)
-        printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
-    }
-  }
-
-
-  if(LFirst(&amp;list, &amp;data))
-  {
-    printf("data : %d\n", data);
-
-    while(LNext(&amp;list, &amp;data))
-    {
-      printf("data : %d\n", data);
-    }
-  }
-  return 0;
-}
-</code></pre>
-
-<h2 id="참고-자료">참고 자료</h2>
-
-<p>책 - 윤성우의 열혈 자료 구조</p>
-
-
-    </div>
-
-</article>
-<div class="post-nav">
-<a class="previous" href="/til/2023/01/28/Linked-List-03.html" title="리스트 - 3">리스트 - 3</a><a class="next" href="/til/2023/01/31/Linked-List-05.html" title="리스트 - 5">리스트 - 5</a>
+    else if(arr[mid] &lt; target)
+      first = mid + 1;
+    else... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Algorithm">#Algorithm</a>
 </div>
-<div class="post-related">
-      <div>Related Articles</div>
-      <ul>
-        <li>
-          <a class="post-link" href="/til/2023/02/01/Stack-01.html" title="리스트 - 5">Stack - 배열 기반</a>
-        </li>
+    </li>
 <li>
-          <a class="post-link" href="/til/2023/05/17/node.html" title="리스트 - 5">Node 소개</a>
-        </li>
-<li>
-          <a class="post-link" href="/til/2023/05/19/npm.html" title="리스트 - 5">npm이란</a>
-        </li>
-<li>
-          <a class="post-link" href="/til/2023/01/30/Linked-List-04.html" title="리스트 - 5">리스트 - 4</a>
-        </li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/git/til/2023/01/01/git.html">
+          git정리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 01, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/git/til/2023/01/01/git.html">
+        <p>
+        init
+
+git init // .git 폴더 생성 - 로컬 저장소
+
+
+download zip : 최근 커밋을 기준으로 source 코드를 내려받음
+clone : .git파일을 포함하여 source코드를 내려받음
+
+push
+
+git push &lt;원격 저장소 이름&gt; &lt;branch 이름&gt; // 원격 저장소에 branch의 코드를 push한다.
+git push origin main  // 일반적으로 원격 저장소의 이름은 main이므로 다음과 같이 쓰인다.
+git push -f &lt;원격 저장소 이름&gt; &lt;branch 이름&gt; // -f 옵션은 강제로 덮어쓰기를 하게 된다.
+git pus... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#github">#github</a>
+</div>
+    </li>
 </ul>
-    </div>
-<div class="post-comments">
-<div id="utterances-placeholder"></div>
-<script>
-  const utterancesThemeFromDataTheme = () => {
-    const dataTheme = document.documentElement.getAttribute('data-theme');
-    return `github-${dataTheme}`;
-  };
 
-  const setUtterancesTheme = () => {
-    const iframe = document.querySelector('.utterances-frame');
-    if (iframe) {
-      const message = {
-        type: 'set-theme',
-        theme: utterancesThemeFromDataTheme()
-      };
-      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-    }
-  }
+  <!-- Pagination links -->
 
-  // dynamic change
-  const observer = new MutationObserver((mutationsList, observer) => {
-    for (let mutation of mutationsList) {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
-        setUtterancesTheme();
-      }
-    }
-  });
-  observer.observe(document.documentElement, { attributes: true, childList: false, subtree: false });
 
-  let utterancesScript = document.createElement('script');
-  utterancesScript.async = true;
-  utterancesScript.src = 'https://utteranc.es/client.js';
-  utterancesScript.crossOrigin = 'anonymous';
-  utterancesScript.setAttribute('issue-term', 'pathname');
-  utterancesScript.setAttribute('label', 'comments');
-  utterancesScript.setAttribute('repo', 'pwsusc10/pwsusc10.github.io');
-  utterancesScript.setAttribute('theme', utterancesThemeFromDataTheme());
+  <div class="paginator">
+    <span class="previous">
+    
+      <a href="/page3">Prev</a>
+    
+    </span>
 
-  const placeholder = document.getElementById('utterances-placeholder');
-  placeholder.parentNode.replaceChild(utterancesScript, placeholder);
-</script>
-</div></section>
+    <span class="indicator"> 4/4</span>
+
+    <span class="next">
+    
+      <span>Next</span>
+    
+    </span>
+  </div>
+
+</div>
 </div>
 
 
   </section>
   <section class="sidebar" style="margin-left: 15px;">
-    <!-- Get sidebar items --><style type="text/css" media="screen">
-.post-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-</style>
+    <!-- Get sidebar items -->
 
-<div class="post-menu">
-  <div class="post-menu-title">TOC</div>
-  <div class="post-menu-content"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="common-list">
+  <ul>
+    <li>
+      <a href="/index.html">
+        All<span>17</span>
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/categories.html#h-Git">
+          Git <span>1</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-TIL">
+          TIL <span>17</span>
+        </a>
+      </li>
+    
+  </ul>
 </div>
 
-<script>
-  function generateContent() {
-    var menu = document.querySelector(".post-menu");
-    var menuContent =  menu.querySelector(".post-menu-content");
-    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
-
-    // Hide menu when no headings
-    if (headings.length === 0) {
-      return menu.style.display = "none";
-    }
-
-    // Generate post menu
-    var menuHTML = '';
-    for (var i = 0; i < headings.length; i++) {
-      var h = headings[i];
-      menuHTML += (
-        '<li class="h-' + h.tagName.toLowerCase() + '">'
-        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
-    }
-
-    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
-
-    // The header element
-    var header = document.querySelector('header.site-header');
-
-    function doMenuCollapse(index, over_items) {
-      var items = menuContent.firstChild.children;
-
-      if (over_items == undefined) {
-        over_items = 20;
-      }
-
-      if (items.length < over_items) {
-        return;
-      }
-
-      var activeItem = items[index];
-      var beginItem = activeItem
-      var endItem = activeItem
-      var beginIndex = index;
-      var endIndex = index + 1;
-      while (beginIndex >= 0
-        && !items[beginIndex].classList.contains('h-h2')) {
-        beginIndex -= 1;
-      }
-      while (endIndex < items.length
-        && !items[endIndex].classList.contains('h-h2')) {
-        endIndex += 1;
-      }
-      for (var i = 0; i < beginIndex; i++) {
-        item = items[i]
-        if (!item.classList.contains('h-h2')) {
-          item.style.display = 'none';
-        }
-      }
-      for (var i = beginIndex + 1; i < endIndex; i++) {
-        item = items[i]
-        // if (!item.classList.contains('h-h2')) {
-          item.style.display = '';
-        // }
-      }
-      for (var i = endIndex; i < items.length; i++) {
-        item = items[i]
-        if (!item.classList.contains('h-h2')) {
-          item.style.display = 'none';
-        }
-      }
-    }
-
-    // Init menu collapsed
-    doMenuCollapse(-1);
-
-    // Active the menu item
-    window.addEventListener('scroll', function (event) {
-      var lastActive = menuContent.querySelector('.active');
-      var changed = true;
-      var activeIndex = -1;
-      for (var i = headings.length - 1; i >= 0; i--) {
-        var h = headings[i];
-        var headingRect = h.getBoundingClientRect();
-        var headerRect = header.getBoundingClientRect();
-        var headerTop = Math.floor(headerRect.top);
-        var headerHeight = Math.floor(headerRect.height);
-        var headerHeight = headerTop + headerHeight + 20;
-        if (headingRect.top <= headerHeight) {
-          var id = 'h-' + h.getAttribute('id');
-          var a = menuContent.querySelector('a[href="#' + id  + '"]');
-          var curActive = a.parentNode;
-          if (curActive) {
-            curActive.classList.add('active');
-            activeIndex = i;
-          }
-          if (lastActive == curActive) {
-            changed = false;
-          }
-          break;
-        }
-      }
-      if (changed) {
-        if (lastActive) {
-          lastActive.classList.remove('active');
-        }
-        doMenuCollapse(activeIndex);
-      }
-      event.preventDefault();
-    });
-  }
-  generateContent();
-</script>
 </section>
 </div>
 

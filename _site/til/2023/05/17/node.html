@@ -1001,10 +1001,6 @@ Node JS에서 작성되는 거의 모든 코드들은 콜백 함수로 이루어
 
 <p><img width="647" alt="스크린샷 2023-05-24 오후 9 52 54" src="https://github.com/pwsusc10/pwsusc10.github.io/assets/101408068/d6f37c44-faf8-497e-b315-b68c24a923f0"></p>
 
-<h2 id="참고">참고</h2>
-
-<p>블로그 - <a href="https://codingjuny.tistory.com/58">Node JS 동작 원리</a></p>
-
 <p>I/O 작업들은 OS 커널 혹은 libuv 내의 스레드 풀에서 담당하게 됩니다. libuv는 OS 커널에서 어떤 비동기 작업들을 지원해주는지 알고 있기 때문에 작업 종류에 따라서 커널 혹은 스레드 풀로 분기합니다. libuv의 스레드풀은 커널이 지원안하는 작업들을 수행하게 됩니다. 또한 libuv 의 스레드 풀은 멀티 스레드로 이루어져 있습니다. 예를 들어 파일 시스템은 libuv에서 처리되게 되고 스레드 풀도 마찬가지로 작업을 마친 후 이벤트 루프에 콜백 함수를 전달하게 됩니다.</p>
 
 <h4 id="libuv는-어떻게-동작할까">libuv는 어떻게 동작할까?</h4>
@@ -1017,13 +1013,25 @@ Node JS에서 작성되는 거의 모든 코드들은 콜백 함수로 이루어
 
 <p><img width="634" alt="스크린샷 2023-05-24 오후 9 54 50" src="https://github.com/pwsusc10/pwsusc10.github.io/assets/101408068/fc044a9d-c5d5-4b40-84ed-e889e66d5528"></p>
 
-<ul>
-  <li>timers : setTimeOut(), setIntever() 같은 timer 함수들이 처리가 됩니다.</li>
-  <li>I/O callbacks : 클로즈 콜백, 타이머로 스케쥴링된 콜백, setImemediate를 제외한 거의 모든 콜백들이 큐에 놓이게 됩니다.(http, api 호출, db 조회 등)</li>
-  <li>poll : poll 큐에 있는 이벤트 콜백들을 처리합니다. 이때 poll에 쌓인 콜백 함수들을 실행하게 되는데 더 이상 실행할 콜백 함수가 없을때에는 규칙에 따라 다음 단계로 넘거가거나 대기하게 됩니다. 일단 check 단계를 검사하여 setImemediate 가 있는지 확인하고 setImemediate 가 있으면 check 단계로 넘어가게 됩니다. 만약 setImemediate 가 없다면 timer 단계에 실행할 timer 함수가 있는지 확인하게 됩니다. timer 단계로 넘어갈 수있을때까지 대기하고 도중에 poll 큐에 콜백함수가 들어온다면 즉시 실행합니다.</li>
-  <li>check : setImediate() 콜백이 호출되고 실행됩니다.</li>
-  <li>close callbacks : . on(‘close’) 같은 이벤트에 따른 콜백 함수를 실행합니다.</li>
-</ul>
+<h4 id="timers">timers</h4>
+
+<p>setTimeOut(), setIntever() 같은 timer 함수들이 처리가 됩니다.</p>
+
+<h4 id="io-callbacks">I/O callbacks</h4>
+
+<p>클로즈 콜백, 타이머로 스케쥴링된 콜백, setImemediate를 제외한 거의 모든 콜백들이 큐에 놓이게 됩니다.(http, api 호출, db 조회 등)</p>
+
+<h4 id="poll">poll</h4>
+
+<p>poll 큐에 있는 이벤트 콜백들을 처리합니다. 이때 poll에 쌓인 콜백 함수들을 실행하게 되는데 더 이상 실행할 콜백 함수가 없을때에는 규칙에 따라 다음 단계로 넘거가거나 대기하게 됩니다. 일단 check 단계를 검사하여 setImemediate 가 있는지 확인하고 setImemediate 가 있으면 check 단계로 넘어가게 됩니다. 만약 setImemediate 가 없다면 timer 단계에 실행할 timer 함수가 있는지 확인하게 됩니다. timer 단계로 넘어갈 수있을때까지 대기하고 도중에 poll 큐에 콜백함수가 들어온다면 즉시 실행합니다.</p>
+
+<h4 id="check">check</h4>
+
+<p>setImediate() 콜백이 호출되고 실행됩니다.</p>
+
+<h4 id="close-callbacks">close callbacks</h4>
+
+<p>. on(‘close’) 같은 이벤트에 따른 콜백 함수를 실행합니다.</p>
 
 <h4 id="코드-예시">코드 예시</h4>
 
@@ -1080,6 +1088,10 @@ timeout
   </li>
 </ol>
 
+<h2 id="참고">참고</h2>
+
+<p>블로그 - <a href="https://codingjuny.tistory.com/58">Node JS 동작 원리</a></p>
+
 
     </div>
 
@@ -1091,16 +1103,16 @@ timeout
       <div>Related Articles</div>
       <ul>
         <li>
-          <a class="post-link" href="/til/2023/01/08/BinarySearch.html" title="npm이란">이진 탐색</a>
+          <a class="post-link" href="/til/2023/02/02/Stack-02.html" title="npm이란">Stack - 리스트 기반</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/02/03/Stack-03.html" title="npm이란">Stack - 계산기</a>
+          <a class="post-link" href="/git/til/2023/01/01/git.html" title="npm이란">git정리</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/31/Linked-List-05.html" title="npm이란">리스트 - 5</a>
+          <a class="post-link" href="/til/2023/05/24/http2.html" title="npm이란">http - 2</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/15/Linked-List-01.html" title="npm이란">리스트 - 1</a>
+          <a class="post-link" href="/til/2023/05/19/npm.html" title="npm이란">npm이란</a>
         </li>
 </ul>
     </div>

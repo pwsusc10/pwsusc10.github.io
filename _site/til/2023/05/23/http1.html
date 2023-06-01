@@ -7,22 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>리스트 - 4 | 작은 걸음</title>
+<title>http - 1 | 작은 걸음</title>
 <meta name="generator" content="Jekyll v4.3.2">
-<meta property="og:title" content="리스트 - 4">
+<meta property="og:title" content="http - 1">
 <meta name="author" content="pwsusc10">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="양방향 연결 리스트">
-<meta property="og:description" content="양방향 연결 리스트">
-<link rel="canonical" href="http://localhost:4000/til/2023/01/30/Linked-List-04.html">
-<meta property="og:url" content="http://localhost:4000/til/2023/01/30/Linked-List-04.html">
+<meta name="description" content="http? https?">
+<meta property="og:description" content="http? https?">
+<link rel="canonical" href="http://localhost:4000/til/2023/05/23/http1.html">
+<meta property="og:url" content="http://localhost:4000/til/2023/05/23/http1.html">
 <meta property="og:site_name" content="작은 걸음">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2023-01-30T00:00:00+09:00">
+<meta property="article:published_time" content="2023-05-23T00:00:00+09:00">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="리스트 - 4">
+<meta property="twitter:title" content="http - 1">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-01-30T00:00:00+09:00","datePublished":"2023-01-30T00:00:00+09:00","description":"양방향 연결 리스트","headline":"리스트 - 4","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/01/30/Linked-List-04.html"},"url":"http://localhost:4000/til/2023/01/30/Linked-List-04.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"pwsusc10"},"dateModified":"2023-05-23T00:00:00+09:00","datePublished":"2023-05-23T00:00:00+09:00","description":"http? https?","headline":"http - 1","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/til/2023/05/23/http1.html"},"url":"http://localhost:4000/til/2023/05/23/http1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -782,11 +782,11 @@ function googleTranslateElementInit() {
 
 
 <header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">리스트 - 4</h1>
-  <h2 class="post-subtitle">양방향 연결 리스트 구현</h2>
+  <h1 class="post-title p-name" itemprop="name headline">http - 1</h1>
+  <h2 class="post-subtitle">http과 status code</h2>
 
   <p class="post-meta">
-    <time class="dt-published" datetime="2023-01-30T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 30, 2023
+    <time class="dt-published" datetime="2023-05-23T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> May 23, 2023
     </time>
 
     
@@ -823,322 +823,112 @@ function googleTranslateElementInit() {
 
 
 
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
   </p>
 <div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Data%20Structure">#Data Structure</a>
+<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#HTTP">#HTTP</a>
 </div></header>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="post-content e-content" itemprop="articleBody">
 
-      <h2 id="양방향-연결-리스트">양방향 연결 리스트</h2>
+      <h2 id="http-https">http? https?</h2>
+
+<h3 id="http">http</h3>
+
+<p>http란 Hypertext Transfer Protocol으로 server와 client간의 request와 response로 이루어진 protocol이라고 할 수 있다.<br>
+client와 server간에 데이터를 주고 받을 때 암호화처리가 되어있지 않은 텍스트 형태로 전송한다. 그 데이터를 누군가 가로채면 읽을 수 있어 보안이 낮다.</p>
+
+<h3 id="https">https</h3>
+
+<p>https란 Hypertext Transfer Secure Protocol로 http에서 데이터를 주고 받을 때 암호화처리 되지 않은 것을 SSL, TLS와 같은 암호화된 방식으로 주고 받는 protocol이다.</p>
 
 <ul>
-  <li>장점
+  <li>SSL : SSL(Secure Scokets Layer)은 암호화 기반 인터넷 보안 프로토콜이다. 전달되는 모든 데이터를 암호화하고 특정한 유형의 사이버 공격도 차단한다. SSL은 1996년 SSL 3.0 이후 업데이트되지 않았으며, 앞으로 사라지게 될 것으로 여기지고 있다. 또한 알려진 취약성이 여러가지 있으며 보안 전문가들은 SSL 사용 중단을 권장한다고 한다.</li>
+  <li>TLS : TLS 는 SSL의 업데이트 버전으로 SSL의 최종버전인 3.0과 TLS의 최초버전의 차이는 크지않다. TLS는 SSL의 업데이트 버전이며 명칭만 다르다고 볼 수 있다.</li>
+</ul>
+
+<h3 id="연도별-http-https">연도별 http, https</h3>
+
+<p>1989년 - HTTP 등장<br>
+1994년 - HTPPS 등장<br>
+1997년 - HTTP v1 등장 - http, https 둘다 지원 / text-base, header부분이 압축되어 있지 않아 사이즈가 크다, 한 번에 하나의 파일만 전송. =&gt; 비효율적이다.<br>
+2015년 - HTTP v2 등장 - https를 지원 / binary-base =&gt; secure, header 부분 압축, multiplexing =&gt; 효율적이며 안전하다.<br>
+2019년 - HTTP v3 등장 - https를 지원 / TCP 통신을 UDP 통신으로.</p>
+
+<h2 id="http-status-codes">HTTP Status Codes</h2>
+
+<h3 id="status-codes란">Status Codes란?</h3>
+
+<p>server에서 client에게 requset에 대한 reponse를 보낼 때 status code를 함께 보낸다. status code는 세자리 숫자로 이루어져 있으며 숫자로 server에서 request를 어떻게 처리했는 지, 처리 결과에 대한 내용을 내포하고 있다. status code에는 5가지의 종류가 있다.</p>
+
+<ul>
+  <li>1xx : informational
     <ul>
-      <li>기존의 단순 연결 리스트는 한쪽 방향으로만 조회가 가능하기 때문에 삭제를 위해 before이라는 멤버 변수를 유지해야하지만 양뱡향 연결 리스트는 그럴 필요가 없다.</li>
+      <li>100 : continue</li>
+      <li>102 : processing</li>
+    </ul>
+  </li>
+  <li>2xx : successful
+    <ul>
+      <li>200 : ok</li>
+      <li>201 : created</li>
+      <li>204 : no content</li>
+    </ul>
+  </li>
+  <li>3xx : redirection
+    <ul>
+      <li>301 : moved permanently</li>
+      <li>302 : found</li>
+      <li>303 : see other</li>
+      <li>307 : temporary redirect</li>
+      <li>308 : permanent redirect</li>
+    </ul>
+  </li>
+  <li>4xx : client error
+    <ul>
+      <li>400 : bad request</li>
+      <li>401 : unauthorized</li>
+      <li>403 : forbidden</li>
+      <li>404 : not found</li>
+      <li>405 : method not allowed</li>
+      <li>409 : conflict</li>
+    </ul>
+  </li>
+  <li>5xx : server error
+    <ul>
+      <li>500 : internal server error</li>
+      <li>502 : bad gateway</li>
+      <li>503 : service unavailable</li>
     </ul>
   </li>
 </ul>
 
-<p>양방향 연결 리스트는 하나의 노드가 자신의 왼쪽과 오른쪽 노드를 동시에 가리키는 구조이다.<br>
-따라서 양방향 연결 리스트의 노드를 표현하는 구조체는 다음과 같다.</p>
+<h2 id="참고">참고</h2>
 
-<pre><code class="language-Node">typedef struct _node
-{
-  Data data;
-  struct _node *prev;
-  struct _node *next;
-} Node;
-</code></pre>
-
-<h3 id="adt">ADT</h3>
-
-<pre><code class="language-ADT">void List Init(List *plist);
-- 리스트 초기화
-
-void LInsert(List *plist, LData pdata);
-- 리스트에 데이터 저장
-
-int LFirst(List *plist, LData pdata);
-- 첫 번째 데이터를 pdata에 저장
-- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
-
-int LNext(List *plist, LData *pdata);
-- 참조된 데이터의 다음 데이터를 pdata에 저장
-- 참조를 새로 시작하기 위해선 LFirst 함수를 호출해야 한다.
-- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
-
-int LPrevious(List *plist, Data *pdata);
-- 참조된 데이터의 역순 데이터를 pdata에 저장
-- 참조를 새로 시작하기 위해선 LFirst 함수를 호출해야 한다.
-- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
-
-LData LRemove(List *plist);
-- LFirst 또는 LNext 함수의 마지막 반환 데이터를 삭제
-- 삭제된 데이터를 반환
-
-int LCount(List *plist);
-- 리스트에 저장되어 있는 데이터의 수 반환
-</code></pre>
-
-<h3 id="header-file">header file</h3>
-
-<pre><code class="language-DBLinkedList.h">#ifndef __DB_LINKED_LIST_H__
-#define __DB_LINKED_LIST_H__
-
-#define TRUE 1
-#define FALSE 0
-
-typedef int Data;
-
-typedef struct _node
-{
-  Data data;
-  struct _node *prev;
-  struct _node *next;
-}Node;
-
-typedef struct _DLinkedList
-{
-  Node *head;
-  Node *cur;
-  int numOfData;
-
-}DBLinkedList;
-
-typedef DBLinkedList List;
-
-void ListInit(List *plist);                 // 초기화
-void LInsert(List *plist, Data data);       // 머리에 데이터 저장
-
-int LFirst(List *plist, Data *pdata);       // 첫 데이터 참조
-int LNext(List *plist, Data *pdata);        // 두 번째 이후 데이터 참조
-int LPrevious(List *plist, Data *pdata);    // LNext 함수의 반대 방향 노드 참조
-
-Data LRemove(List *plist);                  // 참조한 데이터 삭제
-int LCount(List *plist);                    // 저장된 데이터의 수 반환
-
-
-#endif
-</code></pre>
-
-<h3 id="source-file">source file</h3>
-
-<pre><code class="language-DBLinkedList.c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include "DBLinkedList.h"
-
-void ListInit(List *plist)
-{
-  plist-&gt;head = NULL;
-  plist-&gt;numOfData = 0;
-}
-
-void LInsert(List *plist, Data data)
-{
-  /*
-  // 저장할 노드 생성
-  Node *newNode = (Node*)malloc(sizeof(Node));
-  newNode-&gt;data = data;
-
-  if(plist-&gt;head == NULL)               // 데이터를 처음 추가할 때
-  {
-    newNode-&gt;next = NULL;
-    newNode-&gt;prev = NULL;
-    plist-&gt;head = newNode;
-  }
-  else
-  {
-    newNode-&gt;next = plist-&gt;head;        // 새 노드가 다음 노드를 가리키게 연결
-    newNode-&gt;prev = NULL;               // 새 노드의 prev는 NULL을 가리킴
-    plist-&gt;head-&gt;prev = newNode;        // 새 노드가 가리키는 노드 즉 새로 추가된 노드의 앞에 있는 노드의 prev가 새 노드를 가리키게 연결
-    plist-&gt;head = newNode;              // head가 새 노드를 가리키도록 연결
-  }
-
-  plist-&gt;numOfData++;
-
-  조건문 안에 3문장이 중복된다.
-  처음 데이터를 추가할 때 plist-&gt;head는 NULL을 가리키므로 다음과 같은 함수로 만들 수 있다.
-  */
-
-  // 저장할 노드 생성
-  Node *newNode = (Node*)malloc(sizeof(Node));
-  newNode-&gt;data = data;
-
-  newNode-&gt;next = plist-&gt;head;
-  newNode-&gt;prev = NULL;
-
-  if(plist-&gt;head != NULL)               // 두 번째 이후의 노드를 추가할 때
-  {
-    plist-&gt;head-&gt;prev = newNode;
-  }
-  plist-&gt;head = newNode;                // head가 새 노드를 가리키도록 연결
-
-  plist-&gt;numOfData++;
-}
-
-int LFirst(List *plist, Data *pdata)
-{
-  if(plist-&gt;head == NULL)
-    return FALSE;
-
-  plist-&gt;cur = plist-&gt;head;
-  *pdata = plist-&gt;cur-&gt;data;
-
-  return TRUE;
-}
-
-int LNext(List *plist, Data *pdata)
-{
-  if(plist-&gt;cur-&gt;next == NULL)
-    return FALSE;
-
-  plist-&gt;cur = plist-&gt;cur-&gt;next;
-  *pdata = plist-&gt;cur-&gt;data;
-
-  return TRUE;
-}
-
-int LPrevious(List *plist, Data *pdata)
-{
-  if(plist-&gt;cur-&gt;prev == NULL)
-    return FALSE;
-
-  plist-&gt;cur = plist-&gt;cur-&gt;prev;
-  *pdata = plist-&gt;cur-&gt;data;
-
-  return TRUE;
-}
-
-Data LRemove(List *plist)
-{
-  Node *delNode;
-  Data delData;
-
-  delNode = plist-&gt;cur;
-  delData = delNode-&gt;data;
-
-  if(delNode == plist-&gt;head)  // 삭제할 노드를 head인 경우
-  {
-    delNode-&gt;next-&gt;prev = NULL;
-    plist-&gt;head = delNode-&gt;next;
-    plist-&gt;cur = plist-&gt;head;
-    free(delNode);
-  }
-  else if(delNode-&gt;next == NULL) // 삭제할 노드가 마지막 노드인 경우
-  {
-    delNode-&gt;prev-&gt;next = NULL;
-    free(delNode);
-  }
-  else
-  {
-    delNode-&gt;prev-&gt;next = delNode-&gt;next;
-    delNode-&gt;next-&gt;prev = delNode-&gt;prev;
-    plist-&gt;cur = delNode-&gt;prev;
-    free(delNode);
-  }
-
-  plist-&gt;numOfData--;
-
-  return delData;
-}
-
-int LCount(List *plist)
-{
-  return plist-&gt;numOfData;
-}
-</code></pre>
-
-<h3 id="mainc">main.c</h3>
-
-<pre><code class="language-DBLinkedListMain.c">#include &lt;stdio.h&gt;
-#include "DBLinkedList.h"
-
-int main(void)
-{
-  List list;
-  Data data;
-
-  ListInit(&amp;list);
-
-  LInsert(&amp;list, 11);
-  LInsert(&amp;list, 22);
-  LInsert(&amp;list, 33);
-  LInsert(&amp;list, 44);
-  LInsert(&amp;list, 55);
-
-  printf("저장된 데이터 수 : %d\n", LCount(&amp;list));
-
-  if(LFirst(&amp;list, &amp;data))
-  {
-    printf("data : %d\n", data);
-
-    while(LNext(&amp;list, &amp;data))
-    {
-      printf("data : %d\n", data);
-    }
-
-    while(LPrevious(&amp;list, &amp;data))
-    {
-      printf("data : %d\n", data);
-    }
-  }
-
-  if(LFirst(&amp;list, &amp;data))
-  {
-    if(data == 11 || data == 33 || data == 55)
-    {
-      printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
-    }
-
-    while(LNext(&amp;list, &amp;data))
-    {
-      if(data == 11 || data == 33 || data == 55)
-        printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
-    }
-  }
-
-
-  if(LFirst(&amp;list, &amp;data))
-  {
-    printf("data : %d\n", data);
-
-    while(LNext(&amp;list, &amp;data))
-    {
-      printf("data : %d\n", data);
-    }
-  }
-  return 0;
-}
-</code></pre>
-
-<h2 id="참고-자료">참고 자료</h2>
-
-<p>책 - 윤성우의 열혈 자료 구조</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">MDN</a></p>
 
 
     </div>
 
 </article>
 <div class="post-nav">
-<a class="previous" href="/til/2023/01/28/Linked-List-03.html" title="리스트 - 3">리스트 - 3</a><a class="next" href="/til/2023/01/31/Linked-List-05.html" title="리스트 - 5">리스트 - 5</a>
+<a class="previous" href="/til/2023/05/19/npm.html" title="npm이란">npm이란</a><a class="next" href="/til/2023/05/24/http2.html" title="http - 2">http - 2</a>
 </div>
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
         <li>
-          <a class="post-link" href="/til/2023/02/01/Stack-01.html" title="리스트 - 5">Stack - 배열 기반</a>
+          <a class="post-link" href="/git/til/2023/01/01/git.html" title="http - 2">git정리</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/05/17/node.html" title="리스트 - 5">Node 소개</a>
+          <a class="post-link" href="/til/2023/02/03/Stack-03.html" title="http - 2">Stack - 계산기</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/05/19/npm.html" title="리스트 - 5">npm이란</a>
+          <a class="post-link" href="/til/2023/01/10/data-structure01.html" title="http - 2">자료구조</a>
         </li>
 <li>
-          <a class="post-link" href="/til/2023/01/30/Linked-List-04.html" title="리스트 - 5">리스트 - 4</a>
+          <a class="post-link" href="/til/2023/02/01/Stack-01.html" title="http - 2">Stack - 배열 기반</a>
         </li>
 </ul>
     </div>
