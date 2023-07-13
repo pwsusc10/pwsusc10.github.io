@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Node 공부하면서 부딪힌 실수들
-subtitle: response
+title: RESTful APIfks?
+subtitle: Rest? REST API의 특징?
 categories: TIL
-tags: [실수들]
+tags: [Rest API]
 ---
 
 ## REST란?
