@@ -858,6 +858,275 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/til/2023/07/05/%EC%8B%A4%EC%88%98-%EC%A0%95%EB%A6%AC.html">
+          Node 공부하면서 부딪힌 실수들
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jul 05, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/07/05/%EC%8B%A4%EC%88%98-%EC%A0%95%EB%A6%AC.html">
+        <p>
+        createReadStream.pipe()와 res.end()
+
+createReadStream.pipe()를 이용해 HTML을 가져오는 동작에서 코드의 마지막 부분에 res.end(); 를 호출하면 내용이 불러와지지 않는다
+=&gt; pipe는 비동기적 함수이므로, 호출만 해놓고 다음 코드 라인으로 넘어간다. 따라서 Piping이 되고 있는 과정에 res.end()를 호출하게 되면 파이핑이 멈추게 되어 내용이 불러와지지 않는다. 스트림은 Event Driven형태이이기 때문.
+
+Express app.all(), app.use()차이
+
+app.all('/path1', (req, res, next)); =&gt; pa... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EC%8B%A4%EC%88%98%EB%93%A4">#실수들</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2023/06/03/Express.html">
+          Express.js
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 03, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/06/03/Express.html">
+        <p>
+        CORS란?
+
+CORS란 Cross-Origin Resource Sharing의 약자로 client와 server가 같은 도메인(ip)를 사용한다면(동일한 서버에서 동작중이라면) 서버의 resource를 별다른 제약없이 주고 받을 수 있지만 다른 도메인(ip)라면 원칙적으로는 어떠한 data도 주고 받을 수 없다.
+client와 server가 다른 도메인일 때 client는 request를 보낼 때 header에 Access-Control-Allow-Origin을 추가해 보내야한다.
+
+Access-Control-Allow-Origin 설정
+
+app.use((req, res, next) =&gt; {
+  res.se... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#Node">#Node</a><a class="post-tag" href="/tags.html#Express">#Express</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/til/2023/06/01/RestfulAPI.html">
+          RESTful APIfks?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 01, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/til/2023/06/01/RestfulAPI.html">
+        <p>
+        REST란?
+
+REST =&gt; Representational State Transfer (대표하는 상태를 전송)
+Software Architecture 중 하나. / Network-based Software Architectures
+
+RESTful API
+
+두 컴퓨터 시스템이 인터넷을 통해 정보를 안전하게 교환하기 위해 사용하는 인터페이스.
+
+REST Architecture style의 6 principles
+
+
+  Statelessness =&gt; 요청들은 독립적이어야 한다.(http protocol)
+  Cacheability =&gt; (http protocol)
+  Layered System
+  Cod... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#Rest%20API">#Rest API</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/til/2023/05/27/http3.html">
           http - 3
         </a>
@@ -977,292 +1246,6 @@ Request Method
 <a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#HTTP">#HTTP</a>
 </div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/til/2023/05/23/http1.html">
-          http - 1
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> May 23, 2023</span>
-        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
-      </div>
-      <a class="post-excerpt" href="/til/2023/05/23/http1.html">
-        <p>
-        http? https?
-
-http
-
-http란 Hypertext Transfer Protocol으로 server와 client간의 request와 response로 이루어진 protocol이라고 할 수 있다.
-client와 server간에 데이터를 주고 받을 때 암호화처리가 되어있지 않은 텍스트 형태로 전송한다. 그 데이터를 누군가 가로채면 읽을 수 있어 보안이 낮다.
-
-https
-
-https란 Hypertext Transfer Secure Protocol로 http에서 데이터를 주고 받을 때 암호화처리 되지 않은 것을 SSL, TLS와 같은 암호화된 방식으로 주고 받는 protocol이다.
-
-
-  SSL : SS... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#HTTP">#HTTP</a>
-</div>
-    </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/til/2023/05/19/npm.html">
-          npm이란
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> May 19, 2023</span>
-        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
-      </div>
-      <a class="post-excerpt" href="/til/2023/05/19/npm.html">
-        <p>
-        npm : Node Package Manager
-
-npm init : package.json(project에 대한 정보) 생성
-npm install [library] : [library] 설치
-npm uninstall [library] : [library] 삭제
-npm version : (Major).(Minor).(Patch)
-
-
-  Major : 기능의 사용 방식이 변하거나, 기능 대거 추가 및 수정 등이 일어났을 때 업데이트
-  Minor : 기능 추가등을 업데이트
-  Patch : 출시한 버전에 오류가 발생하거나 사소한 버그로 인해 수정했을 때 업데이트
-
-
-npm list : 설치한 목록
-npm list -... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Node">#Node</a>
-</div>
-    </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/til/2023/05/17/node.html">
-          Node 소개
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> May 17, 2023</span>
-        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 8 mins</span>
-      </div>
-      <a class="post-excerpt" href="/til/2023/05/17/node.html">
-        <p>
-        Node.js가 나오게 된 환경
-
-시간 별 나열
-
-1995년 이전에는 HTML, CSS로 웹사이트를 만듦
-1995년 JavaScript 도입 =&gt; 많은 브라우저들이 JS Engine을 탑제하기 시작
-
-
-  Safari : JavaScriptCore
-  Internet Explorer : Chakara
-  Firefox : SpiderMonkey
-  Chrome : V8 - (JIT : Just-In-Time compilation)을 지원
-  Edge : V8
-
-
-2009년 Ryan Dahl에 의해 Node.js 탄생 - JavaScript를 브라우저위에서만이 아닌 everywhere에서 사용하기 위함
-
-주요 ... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags">
-<a class="post-tag" href="/tags.html#TIL">#TIL</a><a class="post-tag" href="/tags.html#Node">#Node</a>
-</div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -1315,7 +1298,7 @@ npm list -... <span class="read_more">Read More</span>
   <ul>
     <li>
       <a href="/index.html">
-        All<span>17</span>
+        All<span>20</span>
       </a>
     </li>
 
@@ -1328,7 +1311,7 @@ npm list -... <span class="read_more">Read More</span>
     
       <li>
         <a href="/categories.html#h-TIL">
-          TIL <span>17</span>
+          TIL <span>20</span>
         </a>
       </li>
     

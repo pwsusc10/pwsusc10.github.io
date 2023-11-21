@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-06-02T00:35:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">http - 3</title><link href="http://localhost:4000/til/2023/05/27/http3.html" rel="alternate" type="text/html" title="http - 3" /><published>2023-05-27T00:00:00+09:00</published><updated>2023-05-27T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/05/27/http3</id><content type="html" xml:base="http://localhost:4000/til/2023/05/27/http3.html"><![CDATA[<h2 id="쿠키-세션-토큰을-왜-쓰는가">쿠키, 세션, 토큰을 왜 쓰는가?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-07-27T19:52:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">작은 걸음</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>pwsusc10</name></author><entry><title type="html">Node 공부하면서 부딪힌 실수들</title><link href="http://localhost:4000/til/2023/07/05/%EC%8B%A4%EC%88%98-%EC%A0%95%EB%A6%AC.html" rel="alternate" type="text/html" title="Node 공부하면서 부딪힌 실수들" /><published>2023-07-05T00:00:00+09:00</published><updated>2023-07-05T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/07/05/%EC%8B%A4%EC%88%98%20%EC%A0%95%EB%A6%AC</id><content type="html" xml:base="http://localhost:4000/til/2023/07/05/%EC%8B%A4%EC%88%98-%EC%A0%95%EB%A6%AC.html"><![CDATA[<h2 id="createreadstreampipe와-resend">createReadStream.pipe()와 res.end()</h2>
+
+<p>createReadStream.pipe()를 이용해 HTML을 가져오는 동작에서 코드의 마지막 부분에 res.end(); 를 호출하면 내용이 불러와지지 않는다<br />
+=&gt; pipe는 비동기적 함수이므로, 호출만 해놓고 다음 코드 라인으로 넘어간다. 따라서 Piping이 되고 있는 과정에 res.end()를 호출하게 되면 파이핑이 멈추게 되어 내용이 불러와지지 않는다. 스트림은 Event Driven형태이이기 때문.</p>
+
+<h2 id="express-appall-appuse차이">Express app.all(), app.use()차이</h2>
+
+<pre><code class="language-express">app.all('/path1', (req, res, next)); =&gt; path1에 해당하는 url만 처리
+
+app.use('/path2', (req, res, next)); =&gt; path2에 있으면 깊이에 상관없이 처리.
+</code></pre>
+
+<h2 id="express-api-안에-조건문등의-처리">Express api 안에 조건문등의 처리</h2>
+
+<p>if문을 통해 분기점을 나눠 res.send하는 경우 return을 반드시 넣어야함.</p>
+
+<pre><code class="language-Express">app.get('/path1', (req, res, next) =&gt; {
+  if(조건) {
+    return res.send('first');
+  }
+  res.send('second');
+})
+</code></pre>
+
+<h2 id="express의-error-처리">Express의 error 처리</h2>
+
+<p>동기 =&gt; try, catch<br />
+promise =&gt; catch<br />
+async, await =&gt; try, catch</p>
+
+<h2 id="react의-shallow-compare">React의 shallow compare</h2>
+
+<p>react의 useeffect 생각하며 API 짜기.<br />
+shallow compare 생각.</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="실수들" /><summary type="html"><![CDATA[createReadStream.pipe()와 res.end()]]></summary></entry><entry><title type="html">Express.js</title><link href="http://localhost:4000/til/2023/06/03/Express.html" rel="alternate" type="text/html" title="Express.js" /><published>2023-06-03T00:00:00+09:00</published><updated>2023-06-03T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/06/03/Express</id><content type="html" xml:base="http://localhost:4000/til/2023/06/03/Express.html"><![CDATA[<h2 id="cors란">CORS란?</h2>
+
+<p>CORS란 Cross-Origin Resource Sharing의 약자로 client와 server가 같은 도메인(ip)를 사용한다면(동일한 서버에서 동작중이라면) 서버의 resource를 별다른 제약없이 주고 받을 수 있지만 다른 도메인(ip)라면 원칙적으로는 어떠한 data도 주고 받을 수 없다.<br />
+client와 server가 다른 도메인일 때 client는 request를 보낼 때 header에 Access-Control-Allow-Origin을 추가해 보내야한다.</p>
+
+<h2 id="access-control-allow-origin-설정">Access-Control-Allow-Origin 설정</h2>
+
+<pre><code class="language-Express.js">app.use((req, res, next) =&gt; {
+  res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5000");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS",
+    GET,
+    POST,
+    PUT,
+    DELETE
+  );
+  next();
+});
+</code></pre>
+
+<p>다음과 같이 설정할 수 있다. 하지만 port마다 설정하는 것은 불가능하며 매번 작성하는 것도 부담이 된다. 따라서 cors module을 사용한다.<br />
+npm i cors 를 통해 설치한다.</p>
+
+<h2 id="cors-사용">cors 사용</h2>
+
+<pre><code class="language-Express.js">import express from "express";
+import fs from "fs";
+
+app.use(cors());
+</code></pre>
+
+<p>다음과 같이 설정하면 CORS policy를 피할 수 있다. 하지만 모든 도메인에 대한 접근을 허용하므로 옵션을 추가하는 것이 바람직하다.</p>
+
+<pre><code class="language-Express.js">import express from "express";
+import fs from "fs";
+
+app.use(
+  cors({
+    origin: ["http://127.0.0.1:5000"],
+    optionsSuccessStatus: 200,
+    credentials: true,  // Access-Control-Allow-Credentials : true
+  })
+);
+</code></pre>
+
+<h2 id="그-외-유용한-middleware">그 외 유용한 middleware</h2>
+
+<p>cookie-parser : cookie 정보<br />
+morgan : 응답 속도<br />
+helmet : 보안관련 정보</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="Node" /><category term="Express" /><summary type="html"><![CDATA[CORS란?]]></summary></entry><entry><title type="html">RESTful APIfks?</title><link href="http://localhost:4000/til/2023/06/01/RestfulAPI.html" rel="alternate" type="text/html" title="RESTful APIfks?" /><published>2023-06-01T00:00:00+09:00</published><updated>2023-06-01T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/06/01/RestfulAPI</id><content type="html" xml:base="http://localhost:4000/til/2023/06/01/RestfulAPI.html"><![CDATA[<h2 id="rest란">REST란?</h2>
+
+<p>REST =&gt; Representational State Transfer (대표하는 상태를 전송)<br />
+Software Architecture 중 하나. / Network-based Software Architectures</p>
+
+<h2 id="restful-api">RESTful API</h2>
+
+<p>두 컴퓨터 시스템이 인터넷을 통해 정보를 안전하게 교환하기 위해 사용하는 인터페이스.</p>
+
+<h2 id="rest-architecture-style의-6-principles">REST Architecture style의 6 principles</h2>
+
+<ol>
+  <li>Statelessness =&gt; 요청들은 독립적이어야 한다.(http protocol)</li>
+  <li>Cacheability =&gt; (http protocol)</li>
+  <li>Layered System</li>
+  <li>Code on demand</li>
+  <li>Uniform interface!! =&gt; 가장 중요!
+    <ul>
+      <li>Resource Identification in requests</li>
+      <li>Resource manipulation through representations</li>
+      <li>Self-descriptive messages</li>
+      <li>Hypermedia as the engine of application state(HATEOAS)</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="restful-api의-장점">RESTful API의 장점</h2>
+
+<ol>
+  <li>Scalability =&gt; 클라이언트와 서버 사이의 상호 작용을 최적화하기 때문에 효율적으로 크기를 조정할 수 있다.</li>
+  <li>Flexibility =&gt; 클라이언트와 서버의 완전한 분리를 할 수 있다. 각 부분이 독립적으로 개발될 수 있도록 다양한 서버 구성 요소를 단순화하고 분리한다.</li>
+  <li>Independence =&gt; REST API는 사용되는 기술과 독립적이다. API 설계에 영향을 주지 않고 다양한 프로그래밍 언어로 클라이언트 및 서버 애플리케이션을 모두 작성할 수 있다. 또한 통신에 영향을 주지 않고 양쪽의 technology를 변경할 수 있다.</li>
+</ol>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="Rest API" /><summary type="html"><![CDATA[REST란?]]></summary></entry><entry><title type="html">http - 3</title><link href="http://localhost:4000/til/2023/05/27/http3.html" rel="alternate" type="text/html" title="http - 3" /><published>2023-05-27T00:00:00+09:00</published><updated>2023-05-27T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/05/27/http3</id><content type="html" xml:base="http://localhost:4000/til/2023/05/27/http3.html"><![CDATA[<h2 id="쿠키-세션-토큰을-왜-쓰는가">쿠키, 세션, 토큰을 왜 쓰는가?</h2>
 
 <p>http는 stateless protocol이다. 즉 state를 저장하지 않는다는 것이다. 그렇다면 사용자가 로그인 되었다는 것과 사용자의 정보를 검색하는 등의 요청을 수행할 수 있을까? 바로 쿠키, 세션, 토큰을 이용해서 가능하다!</p>
 
@@ -57,7 +172,8 @@ server의 resource를 변경할 때 : POST, POST, DELETE, PATCH</p>
 
 <p><img width="773" alt="스크린샷 2023-06-01 오후 3 25 06" src="https://github.com/pwsusc10/pwsusc10.github.io/assets/101408068/450da09b-83bd-4bb5-9058-eee3fd055182" />
 Safe : GET method는 서버의 state를 변경하지 않기 때문에 safe하다.<br />
-Idempotent : 동일한 요청을 한 번 보내는 것과 여러 번 연속으로 보내는 것이 같은 효과를 지니고, 서버의 state도 동일하기 때문에 idempotent하다.</p>
+Idempotent : 동일한 요청을 한 번 보내는 것과 여러 번 연속으로 보내는 것이 같은 효과를 지니고, 서버의 state도 동일하기 때문에 idempotent하다.<br />
+Cacheable : cache할 수 있는 HTTP 응답으로, 나중에 검색하고 사용하기 위해 저장하여 새 요청을 서버에 저장한다.</p>
 
 <p>PUT method
 <img width="773" alt="스크린샷 2023-06-01 오후 3 31 51" src="https://github.com/pwsusc10/pwsusc10.github.io/assets/101408068/57614c47-f971-4a45-be19-5a00bd207642" />
@@ -145,7 +261,11 @@ client와 server간에 데이터를 주고 받을 때 암호화처리가 되어�
 
 <h2 id="참고">참고</h2>
 
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">MDN</a></p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="HTTP" /><summary type="html"><![CDATA[http? https?]]></summary></entry><entry><title type="html">npm이란</title><link href="http://localhost:4000/til/2023/05/19/npm.html" rel="alternate" type="text/html" title="npm이란" /><published>2023-05-19T00:00:00+09:00</published><updated>2023-05-19T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/05/19/npm</id><content type="html" xml:base="http://localhost:4000/til/2023/05/19/npm.html"><![CDATA[<p>npm : Node Package Manager</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">MDN</a></p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="HTTP" /><summary type="html"><![CDATA[http? https?]]></summary></entry><entry><title type="html">NPM, NVM</title><link href="http://localhost:4000/til/2023/05/19/npm,-nvm.html" rel="alternate" type="text/html" title="NPM, NVM" /><published>2023-05-19T00:00:00+09:00</published><updated>2023-05-19T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/05/19/npm,%20nvm</id><content type="html" xml:base="http://localhost:4000/til/2023/05/19/npm,-nvm.html"><![CDATA[<h2 id="npm">NPM?</h2>
+
+<p>NPM : Node Package Manager</p>
+
+<h3 id="npm-간단한-명령어">NPM 간단한 명령어</h3>
 
 <p>npm init : package.json(project에 대한 정보) 생성
 npm install [library] : [library] 설치<br />
@@ -166,7 +286,98 @@ npm outdated : update가 필요한 [library]들을 보여줌
 npm update : update가 필요한 [library]를 전부 update
 npm update [library] : [library]를 update
 option / –save-dev : devDependencies 개발에 필요한 library를 설치할 때의 옵션 - 제품 자체에 필요한 것이 아닌 개발에 필요한 것임<br />
-npm install nodemon –save-dev</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Node" /><summary type="html"><![CDATA[npm : Node Package Manager]]></summary></entry><entry><title type="html">Node 소개</title><link href="http://localhost:4000/til/2023/05/17/node.html" rel="alternate" type="text/html" title="Node 소개" /><published>2023-05-17T00:00:00+09:00</published><updated>2023-05-17T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/05/17/node</id><content type="html" xml:base="http://localhost:4000/til/2023/05/17/node.html"><![CDATA[<h2 id="nodejs가-나오게-된-환경">Node.js가 나오게 된 환경</h2>
+npm install nodemon –save-dev</p>
+
+<hr />
+
+<h2 id="nvm">NVM?</h2>
+
+<p>NVM : Node Version Manage</p>
+
+<h3 id="nvm-설치">NVM 설치</h3>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">brew install nvm
+</span></code></pre></div></div>
+
+<h3 id="nvm-설정">NVM 설정</h3>
+
+<p>Terminal에서 NVM을 사용하기 위해서는 .zshrc 파일을 수정할 필요이 필요합니다. .zshrc 파일을 열고 아래와 같이 수정합니다.</p>
+
+<pre><code class="language-Terminal"># code ~/.zshrc
+...
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+</code></pre>
+
+<p>설정을 한 뒤 Terminal을 재시작합니다. 이후 NVM이 잘 설치되었는지 다음 명령어로 확인합니다.</p>
+
+<pre><code class="language-Terminal">nvm --version
+nvm -v
+</code></pre>
+
+<h3 id="nvm-버전-관리-방법">NVM 버전 관리 방법</h3>
+
+<h4 id="node-버전-리스트">Node 버전 리스트</h4>
+
+<p>아래 명령어로 설치 가능한 Node 버전을 확인 할 수 있습니다.</p>
+
+<pre><code class="language-Terminal">nvm ls-remote
+</code></pre>
+
+<h4 id="node-설치">Node 설치</h4>
+
+<p>버전을 확인 후, 아래의 명령어를 사용해 Node를 설치할 수 있습니다.</p>
+
+<ul>
+  <li>최신 버전의 node 설치
+    <pre><code class="language-Terminal">nvm install node
+</code></pre>
+  </li>
+  <li>최신 버전의 LTS(Long Term Support) release 설치
+    <pre><code class="language-Terminal">nvm install --lts
+</code></pre>
+  </li>
+  <li>특정 버전의 Node 설치
+    <pre><code class="language-Terminal">nvm install 16.15.0
+</code></pre>
+  </li>
+</ul>
+
+<p>설치된 Node 버전들을 아래 명령어로 확인 할 수 있습니다.</p>
+
+<pre><code class="language-Terminal">nvm ls
+</code></pre>
+
+<h4 id="node-버전-변경">Node 버전 변경</h4>
+
+<p>NVM을 사용해 여러 버전의 Node를 설치할 수 있으며, 사용하고자 하는 Node 버전을 선택할 수 있습니다.</p>
+
+<pre><code class="language-Terminal">nvm use 16.15.0
+</code></pre>
+
+<p>버전 선택 이후 아래의 명령어로 버전이 잘 변경되었는 지 확인할 수 있습니다.</p>
+
+<pre><code class="language-Terminal">nvm ls
+</code></pre>
+
+<h4 id="node-버전-삭제">Node 버전 삭제</h4>
+
+<p>다음 명령어로 불필요한 Node 버전을 삭제할 수 있습니다.</p>
+
+<pre><code class="language-Terminal">nvm uninstall 16.15.0
+</code></pre>
+
+<h4 id="프로젝트별-node-버전-관리하기">프로젝트별 Node 버전 관리하기</h4>
+
+<ol>
+  <li>프로젝트의 Root 폴더에 .nvmrc 파일 생성합니다.</li>
+  <li>.nvmrc파일 안에 사용하고자 하는 버전의 Node를 작성합니다.
+    <pre><code class="language-.nvmrc">16.15.0
+</code></pre>
+  </li>
+  <li>nvm use 명령어를 사용합니다.</li>
+  <li>nvm ls 명령어를 사용해 버전이 변경되었는지 확인합니다.</li>
+</ol>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Node" /><summary type="html"><![CDATA[NPM?]]></summary></entry><entry><title type="html">Node 소개</title><link href="http://localhost:4000/til/2023/05/17/node.html" rel="alternate" type="text/html" title="Node 소개" /><published>2023-05-17T00:00:00+09:00</published><updated>2023-05-17T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/05/17/node</id><content type="html" xml:base="http://localhost:4000/til/2023/05/17/node.html"><![CDATA[<h2 id="nodejs가-나오게-된-환경">Node.js가 나오게 된 환경</h2>
 
 <h3 id="시간-별-나열">시간 별 나열</h3>
 
@@ -730,548 +941,4 @@ int main(void)
 
 <h2 id="참고-자료">참고 자료</h2>
 
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[수식의 표기법]]></summary></entry><entry><title type="html">Stack - 리스트 기반</title><link href="http://localhost:4000/til/2023/02/02/Stack-02.html" rel="alternate" type="text/html" title="Stack - 리스트 기반" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/02/Stack-02</id><content type="html" xml:base="http://localhost:4000/til/2023/02/02/Stack-02.html"><![CDATA[<h2 id="연결-리스트-기반-stack">연결 리스트 기반 Stack</h2>
-
-<p>스택도 연결 리스트이다. 다만 저장된 순서의 역순으로 조회(삭제)가 가능한 연결 리스트일 뿐이다.<br />
-우리는 연결리스트를 head만 있는 연결리스트와 head와 tail 둘 다 있는 연결리스트를 만들 수 있다.<br />
-여기서 주목할 점은 head만 있는 연결리스트는 stack의 구조와 유사하다는 점이다.<br />
-즉 새로운 노드를 꼬리가 아닌 머리에 추가하는 형태로 구현한 연결 리스트가 스택의 구조와 매우 유사한 성격을 지닌다.</p>
-
-<h3 id="adt">ADT</h3>
-
-<p>list기반 Stack의 ADT 또한 배열기반 Stack의 ADT와 동일하다.</p>
-
-<pre><code class="language-ADT">void StackInit(Stack *pstack);
-- 스택의 초기화를 진행한다.
-- 스택 생성 후 가장 먼저 호출되어야 한다.
-
-int SIsEmpty(Stack *pstack);
-- 스택이 빈 경우 TRUE(1)을, 그렇지 않은 경우 FALSE(0)을 반환한다.
-
-void SPush(Stack *pstack, Data data);
-- 스택에 데이터를 저장한다. 매개변수 data로 전달된 값을 저장한다.
-
-Data SPop(Stack *pstack);
-- 마지막에 저장된 요소를 삭제한다.
-- 삭제된 데이터는 반환이 된다.
-- 본 함수의 호출을 위해서는 데이터가 하나 이상 존재해야한다.
-
-Data SPeek(Stack *pstack);
-- 마지막에 저장된 요소를 반환하되 삭제하지 않는다.
-- 본 함수의 호출을 위해서는 데이터가 하나 이상 존재해야한다.
-</code></pre>
-
-<h3 id="header-file">header file</h3>
-
-<p>list 기반 Stack을 구현하기 위해서 필요한 것은 포인터 변수 head하나이므로 이를 헤더파일로 정의하면 다음과 같다.</p>
-
-<pre><code class="language-ListBaseStack.h">#ifndef __LB_STACK_H__
-#define __LB_STACK_H__
-
-#define TRUE 1
-#define FALSE 0
-#define STACK_LEN 100
-
-typedef int Data;
-
-typedef struct _node
-{
-  Data data;
-  struct _node *next;
-} Node;
-
-typedef struct _listStack
-{
-  Node *head;
-}ListStack;
-
-typedef ListStack Stack;
-
-void StackInit(Stack *pstack);          // 스택의 초기화
-int SIsEmpty(Stack *pstack);            // 스택이 비었는지 확인
-
-void SPush(Stack *pstack, Data data);   // 스택의 push연산
-Data SPop(Stack *pstack);               // 스택의 pop연산
-Data SPeek(Stack *pstack);              // 스택의 peek연산
-
-
-#endif
-</code></pre>
-
-<h3 id="source-file">source file</h3>
-
-<pre><code class="language-ListBaseStack.c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include "ListBaseStack.h"
-
-void StackInit(Stack *pstack)
-{
-  pstack-&gt;head = NULL;
-}
-
-int SIsEmpty(Stack *pstack)
-{
-  if(pstack-&gt;head == NULL)
-    return TRUE;
-  else
-    return FALSE;
-}
-
-void SPush(Stack *pstack, Data data)
-{
-  // 새로운 노드 생성 및 데이터 저장.
-  Node *newNode = (Node*)malloc(sizeof(Node));
-  newNode-&gt;data = data;
-
-  newNode-&gt;next = pstack-&gt;head;
-  pstack-&gt;head = newNode;
-}
-
-Data SPop(Stack *pstack)
-{
-  Node *delNode;
-  Data delData;
-
-  if(SIsEmpty(pstack))
-  {
-    printf("Stack Memory Error!\n");
-    exit(-1);
-  }
-
-  delNode = pstack-&gt;head;
-  delData = delNode-&gt;data;
-
-  pstack-&gt;head = pstack-&gt;head-&gt;next;
-
-  free(delNode);
-
-  return delData;
-}
-
-Data SPeek(Stack *pstack)
-{
-  if(SIsEmpty(pstack))
-  {
-    printf("Stack Memory Error!\n");
-    exit(-1);
-  }
-
-  return pstack-&gt;head-&gt;data;
-}
-</code></pre>
-
-<h3 id="mainc">main.c</h3>
-
-<pre><code class="language-ListBaseStackMain.c">#include &lt;stdio.h&gt;
-#include "ListBaseStack.h"
-
-int main(void)
-{
-  // Stack의 생성 및 초기화
-  Stack stack;
-  StackInit(&amp;stack);
-
-  // 데이터 저장
-  SPush(&amp;stack, 11);
-  SPush(&amp;stack, 22);
-  SPush(&amp;stack, 33);
-  SPush(&amp;stack, 44);
-  SPush(&amp;stack, 55);
-
-  // 데이터 꺼내기
-  while(!SIsEmpty(&amp;stack))
-  {
-    printf("%d ", SPop(&amp;stack));
-  }
-
-  return 0;
-}
-</code></pre>
-
-<h2 id="참고-자료">참고 자료</h2>
-
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[연결 리스트 기반 Stack]]></summary></entry><entry><title type="html">Stack - 배열 기반</title><link href="http://localhost:4000/til/2023/02/01/Stack-01.html" rel="alternate" type="text/html" title="Stack - 배열 기반" /><published>2023-02-01T00:00:00+09:00</published><updated>2023-02-01T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/02/01/Stack-01</id><content type="html" xml:base="http://localhost:4000/til/2023/02/01/Stack-01.html"><![CDATA[<h2 id="stack">Stack</h2>
-
-<p>스택의 구조는 매우 간단하다. 스택은 쟁반 위에 쌓인 접시라고 생각하면 이해하기 쉽다. 쟁반 위에 쌓인 접시는 가장 먼저 쌓은 접시는 맨 밑에 가장 늦게 쌓은 접시는 가장 위에 놓여 있으며, 접시를 뺄 때에는 가장 늦게 쌓인 접시가 제일 먼저 뺄 수 있다는 것을 알 수 있다. 이처럼 스택은 ‘LIFO(Last-In, First-Out) 구조의 자료 구조이다. 즉 후입선출 방식의 자료구조를 뜻한다는 말이다.</p>
-
-<h3 id="adt">ADT</h3>
-
-<p>Stack의 ADT는 다음과 같다.</p>
-
-<pre><code class="language-ADT">void StackInit(Stack *pstack);
-- 스택의 초기화를 진행한다.
-- 스택 생성 후 가장 먼저 호출되어야 한다.
-
-int SIsEmpty(Stack *pstack);
-- 스택이 빈 경우 TRUE(1)을, 그렇지 않은 경우 FALSE(0)을 반환한다.
-
-void SPush(Stack *pstack, Data data);
-- 스택에 데이터를 저장한다. 매개변수 data로 전달된 값을 저장한다.
-
-Data SPop(Stack *pstack);
-- 마지막에 저장된 요소를 삭제한다.
-- 삭제된 데이터는 반환이 된다.
-- 본 함수의 호출을 위해서는 데이터가 하나 이상 존재해야한다.
-
-Data SPeek(Stack *pstack);
-- 마지막에 저장된 요소를 반환하되 삭제하지 않는다.
-- 본 함수의 호출을 위해서는 데이터가 하나 이상 존재해야한다.
-</code></pre>
-
-<h3 id="header-file">header file</h3>
-
-<p><img width="739" alt="ArrayBaseStack" src="https://user-images.githubusercontent.com/101408068/226134286-b93c7b13-ba2b-4e0f-971f-cdf14970730b.png" />&lt;/img&gt;
-위 그림에서 주목해야 할 것은 두 가지이다.</p>
-
-<ul>
-  <li>인데스 0의 배열 요소가 ‘스택의 바닥’으로 정의되어 있다.</li>
-  <li>마지막에 저장된 데이터의 위치를 기억해야 한다.(TOP)</li>
-</ul>
-
-<p>인데스 0의 배열 요소를 스택의 바닥으로 두어 배열의 길이에 상관 없이 언제나 인덱스 0의 요소가 스택의 바닥이 된다.<br />
-스택의 핵심 연산 두 가지는 다음과 같다.</p>
-
-<ul>
-  <li>push : Top을 위로 한 칸 올리고, Top이 가리키는 위치에 데이터 저장</li>
-  <li>pop : Top이 가리키는 데이터를 반환하고, Top을 아래로 한 칸 내림</li>
-</ul>
-
-<pre><code class="language-ArrayBaseStack.h">#ifndef __AB_STACK_H__
-#define __AB_STACK_H__
-
-#define TRUE 1
-#define FALSE 0
-#define STACK_LEN 100
-
-typedef int Data;
-
-typedef struct _arrayStack
-{
-  Data stackArr[STACK_LEN];
-  int topIndex;
-} ArrayStack;
-
-typedef ArrayStack Stack;
-
-void StackInit(Stack *pstack);          // 스택의 초기화
-int SIsEmpty(Stack *pstack);            // 스택이 비었는지 확인
-
-void SPush(Stack *pstack, Data data);   // 스택의 push연산
-Data SPop(Stack *pstack);               // 스택의 pop연산
-Data SPeek(Stack *pstack);              // 스택의 peek연산
-
-
-#endif
-</code></pre>
-
-<h3 id="source-file">source file</h3>
-
-<pre><code class="language-ArrayBaseStack.c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include "ArrayBaseStack.h"
-
-void StackInit(Stack *pstack)
-{
-  pstack-&gt;topIndex = -1;        // -1은 빈 상태를 의미한다.
-}
-
-int SIsEmpty(Stack *pstack)
-{
-  if(pstack-&gt;topIndex == -1)
-    return TRUE;
-  else
-    return FALSE;
-}
-
-void SPush(Stack *pstack, Data data)
-{
-  pstack-&gt;topIndex++;
-  pstack-&gt;stackArr[pstack-&gt;topIndex] = data;
-}
-
-Data SPop(Stack *pstack)
-{
-  int delIndex;
-
-  if(SIsEmpty(pstack))                  // Stack이 비어있다면
-  {
-    printf("Stack Memory Error!\n");
-    exit(-1);
-  }
-
-  delIndex = pstack-&gt;topIndex;          // 삭제할 index값 저장
-  pstack-&gt;topIndex--;                   // pop 연산으로 인해 topIndex 값 하나 감소
-
-  return pstack-&gt;stackArr[delIndex];    // 삭제되는 데이터 반환
-}
-
-Data SPeek(Stack *pstack)
-{
-  if(SIsEmpty(pstack))
-  {
-    printf("Stack Memory Error!\n");
-    exit(-1);
-  }
-
-  return pstack-&gt;stackArr[pstack-&gt;topIndex];
-}
-</code></pre>
-
-<h3 id="mainc">main.c</h3>
-
-<pre><code class="language-ArrayBaseStackMain.c">#include &lt;stdio.h&gt;
-#include "ArrayBaseStack.h"
-
-int main(void)
-{
-  // Stack의 생성 및 초기화
-  Stack stack;
-  StackInit(&amp;stack);
-
-  // 데이터 저장
-  SPush(&amp;stack, 11);
-  SPush(&amp;stack, 22);
-  SPush(&amp;stack, 33);
-  SPush(&amp;stack, 44);
-  SPush(&amp;stack, 55);
-
-  // 데이터 꺼내기
-  while(!SIsEmpty(&amp;stack))
-  {
-    printf("%d ", SPop(&amp;stack));
-  }
-
-  return 0;
-}
-</code></pre>
-
-<h2 id="참고-자료">참고 자료</h2>
-
-<p>책 - 윤성우의 열혈 자료 구조<br />
-블로그 - <a href="https://hellmath.tistory.com/7">스택의 개념, 배열로 스택구현</a></p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[Stack]]></summary></entry><entry><title type="html">리스트 - 5</title><link href="http://localhost:4000/til/2023/01/31/Linked-List-05.html" rel="alternate" type="text/html" title="리스트 - 5" /><published>2023-01-31T00:00:00+09:00</published><updated>2023-01-31T00:00:00+09:00</updated><id>http://localhost:4000/til/2023/01/31/Linked-List-05</id><content type="html" xml:base="http://localhost:4000/til/2023/01/31/Linked-List-05.html"><![CDATA[<h2 id="양방향-연결-리스트---headdummynode와-taildummynode가-있는-것">양방향 연결 리스트 - headDummyNode와 tailDummyNode가 있는 것</h2>
-
-<ul>
-  <li>장점
-    <ul>
-      <li>DummyNode를 head와 tail에 추가함으로써 삭제와 조회의 일관성을 더한다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="adt">ADT</h3>
-
-<pre><code class="language-ADT">void List Init(List *plist);
-- 리스트 초기화
-
-void LInsert(List *plist, LData pdata);
-- 리스트에 데이터 저장
-
-int LFirst(List *plist, LData pdata);
-- 첫 번째 데이터를 pdata에 저장
-- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
-
-int LNext(List *plist, LData *pdata);
-- 참조된 데이터의 다음 데이터를 pdata에 저장
-- 참조를 새로 시작하기 위해선 LFirst 함수를 호출해야 한다.
-- 참조 성공 시 TRUE(1), 실패 시 FALSE(0)을 반환
-
-LData LRemove(List *plist);
-- LFirst 또는 LNext 함수의 마지막 반환 데이터를 삭제
-- 삭제된 데이터를 반환
-
-int LCount(List *plist);
-- 리스트에 저장되어 있는 데이터의 수 반환
-</code></pre>
-
-<h3 id="header-file">header file</h3>
-
-<pre><code class="language-DBLinkedList.h">#ifndef __DB_LINKED_LIST_H__
-#define __DB_LINKED_LIST_H__
-
-#define TRUE 1
-#define FALSE 0
-
-typedef int Data;
-
-typedef struct _node
-{
-  Data data;
-  struct _node *prev;
-  struct _node *next;
-}Node;
-
-typedef struct _DLinkedList
-{
-  Node *head;
-  Node *tail;
-  Node *cur;
-  int numOfData;
-
-}DBLinkedList;
-
-typedef DBLinkedList List;
-
-void ListInit(List *plist);                 // 초기화
-void LInsert(List *plist, Data data);       // 머리에 데이터 저장
-
-int LFirst(List *plist, Data *pdata);       // 첫 데이터 참조
-int LNext(List *plist, Data *pdata);        // 두 번째 이후 데이터 참조
-
-Data LRemove(List *plist);                  // 참조한 데이터 삭제
-int LCount(List *plist);                    // 저장된 데이터의 수 반환
-
-
-#endif
-</code></pre>
-
-<h3 id="source-file">source file</h3>
-
-<pre><code class="language-DBLinkedList.c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include "DBLinkedList.h"
-
-void ListInit(List *plist)
-{
-  Node *headDummy = (Node*)malloc(sizeof(Node));
-  Node *tailDummy = (Node*)malloc(sizeof(Node));
-
-  // headDummy 연결.
-  headDummy-&gt;prev = NULL;
-  headDummy-&gt;next = tailDummy;
-  plist-&gt;head = headDummy;
-
-  // tailDummy 연결
-  tailDummy-&gt;prev = headDummy;
-  tailDummy-&gt;next = NULL;
-  plist-&gt;tail = tailDummy;
-
-  plist-&gt;numOfData = 0;
-}
-
-void LInsert(List *plist, Data data)
-{
-  // 저장할 노드 생성
-  Node *newNode = (Node*)malloc(sizeof(Node));
-  newNode-&gt;data = data;
-
-  // newNode와 다음 Node 연결
-  newNode-&gt;next = plist-&gt;head-&gt;next;
-  plist-&gt;head-&gt;next-&gt;prev = newNode;
-
-  // headDummy와 newNode 연결
-  newNode-&gt;prev = plist-&gt;head;
-  plist-&gt;head-&gt;next = newNode;
-
-  plist-&gt;numOfData++;
-}
-
-int LFirst(List *plist, Data *pdata)
-{
-  if(plist-&gt;head-&gt;next == plist-&gt;tail)
-    return FALSE;
-
-  plist-&gt;cur = plist-&gt;head-&gt;next;
-  *pdata = plist-&gt;cur-&gt;data;
-
-  return TRUE;
-}
-
-int LNext(List *plist, Data *pdata)
-{
-  if(plist-&gt;cur-&gt;next == plist-&gt;tail)
-    return FALSE;
-
-  plist-&gt;cur = plist-&gt;cur-&gt;next;
-  *pdata = plist-&gt;cur-&gt;data;
-
-  return TRUE;
-}
-
-Data LRemove(List *plist)
-{
-  Node *delNode;
-  Data delData;
-
-  delNode = plist-&gt;cur;
-  delData = delNode-&gt;data;
-
-  delNode-&gt;prev-&gt;next = delNode-&gt;next;
-  delNode-&gt;next-&gt;prev = delNode-&gt;prev;
-  plist-&gt;cur = delNode-&gt;prev;
-  free(delNode);
-
-  plist-&gt;numOfData--;
-
-  return delData;
-}
-
-int LCount(List *plist)
-{
-  return plist-&gt;numOfData;
-}
-</code></pre>
-
-<h3 id="mainc">main.c</h3>
-
-<pre><code class="language-DBLinkedListMain.c">#include &lt;stdio.h&gt;
-#include "DBLinkedList.h"
-
-int main(void)
-{
-  List list;
-  Data data;
-
-  ListInit(&amp;list);
-
-  LInsert(&amp;list, 11);
-  LInsert(&amp;list, 22);
-  LInsert(&amp;list, 33);
-  LInsert(&amp;list, 44);
-  LInsert(&amp;list, 55);
-
-  printf("저장된 데이터 수 : %d\n", LCount(&amp;list));
-
-  if(LFirst(&amp;list, &amp;data))
-  {
-    printf("data : %d\n", data);
-
-    while(LNext(&amp;list, &amp;data))
-    {
-      printf("data : %d\n", data);
-    }
-  }
-
-  if(LFirst(&amp;list, &amp;data))
-  {
-    if(data == 11 || data == 33 || data == 55)
-    {
-      printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
-    }
-
-    while(LNext(&amp;list, &amp;data))
-    {
-      if(data == 11 || data == 33 || data == 55)
-        printf("삭제된 데이터 : %d\n", LRemove(&amp;list));
-    }
-  }
-
-
-  if(LFirst(&amp;list, &amp;data))
-  {
-    printf("data : %d\n", data);
-
-    while(LNext(&amp;list, &amp;data))
-    {
-      printf("data : %d\n", data);
-    }
-  }
-
-  printf("저장된 데이터 수 : %d\n", LCount(&amp;list));
-
-  return 0;
-}
-</code></pre>
-
-<h2 id="참고-자료">참고 자료</h2>
-
-<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[양방향 연결 리스트 - headDummyNode와 tailDummyNode가 있는 것]]></summary></entry></feed>
+<p>책 - 윤성우의 열혈 자료 구조</p>]]></content><author><name>pwsusc10</name></author><category term="TIL" /><category term="TIL" /><category term="Data Structure" /><summary type="html"><![CDATA[수식의 표기법]]></summary></entry></feed>
